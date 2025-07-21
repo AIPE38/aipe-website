@@ -1,7 +1,7 @@
 $test-color: #9BBDD6;
 
 .test {
-    background-color: $test-color;
+    border: .25rem solid $test-color;
 }
 
 
@@ -28,4 +28,16 @@ $test-color: #9BBDD6;
 
 .dancing-script {
     font-family: 'dancing-script', cursive;
+}
+
+
+.lien-evitement {
+    position:absolute;
+    left:-99999rem;
+    padding:1rem;
+    background-color: $test-color;
+}
+.lien-evitement:focus {
+    position:absolute;
+    left:0
 }

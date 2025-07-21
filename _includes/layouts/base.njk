@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    {% include "layouts/head.njk" %}
+
+    <body>
+
+        <nav role="navigation" aria-label="Accès rapide">
+            <a class="lien-evitement" href="#contenu">
+                Aller au contenu
+            </a>
+        </nav>
+
+        <header role="banner">
+            {% include "components/navigation-principal.njk" %}
+        </header>
+
+        <main id="contenu" role="main" tabindex="-1">
+            {{ content | safe }}
+        </main>
+
+        <footer class="test" role="contentinfo">
+            {% include "layouts/footer.njk" %}
+        </footer>
+        
+    </body>
+
+</html>

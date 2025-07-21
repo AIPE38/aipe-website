@@ -1,0 +1,13 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if accueil %}
+        {% set titrePage %}{{ title }}{% endset %}
+    {% else %}
+        {% set titrePage %}{{title}} - {{ metadata.title }}{% endset %}
+    {% endif %}
+    <title>{{ titrePage | safe }}</title>
+
+    <link rel="stylesheet" href="/style.css" />
+</head>

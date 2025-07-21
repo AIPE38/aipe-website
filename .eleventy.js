@@ -11,6 +11,13 @@ const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
 
+    // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+    // Merge data instead of overriding
+    // https://www.11ty.dev/docs/data-deep-merge/
+    eleventyConfig.setDataDeepMerge(true);
+
      // SCSS
     eleventyConfig.on("beforeBuild", () => {
 
