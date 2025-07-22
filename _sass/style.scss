@@ -41,3 +41,49 @@ $test-color: #9BBDD6;
     position:absolute;
     left:0
 }
+
+// MAintenance page
+
+// avec un bon contraste     #403F3F
+
+
+
+
+//FFF6E9;
+img {
+  max-width: 100%;
+}
+
+
+.maintenance {
+    margin: 1rem;
+    min-height: 100dvh;
+
+    background-color: #FFF6E9;
+    color: #403F3F;
+    font-family: 'hero', sans-serif;
+    font-size: 1.1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.maintenance main {
+    max-width: 700px;
+    @media screen and (min-width: 500px) {
+        text-align: center;
+    }
+}
+
+.maintenance h1 {
+    font-family: 'dancing-script', cursive;
+    font-size: 3rem;
+}
+
+.maintenance a {
+    color: #2B75AC;
+    font-size: 2.1rem;
+    font-family: 'dancing-script', cursive;
+}

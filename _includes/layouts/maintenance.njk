@@ -3,13 +3,7 @@
 
     {% include "layouts/head.njk" %}
 
-    <body>
-
-        <nav role="navigation" aria-label="Accès rapide">
-            <a class="lien-evitement" href="#contenu">
-                Aller au contenu
-            </a>
-        </nav>
+    <body class="maintenance">
 
         <main id="contenu" role="main" tabindex="-1">
             {{ content | safe }}
