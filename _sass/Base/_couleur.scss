@@ -31,6 +31,7 @@ $fg-bleu-200:    #194362; // ok --c-bg-default et --c-theme
 
     --c-bg-default:   #{$aipe-blanc};
 
-    --c-fg-default:   #{gris};
-    --c-fg-primary:   #{$fg-bleu};
+    --c-fg-default:     #{$fg-gris};
+    --c-fg-primary:     #{$fg-bleu};
+    --c-fg-primary-200: #{$fg-bleu-200};
 }

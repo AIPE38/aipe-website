@@ -1,3 +1,9 @@
+::selection {
+  background: var(--c-fg-primary);
+  color: var(--c-bg-default);
+}
+
+
 *, ::before, ::after {
     box-sizing: border-box;
 }
@@ -7,7 +13,59 @@ html {
     scroll-padding-top: 2rem;
 }
 
+body {
+    font-family: 'Hero', sans-serif;
+    background-color: var(--c-bg-default);
+    color: var(--c-fg-default);
+    font-size: 1.1rem;;
+}
+
+h1:not([class]),
+h2:not([class]),
+h3:not([class]),
+h4:not([class]) {
+    font-family: 'dancing', cursive;
+}
+
+h3:not([class]),
+h4:not([class]) {
+    //font-weight: 200;
+}
+
+h1:not([class]) { font-size: 3rem}
+h2:not([class]) { font-size: 2.4rem}
+h3:not([class]) { font-size: 1.8rem}
+h4:not([class]) { font-size: 1.35rem}
+
 img {
     max-width: 100%;
     height: auto;
+}
+
+a {
+    color: var(--c-fg-primary);
+}
+a:hover,
+a:focus {
+    color: var(--c-fg-primary-200);
+}
+
+a[rel="external"]:after {
+    content: "↗";
+    font-family: system-ui,-apple-system,sans-serif;
+    color: var(--c-fg-primary-200);
+}
+
+strong {
+    font-weight: 700;
+}
+
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 2px solid var(--c-fg-primary);
+    outline-offset: .5rem;
+    border-radius: 2.5rem;
 }
