@@ -1,7 +1,16 @@
 {% set navPages = collections.all | eleventyNavigation %}
 
-<nav class="test" role="navigation" aria-label="Menu principal">
-    <ul>
+
+{% if accueil %}
+    <img src="/media/image/AIPE-logo-fond-fff6e9.jpg" alt="{{ metadata.title }}" width="150">
+{% else %}
+    <a href="/">
+        <img src="/media/image/AIPE-logo-fond-fff6e9.jpg" alt="{{ metadata.title }}" width="150">
+    </a>
+{% endif %}
+
+<nav class="menu" role="navigation" aria-label="Menu principal">
+    <ul class="reset df fw-w gap">
         {%- for entry in navPages %}
             <li>
                 {% if entry.url == page.url %}
@@ -18,3 +27,12 @@
         {%- endfor %}
     </ul>
 </nav>
+
+<ul class="reset df fw-w gap">
+    <li>
+        <a href="https://www.facebook.com/aiperam" rel="external" target="_blank">Facebook</a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/aipe.38" rel="external" target="_blank">Instagram</a>
+    </li>
+</ul>
