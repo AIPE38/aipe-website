@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------------*/
+/* Charte AIPE                                                        */
+/*--------------------------------------------------------------------*/
+$aipe-blanc:    #FFF6E9;
+$aipe-jaune:    #F0BF60;
+$aipe-corail:   #FE9191;
+$aipe-maron:    #E09D94;
+$aipe-bleu:     #9BBDD6;
+$aipe-gris:     #4A4A4A;
+
+
+/*--------------------------------------------------------------------*/
+/* Déclinaisons de couleurs pour un contraste A11y optimal            */
+/*--------------------------------------------------------------------*/
+//$fg-jaune:   #9B6600;
+//$fg-corail:  #B45151;
+//$fg-marron:  #AE5549;
+$fg-gris:        #403F3F; // ok --c-bg-default et --c-theme
+$fg-bleu:        #2B75AC; // ok --c-bg-default
+$fg-bleu-200:    #194362; // ok --c-bg-default et --c-theme
+
+
+/*--------------------------------------------------------------------*/
+/* Root                                                               */
+/*--------------------------------------------------------------------*/
+:root {
+    --c-theme-jaune:  #{$aipe-jaune};
+    --c-theme-corail: #{$aipe-corail};
+    --c-theme-marron: #{$aipe-maron};
+    --c-theme-bleu:   #{$aipe-bleu};
+
+    --c-bg-default:   #{$aipe-blanc};
+
+    --c-fg-default:   #{gris};
+    --c-fg-primary:   #{$fg-bleu};
+}

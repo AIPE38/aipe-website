@@ -1,0 +1,34 @@
+
+.maintenance {
+    margin: 1rem;
+    min-height: 100dvh;
+
+    background-color: var(--c-bg-default);
+    color: var(--c-fg-default);
+    font-family: 'hero', sans-serif;
+    font-size: 1.1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.maintenance main {
+    max-width: 700px;
+    @media screen and (min-width: 500px) {
+        text-align: center;
+    }
+}
+
+.maintenance h1 {
+    font-family: 'dancing', cursive;
+    font-size: 3rem;
+}
+
+.maintenance a {
+    color: var(--c-fg-primary);;
+    font-size: 2.1rem;
+    font-family: 'dancing', cursive;
+    text-underline-offset: .4rem;
+}
