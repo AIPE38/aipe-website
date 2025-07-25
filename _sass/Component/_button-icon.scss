@@ -2,10 +2,21 @@
 @use "../Abstracts/__index" as *;
 
 .button-icon {
+    --c-bg: var(--c-theme-neutre);
     width: rem(50px);
     height: rem(50px);
     border-radius: rem(1000px);
-    background-color: var(--c-bg, var(--c-bg-default));
+    background-color: var(--c-bg);
+    transition: all 0.2s ease-in-out;
+}
+
+.button-icon:hover,
+.button-icon:focus {
+    background-color: hsl(from var(--c-bg) h s l / .6);
+
+    svg {
+        fill: var(--c-fg-primary);
+    }
 }
 
 .button-icon svg {
