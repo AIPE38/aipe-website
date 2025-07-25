@@ -1,0 +1,24 @@
+@use "sass:map";
+@use 'pixel-to-rem' as remUtils;
+
+@mixin breakpoint($taille) {
+
+    @if $taille == 'large' {
+        @media screen and (min-width: remUtils.rem(900px)) {
+            @content
+        }
+    }
+
+    @if $taille == 'mediumDown' {
+        @media screen and (max-width: remUtils.rem(899px)) {
+            @content
+        }
+    }
+    
+    @if $taille == 'medium' {
+        @media screen and (min-width: remUtils.rem(600px)) {
+            @content
+        }
+    }
+
+}

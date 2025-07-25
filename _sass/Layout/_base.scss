@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.base {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    padding: rem(10px) rem(20px);
+    max-width: rem(1120px);
+    min-height: 100dvh;
+
+    @include breakpoint(medium) {
+        padding: rem(10px) rem(32px);
+    }
+
+    @include breakpoint(large) {
+        padding: rem(20px) rem(40px);
+    }
+}
+
+.base main {
+    flex-grow: 1;
+}
