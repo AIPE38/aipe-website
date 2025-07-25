@@ -18,7 +18,7 @@
     "fs-extra": "^9.1.0",
     "html-minifier": "^4.0.0",
     "postcss": "^8.1.8",
-    "sass": "^1.29.0",
+    "sass": "^1.89.2",
     "uglify-js": "^3.14.2"
   }
 }

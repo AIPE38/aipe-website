@@ -8,6 +8,7 @@ const postcss = require("postcss");
 const autoprefixer = require("autoprefixer");
 const markdownIt = require("markdown-it");
 const Image = require("@11ty/eleventy-img");
+const path = require("path");
 
 module.exports = function(eleventyConfig) {
 
@@ -22,10 +23,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.on("beforeBuild", () => {
 
         // Compile Sass
-        let result = sass.renderSync({
-            file: "_sass/style.scss",
-            sourceMap: false,
-            outputStyle: "compressed",
+        const result = sass.compile("_sass/style.scss", {
+            style: "compressed", // équivalent de outputStyle: "compressed"
         });
         console.log("SCSS compiled");
 
