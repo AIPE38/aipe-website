@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
 ::selection {
   background: var(--c-fg-primary);
   color: var(--c-bg-default);
@@ -17,38 +20,41 @@ body {
     margin: 0;
     font-family: 'Hero', sans-serif;
     background-color: var(--c-bg-default);
-    color: var(--c-fg-default);
-    font-size: 1.1rem;
+    color: var(--c-fg-primary);
+    font-size: 1rem;
 }
 
 h1:not([class]),
 h2:not([class]),
-h3:not([class]),
-h4:not([class]) {
+h3:not([class]) {
     font-family: 'dancing', cursive;
 }
 
-h3:not([class]),
-h4:not([class]) {
-    //font-weight: 200;
-}
-
-h1:not([class]) { font-size: 3rem}
-h2:not([class]) { font-size: 2.4rem}
-h3:not([class]) { font-size: 1.8rem}
-h4:not([class]) { font-size: 1.35rem}
+h1:not([class]) { font-size: rem(48px)}
+h2:not([class]) { font-size: rem(38px)}
+h3:not([class]) { font-size: rem(30px)}
+h4:not([class]) { font-size: rem(24px); font-weight: 400;}
 
 img {
     max-width: 100%;
     height: auto;
 }
 
-a {
+a:not([class]) {
     color: var(--c-fg-primary);
 }
-a:hover,
-a:focus {
+a:not([class]):hover,
+a:not([class]):focus {
     color: var(--c-fg-secondary);
+}
+
+button.reset {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
 }
 
 strong {
@@ -68,6 +74,6 @@ ul.reset {
 
 *:focus-visible {
     outline: 2px solid var(--c-theme-accent);
-    outline-offset: .5rem;
-    border-radius: 2.5rem;
+    outline-offset: var(--focus-visible-offset, rem(8px));
+    border-radius: var(--focus-visible-radius, rem(40px));
 }

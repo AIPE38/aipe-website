@@ -22,3 +22,15 @@
     }
 
 }
+
+@include breakpoint(large) {
+    .hide-for-large {
+        display: none;
+    }
+}
+
+@include breakpoint(mediumDown) {
+    .hide-for-medium-down {
+        display: none
+    }
+}

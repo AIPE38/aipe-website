@@ -3,11 +3,16 @@
 
 .button-icon {
     --c-bg: var(--c-theme-neutre);
-    width: rem(50px);
-    height: rem(50px);
+    width: rem(35px);
+    height: rem(35px);
     border-radius: rem(1000px);
     background-color: var(--c-bg);
     transition: all 0.2s ease-in-out;
+
+    @include breakpoint(large) {
+        width: rem(50px);
+        height: rem(50px);
+    }
 }
 
 .button-icon:hover,
@@ -20,9 +25,14 @@
 }
 
 .button-icon svg {
-    width: rem(24px);
-    height: rem(24px);
+    width: rem(20px);
+    height: rem(20px);
     fill: var(--c-fg-secondary);
+
+    @include breakpoint(large) {
+        width: rem(24px);
+        height: rem(24px);
+    }
 }
 
 .button-icon.v--parent {

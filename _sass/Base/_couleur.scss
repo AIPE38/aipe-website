@@ -11,27 +11,26 @@
 
     /*--------------------------------------------------------------------*/
     /* Déclinaisons de couleurs pour un contraste A11y optimal            */
-    /* Ratio ok pour etre sur les couleurs AIPE                           */
     /*--------------------------------------------------------------------*/
     //$fg-jaune:   #9B6600;
     //$fg-corail:  #B45151;
     //$fg-marron:  #AE5549;
-    $fg-gris:      #403F3F;
-    $fg-bleu:      #194362;
+    --c-fg-gris:      rgb(54 63 63);    //#403F3F; // ok sur aipe
+    --c-fg-bleu:      rgb(25 67  98);   //#194362; // ok sur aipe
+    --c-fg-accent:    rgb(43 117 172);  //#2B75AC; // ok sur aipe-blanc
 
 
     /*--------------------------------------------------------------------*/
     /* Theme                                                              */
     /*--------------------------------------------------------------------*/
-
     --c-bg-default:   var(--c-aipe-blanc);
 
     --c-theme-pro:    var(--c-aipe-jaune);
     --c-theme-enfant: var(--c-aipe-corail);
     --c-theme-neutre: var(--c-aipe-maron);
     --c-theme-parent: var(--c-aipe-bleu);
-    --c-theme-accent: #005694;
+    --c-theme-accent: var(--c-fg-accent);
 
-    --c-fg-primary:     #{$fg-gris};
-    --c-fg-secondary:   #{$fg-bleu};
+    --c-fg-primary:   var(--c-fg-gris);
+    --c-fg-secondary: var(--c-fg-bleu);
 }

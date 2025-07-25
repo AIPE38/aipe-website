@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.button-burger:before,
+.button-burger:after {
+    content:"";
+    display:block;
+    width: rem(30px);
+    height: rem(5px);
+    border-radius: rem(90px);
+    background-color:var(--c-fg-accent);
+    transition:transform .3s ease;
+}
+
+.button-burger:before,
+.button-burger:after {
+    margin: rem(5px) 0;
+}
+
+
+.button-burger.v_actif {
+    background-color: white;
+}
+
+.button-burger.v_actif:before {
+    transform:rotate(45deg) translate(rem(4px), rem(4px))
+}
+
+.button-burger.v_actif:after {
+    transform:rotate(-45deg) translate(rem(3px), rem(-3px))
+}

@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.link-menu {
+    --c-fg: var(--c-fg-accent);
+    --focus-visible-radius: #{rem(2px)};
+    --focus-visible-offset: #{rem(4px)};
+    padding: rem(6px);
+    font-weight: 700;
+    color: var(--c-fg);
+    text-decoration: none;
+    letter-spacing: rem(1px);
+}
+
+.link-menu:hover,
+.link-menu:focus {
+    --c-fg: var(--c-fg-secondary);
+}   
+
+.link-menu[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: rem(4px);
+    text-decoration-thickness: rem(2px);
+}  

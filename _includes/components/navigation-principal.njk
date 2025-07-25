@@ -3,24 +3,38 @@
 {% set navPages = collections.all | eleventyNavigation %}
 
 
-{% if accueil %}
-    <img src="/media/image/aipe-logo-horizontal.svg" alt="{{ metadata.title }}" width="150">
-{% else %}
-    <a href="/">
-        <img src="/media/image/aipe-logo-horizontal.svg" alt="{{ metadata.title }}" width="150">
-    </a>
-{% endif %}
+<button 
+    id="burger" 
+    class="reset header__burger button-burger"
+    aria-label="Afficher le menu"
+    aria-expanded="false"
+    data-label="Fermer le menu"></button>
 
-<nav class="menu" role="navigation" aria-label="Menu principal">
+<div class="header__logo">
+    {% if accueil is not defined %}
+        {% set accueil = false %}
+    {% endif %}
+    {% if accueil %}
+        <img class="hide-for-large" src="/media/image/aipe-logo-sigle.svg" alt="{{ metadata.title }}" width="87">
+        <img class="hide-for-medium-down" src="/media/image/aipe-logo-horizontal.svg" alt="{{ metadata.title }}" width="150">
+    {% else %}
+        <a href="/">
+            <img class="hide-for-large" src="/media/image/aipe-logo-sigle.svg" alt="{{ metadata.title }}" width="85">
+            <img class="hide-for-medium-down" src="/media/image/aipe-logo-horizontal.svg" alt="{{ metadata.title }}" width="150">
+        </a>
+    {% endif %}
+</div>
+
+<nav id="navigation-principal" class="header__menu hide-for-medium-down" role="navigation" aria-label="Menu principal">
     <ul class="reset df fw-w gap">
         {%- for entry in navPages %}
             <li>
                 {% if entry.url == page.url %}
-                    <a class="" href="{{ entry.url | url }}" aria-current="page">
+                    <a class="link-menu" href="{{ entry.url | url }}" aria-current="page">
                         {{ entry.title }}
                     </a>
                 {% else %}
-                    <a class="" href="{{ entry.url | url }}">
+                    <a class="link-menu" href="{{ entry.url | url }}">
                         {{ entry.title }}
                     </a>
                 {% endif %}
@@ -30,7 +44,7 @@
     </ul>
 </nav>
 
-<ul class="reset df fw-w gap">
+<ul class="reset header__social df fw-w">
     <li>
          {{ macro.button_icon("https://www.facebook.com/aiperam", "Facebook", "facebook", "parent") }}
     </li>

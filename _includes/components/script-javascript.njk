@@ -1,0 +1,12 @@
+<!-- capture the JS content as a Nunjucks variable -->
+{% set js %}
+	{% include "js/button-burger.js" %}
+{% endset %}
+
+<!-- feed it through our jsmin filter to minify -->
+<script>
+
+	//commun dans chaque page
+	{{ js | safe }} 
+
+</script>
