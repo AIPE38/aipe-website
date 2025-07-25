@@ -1,0 +1,28 @@
+{% if theme == 'parent' %}
+    {% set cssTheme = " v--parent" %}
+{% elif theme == 'enfant' %}
+    {% set cssTheme = " v--enfant" %}
+{% else %}
+    {% set cssTheme = "" %}
+{% endif %}
+
+{% if svg == 'facebook' %}
+    {% set idSvg = "facebook" %}
+{% elif svg == 'instagram' %}
+    {% set idSvg = "instagram" %}
+{% else %}
+    {% set idSvg = "sun" %}
+{% endif %}
+
+<a 
+    class="button-icon df ai-c jc-c{{cssTheme}}" 
+    href="{{ href }}" 
+    rel="external" 
+    target="_blank" 
+    title="{{ label | safe }} - Nouvel fenêtre" 
+    aria-label="{{ label | safe }} - Nouvel fenêtre"
+>
+    <svg aria-hidden="true" focusable="false">
+        <use xlink:href="#{{ idSvg }}"></use>
+    </svg> 
+</a>

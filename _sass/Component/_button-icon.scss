@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.button-icon {
+    width: rem(50px);
+    height: rem(50px);
+    border-radius: rem(1000px);
+    background-color: var(--c-bg, var(--c-bg-default));
+}
+
+.button-icon svg {
+    width: rem(24px);
+    height: rem(24px);
+    fill: var(--c-fg-secondary);
+}
+
+.button-icon.v--parent {
+    --c-bg: var(--c-theme-parent);
+}
+
+.button-icon.v--enfant {
+    --c-bg: var(--c-theme-enfant);
+}

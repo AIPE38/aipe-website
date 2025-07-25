@@ -48,13 +48,7 @@ a {
 }
 a:hover,
 a:focus {
-    color: var(--c-fg-primary-200);
-}
-
-a[rel="external"]:after {
-    content: "↗";
-    font-family: system-ui,-apple-system,sans-serif;
-    color: var(--c-fg-primary-200);
+    color: var(--c-fg-secondary);
 }
 
 strong {
@@ -73,7 +67,7 @@ ul.reset {
 }
 
 *:focus-visible {
-    outline: 2px solid var(--c-fg-primary);
+    outline: 2px solid var(--c-theme-accent);
     outline-offset: .5rem;
     border-radius: 2.5rem;
 }

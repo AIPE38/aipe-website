@@ -1,6 +1,6 @@
 
 @use './Base/_index' as base;
-//@use './Component/_index' as component;
+@use './Component/_index' as component;
 @use './Layout/_index' as layout;
 @use './Page/_index' as page;
-@use './Utilities/_index' as utilities;
+@use './Utilitie/_index' as utilities;

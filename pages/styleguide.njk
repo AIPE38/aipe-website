@@ -1,0 +1,64 @@
+---
+layout: layouts/page.njk
+title: Styleguide
+metaDescription: metadescription ACTIBEBE -> A FAIRE
+permalink: /styleguide/index.html
+eleventyNavigation:
+    key: Styleguide
+    order: 7
+---
+{% import "macros/__index.njk" as macro %}
+
+<h1>Styleguide</h1>
+
+<style>
+    .styleguide-h2 {
+        font-family: sans-serif;
+        border-top: 3px solid var(--c-fg-default);
+        border-left: 3px solid var(--c-fg-default);
+        margin-top: 3rem;
+    }
+</style>
+
+
+<h2 class="styleguide-h2">Texte et paragraphe</h2>
+
+<h1>Heading h1</h1>
+<h2>Heading h2</h2>
+<h3>Heading h3</h3>
+<h4>Heading h4</h4>
+<h5>Heading h5</h5>
+<h6>Heading h6</h6>
+<p>Lorem ipsum dolor sit amet, <a href="#">lien dans paragraphe</a> consectetur adipisicing elit. <a href="#" rel="external">lien external</a> Cupiditate reprehenderit soluta alias, at fuga omnis! <strong>strong</strong> Aliquid dolore quibusdam repudianda</p>
+
+<ul>
+    <li>liste</li>
+    <li>non</li>
+    <li>ordonnée</li>
+</ul>
+
+
+<h2 class="styleguide-h2">Lien et Bouton</h2>
+
+<div class="df fd-c gap">
+    <ul class="reset df gap">
+        <li>
+            <a href="#">lien dans paragraphe</a>
+        </li>
+        <li>
+            <a href="#" rel="external">lien external</a>
+        </li>
+    </ul>
+
+    <ul class="reset df gap">
+        <li>
+            {{ macro.button_icon("/","Default", "icon") }}
+        </li>
+        <li>
+            {{ macro.button_icon("/","Parent theme", "icon", "parent") }}
+        </li>
+        <li>
+            {{ macro.button_icon("/","Enfant theme", "icon", "enfant") }}
+        </li>
+    </ul>
+</div>
