@@ -34,3 +34,27 @@
     --c-fg-primary:   var(--c-fg-gris);
     --c-fg-secondary: var(--c-fg-bleu);
 }
+
+.theme-neutre {
+    --theme-border: var(--c-theme-neutre);
+    --theme-bg: var(--c-theme-neutre);
+    --theme-fg: var(--c-fg-primary);
+}
+
+.theme-enfant {
+    --theme-border: var(--c-theme-enfant);
+    --theme-bg: var(--c-theme-enfant);
+    --theme-fg: var(--c-fg-primary);
+}
+
+.theme-parent {
+    --theme-border: var(--c-theme-parent);
+    --theme-bg: var(--c-theme-parent);
+    --theme-fg: var(--c-fg-primary);
+}
+
+.theme-pro {
+    --theme-border: var(--c-theme-pro);
+    --theme-bg: var(--c-theme-pro);
+    --theme-fg: var(--c-fg-primary);
+}
