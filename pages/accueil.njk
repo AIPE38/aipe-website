@@ -8,26 +8,48 @@ eleventyNavigation:
     order: 1
 accueil: "true"
 ---
+{% import "macros/__index.njk" as macro %}
 
-<h1>Éveil, soutient et formation autour de la petite enfance</h1>
-<p>Retrouvez-nous sur les réseaux pour ne rien manquer de nos ateliers et animations.</p>
-<p>
-    <a href="https://www.facebook.com/aiperam" rel="external" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/aipe.38" rel="external" target="_blank">Instagram</a>
-</p>
+{% call macro.hero(
+    titre="Éveil, soutient et formation autour de la petite enfance", 
+    sousTitre="Retrouvez-nous sur les réseaux pour ne rien<br class='show-for-large'> manquer de nos ateliers et animations.", 
+    imageVertical="/media/image/hero-acc-vertical.png",
+    imageHorizontal="/media/image/hero-acc-horizontal.png"
+) %}
+    <div class="df fw-w gap">
+        {{ macro.button(
+            theme="pro",
+            href="https://www.facebook.com/aiperam",
+            icon="facebook",
+            label="Facebook",
+            external="true"
+        ) }}
+        {{ macro.button(
+            theme="pro",
+            href="https://www.instagram.com/aipe.38",
+            icon="instagram-line",
+            label="Instagram",
+            external="true"
+        ) }}
+    </div>
+{% endcall %}
 
-<h2>Qui sommes nous ?</h2>
-<p>L’AIPE, est une association intercommunale, 
-gérée par des parents  bénévoles qui développe des activités 
-autour de la petite enfance</p>
 
-<h3>Nos objectifs</h3>
-<ul>
-    <li>Favoriser l’éveil des tout-petits</li>
-    <li>Encourager la formation des parents et des professionnels</li>
-    <li>Développer les différents modes de gardes d’enfants</li>
-    <li>Accompagner la fonction parentale</li>
-</ul>
+
+<div>
+    <h2>Qui sommes nous ?</h2>
+    <p>L’AIPE, est une association intercommunale, 
+    gérée par des parents  bénévoles qui développe des activités 
+    autour de la petite enfance</p>
+
+    <h3>Nos objectifs</h3>
+    <ul>
+        <li>Favoriser l’éveil des tout-petits</li>
+        <li>Encourager la formation des parents et des professionnels</li>
+        <li>Développer les différents modes de gardes d’enfants</li>
+        <li>Accompagner la fonction parentale</li>
+    </ul>
+</div>
 
 <h3>Le RPE  Relais Petite Enfance</h3>
 <h4>Auprès des parents</h4>
