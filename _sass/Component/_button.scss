@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.button {
+    padding: rem(15px) rem(20px);
+    background-color: var(--theme-bg);
+    border-radius: rem(30px);
+    color: var(--theme-fg);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+
+    @include breakpoint(smallOnly) {
+        width: 100%;
+    }
+}
+
+.button svg {
+    width: rem(17px);
+    height: rem(17px);
+    fill: var(--theme-fg);
+    margin-right: rem(10px);
+}
+
+.button:hover,
+.button:focus {
+    background-color: hsl(from var(--theme-bg) h s l / .6);
+    border-color: var(--theme-border);
+}

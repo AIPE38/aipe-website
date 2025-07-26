@@ -1,0 +1,30 @@
+{% if theme == 'parent' %}
+    {% set variation = " theme-parent" %}
+{% elif theme == 'enfant' %}
+    {% set variation = " theme-enfant" %}
+{% elif theme == 'pro' %}
+    {% set variation = " theme-pro" %}
+{% else %}
+    {% set variation = " theme-neutre" %}
+{% endif %}
+
+
+{% if external == 'true' %}
+    {% set rel = 'rel="external"' %}
+    {% set target = 'target="_blank"' %}
+    {% set htmlTitle = 'title="'+ label | safe +' - Nouvel fenêtre"' %}
+    {% set ariaLabel = 'aria-label="'+ label | safe +' - Nouvel fenêtre"' %}
+    {% set attrs = ' ' + rel + ' ' + target + ' ' + htmlTitle + ' ' + ariaLabel %}
+{% endif %}
+
+
+<a class="button{{variation}} d-if ai-c jc-c" href="{{ href }}" {{ attrs | safe }}>
+    {% if icon %}
+        <svg aria-hidden="true" focusable="false">
+            <use xlink:href="#{{ icon }}"></use>
+        </svg>
+        <span>{{ label | safe }}</span>
+    {% else %}
+        {{ label | safe }}
+    {% endif %}
+</a>
