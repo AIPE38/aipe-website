@@ -14,7 +14,18 @@ nofollow: true
         font-family: sans-serif;
         border-top: 3px solid var(--c-fg-primary);
         border-left: 3px solid var(--c-fg-primary);
+        padding-top:.5rem;
+        padding-left:.5rem;
         margin-top: 3rem;
+    }
+    .styleguide-h3 {
+        font-family: sans-serif;
+        border-top: 1px solid var(--c-fg-primary);
+        border-left: 1px solid var(--c-fg-primary);
+        padding-top:.5rem;
+        padding-left:.5rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
     }
 </style>
 
@@ -37,6 +48,8 @@ nofollow: true
 <h2 class="styleguide-h2">Lien et Bouton</h2>
 
 <div class="df fd-c gap">
+
+    <h3 class="styleguide-h3">Lien de paragraphe</h3>
     <ul class="reset df gap">
         <li>
             <a href="#">lien dans paragraphe</a>
@@ -46,15 +59,58 @@ nofollow: true
         </li>
     </ul>
 
+    <h3 class="styleguide-h3">button icon</h3>
     <ul class="reset df gap">
         <li>
-            {{ macro.button_icon("/","Default", "icon") }}
+            {{ macro.button_icon(href="/",label="Default", icon="sun") }}
         </li>
         <li>
-            {{ macro.button_icon("/","Parent theme", "icon", "parent") }}
+            {{ macro.button_icon(href="/",label="Parent theme", icon="sun", theme="parent") }}
         </li>
         <li>
-            {{ macro.button_icon("/","Enfant theme", "icon", "enfant") }}
+            {{ macro.button_icon(href="/",label="Enfant theme", icon="sun", theme="enfant") }}
+        </li>
+        <li>
+            {{ macro.button_icon(href="/",label="Default", icon="sun", theme="pro") }}
+        </li>
+    </ul>
+
+    <h3 class="styleguide-h3">button</h3>
+    <ul class="reset df  fd-c gap">
+        <li>
+            {{ macro.button(
+                href="/",
+                label="theme- neutre - classique"
+            ) }}
+        </li>
+        <li>
+            {{ macro.button(
+                href="/",
+                label="theme parent - external",
+                theme="parent",
+                external="true"
+            ) }}
+        </li>
+        <li>
+            {{ macro.button(
+                href="mailto:aipe.petite.enfance@gmail.com",
+                label="theme enfant - mailto",
+                theme="enfant"
+            ) }}
+        </li>
+        <li>
+            {{ macro.button(
+                href="tel:0749836207",
+                label="theme pro - tel:",
+                theme="pro"
+            ) }}
+        </li>
+        <li>
+            {{ macro.button(
+                href="/",
+                icon="facebook",
+                label="theme- neutre - icon"
+            ) }}
         </li>
     </ul>
 </div>
