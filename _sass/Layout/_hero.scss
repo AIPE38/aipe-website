@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.grid-hero {
+    display: grid;
+    grid-template-areas: 
+        "image" 
+        "content";
+    gap: rem(25px);
+
+    @include breakpoint(mediumDown) {
+        margin-block: rem(35px);
+    }
+
+    @include breakpoint(large) {
+        margin-block: rem(70px);
+        grid-template-columns: 1fr rem(416px);
+        grid-template-areas: "content image";
+    }
+}
+
+.grid-hero__content { grid-area: content; align-self: center;}
+.grid-hero__image {   grid-area: image}
+
+
+
+.grid-hero__content h1 {
+    margin-top: unset;
+}
+
+
+.grid-hero__image {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-hero__image img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.grid-hero__image .v_vertical {
+    @include breakpoint(mediumDown) {
+        display: none;
+    }
+}
+
+
+.grid-hero__image .v_horizontal {
+    @include breakpoint(large) {
+        display: none;
+    }
+}

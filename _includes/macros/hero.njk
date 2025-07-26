@@ -1,0 +1,14 @@
+  <div class="grid-hero">
+    <div class="grid-hero__content">
+        <h1>{{ titre }}</h1>
+        <p class="text-20">{{ sousTitre | safe }}</p>
+        <div class="mw-450">
+            {% call caller() %}
+            {% endcall %}
+        </div>
+    </div>
+    <div class="grid-hero__image">
+        <img class="v_vertical" src="{{ imageVertical }}" alt="">
+        <img class="v_horizontal" src="{{ imageHorizontal }}" alt="">
+    </div>
+</div>

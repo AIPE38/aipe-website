@@ -1,3 +1,11 @@
-{% macro button_icon(href, label, svg, theme) %}
+{% macro button(href='', icon='', label='', theme='', external='') %}
+    {% include "./button.njk" %}
+{% endmacro %}
+
+{% macro button_icon(href='', icon='', label='', theme='') %}
     {% include "./button-icon.njk" %}
+{% endmacro %}
+
+{% macro hero(titre='', sousTitre='', imageVertical='', imageHorizontal='') %}
+    {% include "./hero.njk" %}
 {% endmacro %}
