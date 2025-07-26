@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.bg-primary {
+    background-color: var(--c-bg-primary);
+}
+
+.wave {
+    height: rem(23px);
+    -webkit-mask-image: url(/media/image/vague-haut.svg);
+    mask-image: url(/media/image/vague-haut.svg);
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+}
