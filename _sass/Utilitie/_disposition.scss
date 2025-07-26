@@ -1,5 +1,11 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
 .df {
     display: flex;
+}
+.d-if {
+    display: inline-flex;
 }
 .fd-c {
     flex-direction: column;

@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.text-20 {
+  font-size: rem(20px);
+}

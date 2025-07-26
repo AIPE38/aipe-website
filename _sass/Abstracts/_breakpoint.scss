@@ -20,6 +20,12 @@
             @content
         }
     }
+    
+    @if $taille == 'smallOnly' {
+        @media screen and (max-width: remUtils.rem(600px)) {
+            @content
+        }
+    }
 
 }
 
@@ -31,6 +37,12 @@
 
 @include breakpoint(mediumDown) {
     .hide-for-medium-down {
+        display: none
+    }
+}
+
+@include breakpoint(mediumDown) {
+    .show-for-large {
         display: none
     }
 }
