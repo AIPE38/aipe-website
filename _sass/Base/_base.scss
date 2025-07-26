@@ -30,8 +30,23 @@ h3:not([class]) {
     font-family: 'dancing', cursive;
 }
 
-h1:not([class]) { font-size: rem(48px)}
-h2:not([class]) { font-size: rem(38px)}
+h1:not([class]) { 
+    font-size: rem(38px); 
+    line-height: rem(39px); 
+
+    @include breakpoint(large) {
+        font-size: rem(48px);
+        line-height: rem(49px); 
+    }
+}
+h2:not([class]) { 
+    font-size: rem(33px); 
+
+    @include breakpoint(large) {
+        font-size: rem(38px); 
+    }
+
+}
 h3:not([class]) { font-size: rem(30px)}
 h4:not([class]) { font-size: rem(24px); font-weight: 400;}
 
