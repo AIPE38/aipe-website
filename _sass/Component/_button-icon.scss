@@ -6,7 +6,7 @@
     width: rem(35px);
     height: rem(35px);
     border-radius: rem(1000px);
-    background-color: var(--c-bg);
+    background-color: var(--theme-bg);
     transition: all 0.2s ease-in-out;
 
     @include breakpoint(large) {
@@ -17,17 +17,13 @@
 
 .button-icon:hover,
 .button-icon:focus {
-    background-color: hsl(from var(--c-bg) h s l / .6);
-
-    svg {
-        fill: var(--c-fg-primary);
-    }
+    background-color: hsl(from var(--theme-bg) h s l / .6);
 }
 
 .button-icon svg {
     width: rem(20px);
     height: rem(20px);
-    fill: var(--c-fg-secondary);
+    fill: var(--theme-fg);
 
     @include breakpoint(large) {
         width: rem(24px);
@@ -35,10 +31,7 @@
     }
 }
 
-.button-icon.v--parent {
-    --c-bg: var(--c-theme-parent);
-}
-
-.button-icon.v--enfant {
-    --c-bg: var(--c-theme-enfant);
+// spécifique au header
+.header .button-icon svg {
+    fill: var(--c-fg-secondary);
 }
