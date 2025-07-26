@@ -10,9 +10,9 @@
         "burger logo social"
         ". menu .";
     align-items: center;
+    justify-content: center;
 
     background-color: var(--c-bg-default);
-    min-height: 110px;
 
     @include breakpoint(large) {
         grid-template-areas: 
