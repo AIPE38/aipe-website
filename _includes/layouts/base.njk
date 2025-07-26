@@ -3,7 +3,7 @@
 
     {% include "layouts/head.njk" %}
 
-    <body class="base">
+    <body class="base grid-main v_body">
 
         <nav role="navigation" aria-label="Accès rapide">
             <a class="lien-evitement" href="#contenu">
@@ -15,7 +15,7 @@
             {% include "components/navigation-principal.njk" %}
         </header>
 
-        <main id="contenu" role="main" tabindex="-1">
+        <main class="grid-main__item-full grid-main" id="contenu" role="main" tabindex="-1">
             {{ content | safe }}
         </main>
 
