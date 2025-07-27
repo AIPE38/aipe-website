@@ -24,11 +24,16 @@ body {
     font-size: 1rem;
 }
 
+h1,h2,h3,h4,h5,p {
+    margin: unset;
+}
+
 h1:not([class]),
 h2:not([class]),
-h3:not([class]) {
+h3:not([class]), 
+h4:not([class]) 
+{
     font-family: 'dancing', cursive;
-    margin: unset;
 }
 
 h1:not([class]) { 
@@ -49,11 +54,8 @@ h2:not([class]) {
 
 }
 h3:not([class]) { font-size: rem(30px)}
-h4:not([class]) { font-size: rem(24px); font-weight: 400; margin:0}
-
-p.reset {
-    margin: unset;
-}
+h4:not([class]) { font-size: rem(28px)}
+h5:not([class]) { font-size: rem(24px); font-weight: 400;}
 
 img {
     max-width: 100%;
