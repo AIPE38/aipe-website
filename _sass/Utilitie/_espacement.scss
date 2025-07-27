@@ -5,6 +5,10 @@
     gap: 1rem;
 }
 
+.gap-20 {
+    gap: rem(20px)
+}
+
 .pblock-section {
     padding-block: rem(30px);
 }
