@@ -146,7 +146,7 @@ $total-largeur: rem(sum-values($columns));
     @include stabilo;
 }
 
-@include breakpoint(smallOnly) {
+@include breakpoint(mediumDown) {
     .grid-objectif2 br {
         display: none;
     }
@@ -160,6 +160,7 @@ $total-largeur: rem(sum-values($columns));
 
 ///////////////////////
 
+// le ::before{} n'arrive pas a recupé le var(--theme-bg) du parent sur certain navigateur
 .grid-objectif .theme-enfant .font-dancing::before,
 .grid-objectif2 .theme-enfant .font-dancing::before,
 .grid-objectif.v2 .theme-enfant .font-dancing::before {

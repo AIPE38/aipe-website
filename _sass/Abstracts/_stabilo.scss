@@ -6,7 +6,7 @@
         content: "";
         position: absolute;
         width: calc(100% + 4px);
-        height: 60%;
+        height: 28%;
         left: -2px;
         bottom: 0;
         z-index: -1;
@@ -30,13 +30,12 @@
     &::before {
         content: "";
         position: absolute;
-        height: .4em;
-        top: auto;
-        right: 0;
-        bottom: .1em;
-        left: 0;
+        height: 40%;
+        right: 4px;
+        bottom: -6px;
+        left: -2px;
         z-index: -1;
         //background-color: var(--theme-bg);
-        transform: scale(1) skew(-8deg);
+        transform: rotate(-2deg);
     }
 }
