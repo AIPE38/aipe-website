@@ -1,0 +1,116 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:math";
+@use "../Abstracts/__index" as *;
+
+@function sum-values($list) {
+    $total: 0;
+    @each $value in $list {
+        $total: $total + $value;
+    }
+    @return $total;
+}
+
+@function wrap-in-rem($list) {
+    $result: ();
+    @each $value in $list {
+        $rem-value: math.div($value, 16px) * 1rem;
+        $result: list.append($result, $rem-value);
+    }
+    @return $result;
+}
+
+$columns: (224px, 13px, 253px, 12px, 221px, 17px, 207px);
+$total-largeur: rem(sum-values($columns)); 
+
+
+@mixin showBlob(){
+    @container (min-width: #{$total-largeur}) {
+        @content
+    }
+}
+
+@mixin fallbackBlob(){
+    @container (max-width: #{$total-largeur}) {
+        @content
+    }
+}
+
+.grid-objectif {
+    display: grid;
+
+    br {
+        display: none;
+    }
+}
+
+@include fallbackBlob {
+    .grid-objectif {
+        gap: 2rem;
+    }
+}
+
+@include showBlob() {
+    .grid-objectif {
+        grid-template-columns: wrap-in-rem($columns);
+        grid-template-rows: rem(34px) rem(82px) rem(17px) rem(92px) rem(10px) rem(108px) rem(20px);
+        text-align: center;
+    }
+    .grid-objectif br {
+        display: block;
+    }
+}
+
+.grid-objectif p {
+    margin: unset;
+}
+
+.grid-objectif .font-dancing {
+    line-height: rem(32px);
+    font-weight: 400;
+    @include fallbackBlob {
+        @include stabilo;
+    }
+}
+
+.grid-objectif__eveil,
+.grid-objectif__formation,
+.grid-objectif__garde,
+.grid-objectif__accompagner {
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(medium) {
+        justify-content: center;
+    }
+}
+
+.grid-objectif__eveil {       
+    @include showBlob() {  
+        grid-column: 1/2;
+        grid-row: 2/5;
+        background-image: url(/media/image/blob-1.svg);
+    }
+}
+.grid-objectif__formation {     
+    @include showBlob() {  
+        grid-column: 3/5;
+        grid-row: 3/8;
+        background-image: url(/media/image/blob-2.svg);
+    }
+}
+.grid-objectif__garde {       
+    @include showBlob() {    
+        grid-column: 4/6;
+        grid-row: 1/6;
+        background-image: url(/media/image/blob-3.svg);
+    }
+}
+.grid-objectif__accompagner {   
+    @include showBlob() {  
+        grid-column: 7/8;
+        grid-row: 4/7;
+        background-image: url(/media/image/blob-4.svg);
+    }
+}
