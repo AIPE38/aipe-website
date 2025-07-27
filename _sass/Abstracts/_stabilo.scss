@@ -11,6 +11,10 @@
         bottom: 0;
         z-index: -1;
         transform: rotate(-2deg);
-        background-color: hsl(from var(--theme-bg) h s l / .4);
+
+        background-color: var(--theme-bg);
+        @supports (background-color: hsl(from var(--theme-bg) h s l / 0.4)) {
+            background-color: hsl(from var(--theme-bg) h s l / 0.4);
+        }
     }
 }
