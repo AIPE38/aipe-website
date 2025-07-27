@@ -69,6 +69,7 @@ $total-largeur: rem(sum-values($columns));
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo;
+    --theme-bg: inherit; // garanti que le before peut utiliser le theme
 }
 
 .grid-objectif__eveil,
@@ -144,6 +145,7 @@ $total-largeur: rem(sum-values($columns));
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo;
+    --theme-bg: inherit; // garanti que le before peut utiliser le theme
 }
 
 @include breakpoint(smallOnly) {
@@ -156,4 +158,5 @@ $total-largeur: rem(sum-values($columns));
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo2;
+    --theme-bg: inherit; // garanti que le before peut utiliser le theme
 }
