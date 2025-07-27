@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+$puce-width: rem(12px);
+
+ul:not(.reset) {
+    list-style: none;
+    padding: 0;
+}
+
+ul:not(.reset) li {
+    position: relative;
+    padding-left: calc($puce-width + rem(8px));
+}
+
+ul:not(.reset) li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: $puce-width;
+    height: rem(10px);
+    background-image: url("/media/image/puce-neutre.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    top: rem(6px);
+}
+
+.theme-enfant ul:not(.reset) li::before {   background-image: url("/media/image/puce-enfant.svg")}
+.theme-parent ul:not(.reset) li::before {   background-image: url("/media/image/puce-parent.svg")}
+.theme-pro ul:not(.reset) li::before {      background-image: url("/media/image/puce-pro.svg")}
