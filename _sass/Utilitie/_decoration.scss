@@ -5,10 +5,18 @@
     background-color: var(--c-bg-primary);
 }
 
-.wave {
+.vague {
     height: rem(23px);
-    -webkit-mask-image: url(/media/image/vague-haut.svg);
-    mask-image: url(/media/image/vague-haut.svg);
     -webkit-mask-repeat: repeat-x;
     mask-repeat: repeat-x;
+}
+
+.vague.v_haut {
+    -webkit-mask-image: url(/media/image/vague-haut.svg);
+    mask-image: url(/media/image/vague-haut.svg);
+}
+
+.vague-.v_as {
+    -webkit-mask-image: url(/media/image/vague-bas.svg);
+    mask-image: url(/media/image/vague-bas.svg);
 }
