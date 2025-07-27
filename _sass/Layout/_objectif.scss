@@ -69,7 +69,6 @@ $total-largeur: rem(sum-values($columns));
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo;
-    --theme-bg: inherit; // garanti que le before peut utiliser le theme
 }
 
 .grid-objectif__eveil,
@@ -145,7 +144,6 @@ $total-largeur: rem(sum-values($columns));
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo;
-    --theme-bg: inherit; // garanti que le before peut utiliser le theme
 }
 
 @include breakpoint(smallOnly) {
@@ -158,5 +156,30 @@ $total-largeur: rem(sum-values($columns));
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo2;
-    --theme-bg: inherit; // garanti que le before peut utiliser le theme
+}
+
+///////////////////////
+
+.grid-objectif .theme-enfant .font-dancing::before,
+.grid-objectif2 .theme-enfant .font-dancing::before,
+.grid-objectif.v2 .theme-enfant .font-dancing::before {
+    background-color: var(--c-theme-enfant);
+}
+
+.grid-objectif .theme-parent .font-dancing::before,
+.grid-objectif2 .theme-parent .font-dancing::before,
+.grid-objectif.v2 .theme-parent .font-dancing::before {
+    background-color: var(--c-theme-parent);
+}
+
+.grid-objectif .theme-pro .font-dancing::before,
+.grid-objectif2 .theme-pro .font-dancing::before,
+.grid-objectif.v2 .theme-pro .font-dancing::before {
+    background-color: var(--c-theme-pro);
+}
+
+.grid-objectif .theme-neutre .font-dancing::before,
+.grid-objectif2 .theme-neutre .font-dancing::before,
+.grid-objectif.v2 .theme-neutre .font-dancing::before {
+    background-color: var(--c-theme-neutre);
 }
