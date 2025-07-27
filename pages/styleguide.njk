@@ -40,10 +40,35 @@ nofollow: true
 <h5>Heading h5</h5>
 
 <h3 class="styleguide-h3">Liste</h3>
-<ul>
-    <li>liste</li>
-    <li>non</li>
-    <li>ordonnée</li>
+<ul class="reset df gap">
+    <li>
+        <ul>
+            <li>liste<br>saut de ligne</li>
+            <li>non</li>
+            <li>ordonnée</li>
+        </ul>
+    </li>
+    <li class="theme-parent">
+        <ul>
+            <li>liste<br>saut de ligne</li>
+            <li>non</li>
+            <li>ordonnée</li>
+        </ul>
+    </li>
+    <li class="theme-enfant">
+        <ul>
+            <li>liste<br>saut de ligne</li>
+            <li>non</li>
+            <li>ordonnée</li>
+        </ul>
+    </li>
+    <li class="theme-pro">
+        <ul>
+            <li>liste<br>saut de ligne</li>
+            <li>non</li>
+            <li>ordonnée</li>
+        </ul>
+    </li>
 </ul>
 
 <h3 class="styleguide-h3">Paragraphe</h3>
@@ -128,7 +153,7 @@ nofollow: true
 
 <h2 class="styleguide-h2">Cadre</h2>
 
-<ul class="reset df  fd-c gap">
+<ul class="reset df  gap">
     <li>
         <div class="cadre">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
