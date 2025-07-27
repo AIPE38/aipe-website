@@ -9,7 +9,7 @@
     grid-template-areas: 
         "visuel"
         "texte";
-    gap: var(--grille-gap);
+    gap: var(--main-grid-gap);
 
     @include breakpoint(large) {
         grid-template-rows: auto;
@@ -26,12 +26,12 @@
 @include breakpoint(large) {
 
     .grid-ping {
-        grid-template-columns: calc(6*var(--grille-col)) calc(4*var(--grille-col));
+        grid-template-columns: track-width(6) track-width(4);
         grid-template-areas: "texte visuel";
     }
 
     .grid-pong {
-        grid-template-columns: calc(4*var(--grille-col)) calc(6*var(--grille-col));
+        grid-template-columns: track-width(4) track-width(6);
         grid-template-areas: "visuel texte";
     }
 

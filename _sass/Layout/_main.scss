@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 
         minmax(var(--site-marge-inline), 1fr) 
-        minmax(0,rem(1040px)) 
+        minmax(0,var(--main-grid-width)) 
         minmax(var(--site-marge-inline), 1fr);
 
     @include breakpoint(medium) {
