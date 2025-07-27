@@ -28,6 +28,7 @@ h1:not([class]),
 h2:not([class]),
 h3:not([class]) {
     font-family: 'dancing', cursive;
+    margin: unset;
 }
 
 h1:not([class]) { 
@@ -41,15 +42,18 @@ h1:not([class]) {
 }
 h2:not([class]) { 
     font-size: rem(33px); 
-    margin-bottom: 0;
 
     @include breakpoint(large) {
         font-size: rem(38px); 
     }
 
 }
-h3:not([class]) { font-size: rem(30px); margin:0}
-h4:not([class]) { font-size: rem(24px); font-weight: 400;}
+h3:not([class]) { font-size: rem(30px)}
+h4:not([class]) { font-size: rem(24px); font-weight: 400; margin:0}
+
+p.reset {
+    margin: unset;
+}
 
 img {
     max-width: 100%;
