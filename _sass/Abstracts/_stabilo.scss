@@ -20,3 +20,23 @@
         }
     }
 }
+
+
+@mixin stabilo2 {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        background-color: var(--theme-bg);
+        bottom: .1em;
+        height: .4em;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: auto;
+        transform: scale(1) skew(-8deg);
+        z-index: -1;
+    }
+}

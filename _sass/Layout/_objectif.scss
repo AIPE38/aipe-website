@@ -118,7 +118,7 @@ $total-largeur: rem(sum-values($columns));
 //////////////////////////
 .grid-objectif2 {
     display: flex;
-        flex-direction: column;
+    flex-direction: column;
     gap:1rem;
 
     @include breakpoint(large) {
@@ -140,7 +140,7 @@ $total-largeur: rem(sum-values($columns));
     }
 }
 
-.grid-objectif2 .font-dancing {
+.grid-objectif2:not(.v2) .font-dancing {
     line-height: rem(32px);
     font-weight: 400;
     @include stabilo;
@@ -150,4 +150,10 @@ $total-largeur: rem(sum-values($columns));
     .grid-objectif2 br {
         display: none;
     }
+}
+////////////////////
+.grid-objectif2.v2 .font-dancing {
+    line-height: rem(32px);
+    font-weight: 400;
+    @include stabilo2;
 }
