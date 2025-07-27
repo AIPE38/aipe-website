@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+:root {
+    --grille-gap: #{rem(25px)};
+    --grille-col: #{rem(70px)}; 
+}
