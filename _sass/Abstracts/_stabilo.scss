@@ -13,8 +13,12 @@
         transform: rotate(-2deg);
 
         background-color: var(--theme-bg);
-        @supports (background-color: hsl(from var(--theme-bg) h s l / 0.4)) {
-            background-color: hsl(from var(--theme-bg) h s l / 0.4);
+        @supports (background-color: #{'hsl(from var(--theme-bg) h s l / 0.4)'}) {
+            background-color: #{'hsl(from var(--theme-bg) h s l / 0.4)'};
+        }
+        @supports not (background-color: #{'hsl(from var(--theme-bg) h s l / 0.4)'}) {
+            background-color: var(--theme-bg);
+            opacity: .4;
         }
     }
 }
