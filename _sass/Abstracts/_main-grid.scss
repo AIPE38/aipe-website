@@ -4,7 +4,8 @@
 $main-grid-width:          #{remUtils.rem(1040px)};
 $main-grid-nb-colonnes:    10; 
 $main-grid-gap:            #{remUtils.rem(25px)};
-$main-grid-col:            calc(($main-grid-width - (($main-grid-nb-colonnes - 1) * $main-grid-gap)) / $main-grid-nb-colonnes); 
+$main-grid-col:            calc((100% - (#{$main-grid-nb-colonnes - 1} * #{$main-grid-gap})) / #{$main-grid-nb-colonnes});
+
 
 :root {
     --main-grid-width: #{$main-grid-width};
