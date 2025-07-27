@@ -29,14 +29,15 @@
 
     &::before {
         content: "";
-        background-color: var(--theme-bg);
-        bottom: .1em;
-        height: .4em;
-        left: 0;
         position: absolute;
-        right: 0;
+        height: .4em;
         top: auto;
-        transform: scale(1) skew(-8deg);
+        right: 0;
+        bottom: .1em;
+        left: 0;
         z-index: -1;
+        //background-color: var(--theme-bg);
+        background-color: var(--c-theme-enfant);
+        transform: scale(1) skew(-8deg);
     }
 }
