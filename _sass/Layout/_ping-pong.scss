@@ -1,0 +1,38 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.grid-ping,
+.grid-pong {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+        "visuel"
+        "texte";
+    gap: var(--grille-gap);
+
+    @include breakpoint(large) {
+        grid-template-rows: auto;
+    }
+}
+
+.grid-ping > div:first-child,
+.grid-pong > div:first-child {grid-area: visuel}
+
+.grid-ping > div:last-child,
+.grid-pong > div:last-child {grid-area: texte}
+
+
+@include breakpoint(large) {
+
+    .grid-ping {
+        grid-template-columns: calc(6*var(--grille-col)) calc(4*var(--grille-col));
+        grid-template-areas: "texte visuel";
+    }
+
+    .grid-pong {
+        grid-template-columns: calc(4*var(--grille-col)) calc(6*var(--grille-col));
+        grid-template-areas: "visuel texte";
+    }
+
+}
