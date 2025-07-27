@@ -1,0 +1,74 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+// taille 16px
+.surligne {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+
+    font-family: 'Dancing Script', cursive;
+    font-size: rem(22px);
+    vertical-align: text-bottom;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 40%;
+        right: rem(4px);
+        bottom: rem(-1px);
+        left: rem(-2px);
+        transform: rotate(-2deg);
+        z-index: -1;
+    }
+}
+
+// taille 20px
+.text-20 {
+    .surligne {
+        font-size: rem(36px);
+        line-height: rem(32px);
+        font-weight: 400;
+
+        &::before {
+            bottom: rem(-6px);
+        }
+    }
+}
+
+// le ::before{} n'arrive pas a recupé le var(--theme-bg) du parent sur certain navigateur
+.theme-enfant .surligne::before,
+.theme-enfant.surligne::before {
+    background-color: var(--c-theme-enfant);
+}
+
+.theme-parent .surligne::before,
+.theme-parent.surligne::before {
+    background-color: var(--c-theme-parent);
+}
+
+.theme-pro .surligne::before,
+.theme-pro.surligne::before {
+    background-color: var(--c-theme-pro);
+}
+
+.theme-neutre .surligne::before,
+.theme-neutre.surligne::before {
+    background-color: var(--c-theme-neutre);
+}
+
+// correction du line-height
+.has-dancing {
+        line-height: rem(26px);
+    .surligne {
+        line-height: 1;
+    }
+}
+
+.has-dancing .text-20,
+.has-dancing.text-20 {
+        line-height: rem(44px);
+    .surligne {
+        line-height: 1;
+    }
+}

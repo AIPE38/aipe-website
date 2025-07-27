@@ -65,12 +65,6 @@ $total-largeur: rem(sum-values($columns));
     margin: unset;
 }
 
-.grid-objectif .font-dancing {
-    line-height: rem(32px);
-    font-weight: 400;
-    @include stabilo;
-}
-
 .grid-objectif__eveil,
 .grid-objectif__formation,
 .grid-objectif__garde,
@@ -111,76 +105,4 @@ $total-largeur: rem(sum-values($columns));
         grid-row: 4/7;
         background-image: url(/media/image/blob-4.svg);
     }
-}
-
-
-
-//////////////////////////
-.grid-objectif2 {
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-
-    @include breakpoint(large) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-.grid-objectif2 .grid-objectif__eveil,
-.grid-objectif2 .grid-objectif__formation,
-.grid-objectif2 .grid-objectif__garde,
-.grid-objectif2 .grid-objectif__accompagner {
-    grid-column: unset;
-    grid-row: unset;
-    background-image: none;
-    flex:1;
-    @include breakpoint(medium) {
-        text-align: center;
-    }
-}
-
-.grid-objectif2:not(.v2) .font-dancing {
-    line-height: rem(32px);
-    font-weight: 400;
-    @include stabilo;
-}
-
-@include breakpoint(mediumDown) {
-    .grid-objectif2 br {
-        display: none;
-    }
-}
-////////////////////
-.grid-objectif2.v2 .font-dancing {
-    line-height: rem(32px);
-    font-weight: 400;
-    @include stabilo2;
-}
-
-///////////////////////
-
-// le ::before{} n'arrive pas a recupé le var(--theme-bg) du parent sur certain navigateur
-.grid-objectif .theme-enfant .font-dancing::before,
-.grid-objectif2 .theme-enfant .font-dancing::before,
-.grid-objectif.v2 .theme-enfant .font-dancing::before {
-    background-color: var(--c-theme-enfant);
-}
-
-.grid-objectif .theme-parent .font-dancing::before,
-.grid-objectif2 .theme-parent .font-dancing::before,
-.grid-objectif.v2 .theme-parent .font-dancing::before {
-    background-color: var(--c-theme-parent);
-}
-
-.grid-objectif .theme-pro .font-dancing::before,
-.grid-objectif2 .theme-pro .font-dancing::before,
-.grid-objectif.v2 .theme-pro .font-dancing::before {
-    background-color: var(--c-theme-pro);
-}
-
-.grid-objectif .theme-neutre .font-dancing::before,
-.grid-objectif2 .theme-neutre .font-dancing::before,
-.grid-objectif.v2 .theme-neutre .font-dancing::before {
-    background-color: var(--c-theme-neutre);
 }

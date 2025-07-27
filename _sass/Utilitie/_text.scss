@@ -3,16 +3,4 @@
 
 .text-20 {
     font-size: rem(20px);
-
-    .font-dancing {
-        font-size: rem(36px);
-    }
-}
-
-.font-dancing {
-    font-family: 'Dancing Script', cursive;
-}
-
-.stabilo {
-    @include stabilo;
 }
