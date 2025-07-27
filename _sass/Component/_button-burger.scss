@@ -19,7 +19,9 @@
 
 
 .button-burger.v_actif {
-    background-color: white;
+    background-color: var(--c-bg-primary);
+    box-shadow: 0 0 0 rem(8px) var(--c-bg-primary);
+    border-radius: rem(90px);
 }
 
 .button-burger.v_actif:before {
