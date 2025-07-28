@@ -5,7 +5,8 @@ metaDescription: metadescription ACTIBEBE -> A FAIRE
 permalink: /styleguide/index.html
 nofollow: true
 ---
-{% import "macros/__index.njk" as macro %}
+{% from "macros/button_icon.njk" import button_icon as button_icon %}
+{% from "macros/button.njk" import button as button %}
 
 <h1>Styleguide</h1>
 
@@ -98,29 +99,29 @@ nofollow: true
     <h3 class="styleguide-h3">button icon</h3>
     <ul class="reset df gap">
         <li>
-            {{ macro.button_icon(href="/",label="Default", icon="sun") }}
+            {{ button_icon(href="/",label="Default", icon="sun") }}
         </li>
         <li>
-            {{ macro.button_icon(href="/",label="Parent theme", icon="sun", theme="parent") }}
+            {{ button_icon(href="/",label="Parent theme", icon="sun", theme="parent") }}
         </li>
         <li>
-            {{ macro.button_icon(href="/",label="Enfant theme", icon="sun", theme="enfant") }}
+            {{ button_icon(href="/",label="Enfant theme", icon="sun", theme="enfant") }}
         </li>
         <li>
-            {{ macro.button_icon(href="/",label="Default", icon="sun", theme="pro") }}
+            {{ button_icon(href="/",label="Default", icon="sun", theme="pro") }}
         </li>
     </ul>
 
     <h3 class="styleguide-h3">button</h3>
     <ul class="reset df  fd-c gap">
         <li>
-            {{ macro.button(
+            {{ button(
                 href="/",
                 label="theme- neutre - classique"
             ) }}
         </li>
         <li>
-            {{ macro.button(
+            {{ button(
                 href="/",
                 label="theme parent - external",
                 theme="parent",
@@ -128,21 +129,21 @@ nofollow: true
             ) }}
         </li>
         <li>
-            {{ macro.button(
+            {{ button(
                 href="mailto:aipe.petite.enfance@gmail.com",
                 label="theme enfant - mailto",
                 theme="enfant"
             ) }}
         </li>
         <li>
-            {{ macro.button(
+            {{ button(
                 href="tel:0749836207",
                 label="theme pro - tel:",
                 theme="pro"
             ) }}
         </li>
         <li>
-            {{ macro.button(
+            {{ button(
                 href="/",
                 icon="facebook",
                 label="theme- neutre - icon"
