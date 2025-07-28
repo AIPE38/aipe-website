@@ -1,0 +1,30 @@
+{% macro ping_pong(type='', titre='', imageVertical='', imageHorizontal='', theme='') %}
+
+    {% if type == 'pong' %}
+        {% set gridPingpong = "grid-pong" %}
+    {% else %}
+        {% set gridPingpong = "grid-ping" %}
+    {% endif %}
+
+    {% if theme == 'parent' %}
+        {% set cssTheme = " theme-parent" %}
+    {% elif theme == 'enfant' %}
+        {% set cssTheme = " theme-enfant" %}
+    {% elif theme == 'pro' %}
+        {% set cssTheme = " theme-pro" %}
+    {% else %}
+        {% set cssTheme = " theme-neutre" %}
+    {% endif %}
+
+
+    <div class="{{ gridPingpong }} ai-c pblock-section{{ cssTheme }}">
+        <h4 class="h4 grid-ping-pong__titre">{{ titre | safe }}</h4>
+        <div class="grid-ping-pong__visuel">
+            image
+        </div>
+        <div class="grid-ping-pong__contenu df fd-c gap-30">
+            {{ caller() }}
+        </div>
+    </div>
+
+{% endmacro %}
