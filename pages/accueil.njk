@@ -8,23 +8,27 @@ eleventyNavigation:
     order: 1
 accueil: "true"
 ---
-{% import "macros/__index.njk" as macro %}
+{% from "macros/hero.njk" import hero as hero %}
+{% from "macros/button.njk" import button as button %}
+{% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
 
-{% call macro.hero(
+
+
+{% call hero(
     titre="Éveil, soutient et formation autour de la petite enfance", 
     sousTitre="Retrouvez-nous sur les réseaux pour ne rien&nbsp;<br class='show-for-large'>manquer de nos ateliers et animations.", 
     imageVertical="/media/image/hero-acc-vertical.png",
     imageHorizontal="/media/image/hero-acc-horizontal.png"
 ) %}
     <div class="df fw-w gap">
-        {{ macro.button(
+        {{ button(
             theme="pro",
             href="https://www.facebook.com/aiperam",
             icon="facebook",
             label="Facebook",
             external="true"
         ) }}
-        {{ macro.button(
+        {{ button(
             theme="pro",
             href="https://www.instagram.com/aipe.38",
             icon="instagram-line",
@@ -64,51 +68,67 @@ accueil: "true"
 </div>
 <div class="grid-main__item-full vague v_bas bg-primary"></div>
 
-<div class="pblock-section">
+
+
+ <div class="pblock-section"></div>   
     <h3><span class="font-hero">Le <abbr>RPE</abbr></span> Relais Petite Enfance</h3>
 
-    <div class="pblock-section">
-        <h4>Auprès des parents</h4>
-        <ul>
+    {% call ping_pong(
+        theme="parent",
+        titre="Auprès des parents",  
+        imageVertical="/media/image/hero-acc-vertical.png",
+        imageHorizontal="/media/image/hero-acc-horizontal.png"
+    ) %}
+        <ul class="df fd-c gap">
             <li>La recherche d’un mode de garde</li>
             <li>Un soutien pour l’élaboration d’un contrat de travail</li>
         </ul>
-        <div class="pblock-section">
+        <div class="cadre df fd-c gap">
             <p>Une <strong>permanence administrative</strong> est assurée par un professionnel</p>
             <p><a href="tel:0749836207">07 49 83 62 07</a></p>
             <p><a href="mailto:aipe.petite.enfance@gmail.com">aipe.petite.enfance@gmail.com</a></p>
         </div>
-    </div>
-        </div>
-    </div>
-    
-</div>   
+    {% endcall  %}
+
+
+    {% call ping_pong(
+        type="pong",
+        theme="enfant",
+        titre="Auprès des assistantes maternelles et des enfants",  
+        imageVertical="/media/image/hero-acc-vertical.png",
+        imageHorizontal="/media/image/hero-acc-horizontal.png"
+    ) %}
+        <ul class="df fd-c gap">
+            <li>Accueil de l’enfant dans l’apprentissage de la socialisation avec son assistante maternelle.</li>
+            <li>Un soutien et un accompagnement des assistantes maternelles dans leur pratique professionnelle</li>
+        </ul>
+    {% endcall  %}
+
+    {% call ping_pong(
+        theme="pro",
+        titre="Le <abrr>RPE</abrr>, c’est aussi",  
+        imageVertical="/media/image/hero-acc-vertical.png",
+        imageHorizontal="/media/image/hero-acc-horizontal.png"
+    ) %}
+        <ul class="df fd-c gap">
+            <li>Des sorties, découvertes, spectacles, tout au long de l’année (Fête de Noël, carnaval, sortie de fin d’année).</li>
+            <li>Des soirées débat destinées aux parents et assistantes maternelles sur les thèmes de la petite enfance.</li>
+        </ul>
+    {% endcall  %}
+
+</div>
+
+
+  
 
 
 
 
-<p>Une permanence administrative est assurée par un professionnel</p>
-<ul>
-    <li>la recherche d’un mode de garde</li>
-    <li>un soutien pour l’élaboration d’un contrat de travail</li>
-</ul>
-<p>
-    <a href="tel:0749836207">07 49 83 62 07</a>
-    <br>
-    <a href="mailto:aipe.petite.enfance@gmail.com">aipe.petite.enfance@gmail.com</a>
-</p>
 
-<h4>Auprès des assistantes maternelles et des enfants</h4>
-<ul>
-    <li>Accueil de l’enfant dans l’apprentissage de la socialisation avec son assistante maternelle.</li>
-    <li style="color: red;">C'est un peu pauvre cette partie, possible d'ajouter une seconde phrase ?</li>
-</ul>
 
-<h4>Le RPE, c’est aussi</h4>
-<ul>
-    <li>Des sorties, découvertes, spectacles, tout au long de l’année (Fête de Noël, carnaval, sortie de fin d’année).</li>
-    <li>Des soirées débat destinées aux parents et assistantes maternelles sur les thèmes de la petite enfance.</li>
-</ul>
+
+
+
 
 
 <h3>L’Acti'Bébé  Commission Animation Formation</h3>
