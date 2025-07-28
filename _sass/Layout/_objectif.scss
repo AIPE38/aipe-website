@@ -83,6 +83,7 @@ $total-largeur: rem(sum-values($columns));
         grid-column: 1/2;
         grid-row: 2/5;
         background-image: url(/media/image/blob-1.svg);
+        color: var(--c-theme-fg)
     }
 }
 .grid-objectif__formation {     
@@ -90,6 +91,7 @@ $total-largeur: rem(sum-values($columns));
         grid-column: 3/5;
         grid-row: 3/8;
         background-image: url(/media/image/blob-2.svg);
+        color: var(--c-theme-fg)
     }
 }
 .grid-objectif__garde {       
@@ -97,6 +99,7 @@ $total-largeur: rem(sum-values($columns));
         grid-column: 4/6;
         grid-row: 1/6;
         background-image: url(/media/image/blob-3.svg);
+        color: var(--c-theme-fg)
     }
 }
 .grid-objectif__accompagner {   
@@ -104,5 +107,6 @@ $total-largeur: rem(sum-values($columns));
         grid-column: 7/8;
         grid-row: 4/7;
         background-image: url(/media/image/blob-4.svg);
+        color: var(--c-theme-fg)
     }
 }

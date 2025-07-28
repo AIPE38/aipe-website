@@ -15,6 +15,7 @@
     //$fg-jaune:   #9B6600;
     //$fg-corail:  #B45151;
     //$fg-marron:  #AE5549;
+    --c-fg-dark:      rgb(23 23 23);    //#171717  // bien constraster sur jaune, corail, marron, bleu
     --c-fg-gris:      rgb(54 63 63);    //#403F3F; // ok sur aipe
     --c-fg-bleu:      rgb(25 67  98);   //#194362; // ok sur aipe
     --c-fg-accent:    rgb(43 117 172);  //#2B75AC; // ok sur aipe-blanc
@@ -31,6 +32,7 @@
     --c-theme-neutre: var(--c-aipe-maron);
     --c-theme-parent: var(--c-aipe-bleu);
     --c-theme-accent: var(--c-fg-accent);
+    --c-theme-fg:     var(--c-fg-dark);
 
     --c-fg-primary:   var(--c-fg-gris);
     --c-fg-secondary: var(--c-fg-bleu);
@@ -39,23 +41,23 @@
 .theme-neutre {
     --theme-border: var(--c-theme-neutre);
     --theme-bg: var(--c-theme-neutre);
-    --theme-fg: var(--c-fg-primary);
+    --theme-fg: var(--c-theme-fg);
 }
 
 .theme-enfant {
     --theme-border: var(--c-theme-enfant);
     --theme-bg: var(--c-theme-enfant);
-    --theme-fg: var(--c-fg-primary);
+    --theme-fg: var(--c-theme-fg);
 }
 
 .theme-parent {
     --theme-border: var(--c-theme-parent);
     --theme-bg: var(--c-theme-parent);
-    --theme-fg: var(--c-fg-primary);
+    --theme-fg: var(--c-theme-fg);
 }
 
 .theme-pro {
     --theme-border: var(--c-theme-pro);
     --theme-bg: var(--c-theme-pro);
-    --theme-fg: var(--c-fg-primary);
+    --theme-fg: var(--c-theme-fg);
 }
