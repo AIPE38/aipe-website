@@ -38,16 +38,3 @@
     max-height: 100%;
     object-fit: contain;
 }
-
-.grid-hero__image .v_vertical {
-    @include breakpoint(mediumDown) {
-        display: none;
-    }
-}
-
-
-.grid-hero__image .v_horizontal {
-    @include breakpoint(large) {
-        display: none;
-    }
-}
