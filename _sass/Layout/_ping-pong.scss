@@ -38,4 +38,12 @@
             "visuel contenu";
     }
 
+    .grid-ping-pong__titre {
+        align-self: flex-end;
+    }
+
+    .grid-ping-pong__contenu {
+        align-self: flex-start;
+    }
+
 }
