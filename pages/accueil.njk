@@ -17,8 +17,8 @@ accueil: "true"
 {% call hero(
     titre="Éveil, soutient et formation autour de la petite enfance", 
     sousTitre="Retrouvez-nous sur les réseaux pour ne rien&nbsp;<br class='show-for-large'>manquer de nos ateliers et animations.", 
-    imageVertical="/media/image/hero-acc-vertical.png",
-    imageHorizontal="/media/image/hero-acc-horizontal.png"
+    imageVertical="/media/image/accueil/hero-vertical.png",
+    imageHorizontal="/media/image/accueil/hero-horizontal.png"
 ) %}
     <div class="df fw-w gap">
         {{ button(
@@ -76,17 +76,31 @@ accueil: "true"
     {% call ping_pong(
         theme="parent",
         titre="Auprès des parents",  
-        imageVertical="/media/image/hero-acc-vertical.png",
-        imageHorizontal="/media/image/hero-acc-horizontal.png"
+        imageVertical="/media/image/accueil/rpe-parent-vertical.png",
+        imageHorizontal="/media/image/accueil/rpe-parent-horizontal.png"
     ) %}
         <ul class="df fd-c gap">
             <li>La recherche d’un mode de garde</li>
             <li>Un soutien pour l’élaboration d’un contrat de travail</li>
         </ul>
         <div class="cadre df fd-c gap">
-            <p>Une <strong>permanence administrative</strong> est assurée par un professionnel</p>
-            <p><a href="tel:0749836207">07 49 83 62 07</a></p>
-            <p><a href="mailto:aipe.petite.enfance@gmail.com">aipe.petite.enfance@gmail.com</a></p>
+            <p>Une <strong>permanence administrative</strong> est assurée&nbsp;<br class="show-for-large">par un professionnel</p>
+            <ul class="reset df fw-w gap-8">
+                <li>
+                    {{ button(
+                        theme="parent",
+                        href="tel:0749836207",
+                        label="07 49 83 62 07"
+                    ) }}
+                </li>
+                <li>
+                    {{ button(
+                        theme="parent",
+                        href="mailto:aipe.petite.enfance@gmail.com",
+                        label="aipe.petite.enfance@gmail.com"
+                    ) }}
+                </li>
+            </ul>
         </div>
     {% endcall  %}
 
@@ -95,8 +109,8 @@ accueil: "true"
         type="pong",
         theme="enfant",
         titre="Auprès des assistantes maternelles et des enfants",  
-        imageVertical="/media/image/hero-acc-vertical.png",
-        imageHorizontal="/media/image/hero-acc-horizontal.png"
+        imageVertical="/media/image/accueil/rpe-enfant-vertical.png",
+        imageHorizontal="/media/image/accueil/rpe-enfant-horizontal.png"
     ) %}
         <ul class="df fd-c gap">
             <li>Accueil de l’enfant dans l’apprentissage de la socialisation avec son assistante maternelle.</li>
@@ -107,8 +121,8 @@ accueil: "true"
     {% call ping_pong(
         theme="pro",
         titre="Le <abrr>RPE</abrr>, c’est aussi",  
-        imageVertical="/media/image/hero-acc-vertical.png",
-        imageHorizontal="/media/image/hero-acc-horizontal.png"
+        imageVertical="/media/image/accueil/rpe-pro-vertical.png",
+        imageHorizontal="/media/image/accueil/rpe-pro-horizontal.png"
     ) %}
         <ul class="df fd-c gap">
             <li>Des sorties, découvertes, spectacles, tout au long de l’année (Fête de Noël, carnaval, sortie de fin d’année).</li>

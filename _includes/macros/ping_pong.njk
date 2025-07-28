@@ -20,7 +20,8 @@
     <div class="{{ gridPingpong }} ai-c pblock-section{{ cssTheme }}">
         <h4 class="h4 grid-ping-pong__titre">{{ titre | safe }}</h4>
         <div class="grid-ping-pong__visuel">
-            image
+            <img class="hide-for-large" src="{{ imageHorizontal }}" alt="">
+            <img class="show-for-large" src="{{ imageVertical }}" alt="">
         </div>
         <div class="grid-ping-pong__contenu df fd-c gap-30">
             {{ caller() }}
