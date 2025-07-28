@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "../Abstracts/__index" as *;
 
+.gap-8 {    gap: rem(8px)}
 .gap {      gap: rem(16px)}
 .gap-20 {   gap: rem(20px)}
 .gap-30 {   gap: rem(30px)}
