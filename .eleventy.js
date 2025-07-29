@@ -10,83 +10,136 @@ const markdownIt = require("markdown-it");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
-function imageShortcodeSync(type="", src="", alt="", classe="") { 
+function generateImageTypeMap(configs) {
+    const imageTypeMap = {};
 
-    // garde le src d'origine
-    const originalSrc = src; 
+    for (const [typeName, sizes] of Object.entries(configs)) {
+        const baseWidths = sizes.map(item => item.width);
 
-    // Corrige le chemin si nécessaire
+        const sizesAttr = sizes.map(item => {
+            if (item.breakpoint === null) {
+                return `${item.width}px`;
+            } else {
+                return `(max-width: ${item.breakpoint}px) ${item.width}px`;
+            }
+        }).join(', ');
+
+        const mediaBreakpoints = sizes.map(item => item.breakpoint ? `(max-width: ${item.breakpoint}px)` : null);
+
+        // Choix du nom de la propriété sizesAttr selon le type
+        const sizeKey = (typeName === 'typeHero') ? 'sizebaseWidthssAttr' : 'sizesAttr';
+
+        imageTypeMap[typeName] = {
+            baseWidths,
+            [sizeKey]: sizesAttr,
+            mediaBreakpoints
+        };
+    }
+
+    return imageTypeMap;
+}
+
+const input = {
+    typeHero: [
+        { breakpoint: 600, width: 536 },
+        { breakpoint: 899, width: 835 },
+        { breakpoint: null, width: 416 }
+    ],
+    typePingPong: [
+        { breakpoint: 600, width: 536 },
+        { breakpoint: 899, width: 835 },
+        { breakpoint: null, width: 401 }
+    ]
+};
+const imageTypeMap = generateImageTypeMap(input);
+
+function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
+    const originalSrc = src;
+
+    // Corrige le chemin
     if (src.startsWith("/")) {
-        src = `.${src}`; // Ajoute un point devant
+        src = `.${src}`;
     } else if (!src.startsWith("./") && !src.startsWith("http")) {
-        src = `./${src}`; // Cas: src sans slash du tout
+        src = `./${src}`;
     }
 
-     // Si type n’est pas renseigné, retourne une balise <img> simple
-    if (!type) {
-        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" loading="lazy" decoding="async" />`;
+    // Fallback simple si type non reconnu
+    const config = imageTypeMap[type];
+    if (!type || !config) {
+        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" loading="lazy" decoding="async">`;
     }
 
-    // Génère les versions @2x pour chaque taille (HD / Retina)
-    function doubleWidths(widths) {
-        return widths.flatMap(w => [w, w * 2]);
-    }
+    const { baseWidths, sizesAttr, mediaBreakpoints } = config;
 
-     // Définition des tailles de l'image à générer @1x, des sizes et de la classe CSS dédiées
-    let baseWidths, sizesAttr;
+    // Générer les largeurs à 1x et 2x
+    const widthType = baseWidths.flatMap(w => [w, w * 2]);
 
-    switch (type) {
-        case 'typeHero':
-            baseWidths = [416, 536, 835]; //large, small, medium.
-            sizesAttr = "(max-width: 600px) 536px, (max-width: 899px) 835px, 416px"; //small, medium, large
-            break;
-        case 'typePingPong':
-            baseWidths = [401, 536, 835]; //large, small, medium.
-            sizesAttr = "(max-width: 600px) 536px, (max-width: 899px) 835px, 401px"; //small, medium, large
-            break;
-    }
+    // Format selon l'extension
+    const ext = src.split(/[#?]/)[0].split(".").pop().trim().toLowerCase();
+    const formatType = ext === "png" ? ["webp", "png"] : ["webp", "jpg"];
 
-    // Si type inconnu (variables non définies), renvoie une balise <img> simple
-    if (!baseWidths || !sizesAttr) {
-        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" loading="lazy" decoding="async" />`;
-    }
-
-    // ajoute la version @2x pour chaque taille
-    const widthType = doubleWidths(baseWidths);
-
-    let extentionSrc = src.split(/[#?]/)[0].split('.').pop().trim();
-    // le avif ne fonctionne pas sur certaine image, why ??
-    let formatType;
-    switch (extentionSrc) {
-        case 'png':
-            formatType = ["webp", "png"];
-            break;
-        default:
-            //jpg
-            formatType = ["webp", "jpg"];
-    }
-
-    let options = {
+    const options = {
         widths: widthType,
         formats: formatType,
         urlPath: "/media/generate/",
-        outputDir: "_site/media/generate/",
+        outputDir: "_site/media/generate/"
     };
 
-    // generate images, while this is async we don’t wait
+    // Déclenche génération des images (async, non bloquant)
     Image(src, options);
 
-    let imageAttributes = {
-        class: classe,
-        alt,
-        sizes: sizesAttr,
-        loading: "lazy",
-        decoding: "async",
-    };
+    const metadata = Image.statsSync(src, options);
 
-    // get metadata even the images are not fully generated
-    let metadata = Image.statsSync(src, options);
-    return Image.generateHTML(metadata, imageAttributes);
+    // Génère automatiquement les couples 1x / 2x
+    const media = mediaBreakpoints.map((media, i) => {
+        const w = baseWidths[i];
+        return {
+            media,
+            widths: [w, w * 2]
+        };
+    });
+
+    // Balises <source>
+    const sources = media
+        .map(({ media, widths }) => {
+            const srcset = widths
+                .map((w, i) => {
+                    const image = metadata[formatType[0]]?.find(img => img.width === w);
+                    return image ? `${image.srcset} ${i + 1}x` : null;
+                })
+                .filter(Boolean)
+                .join(", ");
+            if (!srcset) return null;
+            return `<source type="image/${formatType[0]}"${media ? ` media="${media}"` : ""} srcset="${srcset}">`;
+        })
+        .filter(Boolean)
+        .join("\n");
+
+    // Fallback image
+    const fallbackImages = metadata[formatType[1]] || [];
+    const fallbackMain =
+        fallbackImages.find(img => img.width === Math.max(...widthType)) ||
+        fallbackImages[fallbackImages.length - 1];
+
+    if (!fallbackMain) {
+        console.warn(`⚠️ Aucun fallback trouvé pour ${src}`);
+        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" loading="lazy" decoding="async">`;
+    }
+
+    const fallbackSrcset = fallbackImages
+        .map(img => `${img.srcset} ${img.width}w`)
+        .join(", ");
+
+    const imgTag = `<img class="${classe}" alt="${alt}" loading="lazy" decoding="async"
+    src="${fallbackMain.url}"
+    srcset="${fallbackSrcset}"
+    sizes="${sizesAttr}"
+    width="${fallbackMain.width}" height="${fallbackMain.height}">`;
+
+    return `<picture>
+${sources}
+${imgTag}
+</picture>`;
 }
 
 module.exports = function(eleventyConfig) {
