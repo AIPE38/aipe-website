@@ -17,7 +17,8 @@ const input = {
             { breakpoint: 899, width: 835 },
             { breakpoint: null, width: 416 }
         ],
-        noLazyLoading: true // Désactive loading="lazy"
+        noLazyLoading: true, // Désactive loading="lazy"
+        fetchPriorityHigh: true // Active fetchpriority="high"
     },
     typePingPong: {
         sizes: [
@@ -52,7 +53,8 @@ function generateImageTypeMap(configs) {
             baseWidths,
             [sizeKey]: sizesAttr,
             mediaBreakpoints,
-            noLazyLoading: config.noLazyLoading === true // false par défaut
+            noLazyLoading: config.noLazyLoading === true, // false par défaut
+            fetchPriorityHigh: config.fetchPriorityHigh === true // false par défaut
         };
     }
 
@@ -71,12 +73,15 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
     }
 
     const config = imageTypeMap[type];
-    // Par défaut noLazyLoading = false si pas de config
+    // Par défaut noLazyLoading = false, fetchPriorityHigh = false si pas de config
     const noLazyLoading = config?.noLazyLoading === true;
+    const fetchPriorityHigh = config?.fetchPriorityHigh === true;
+
+    const fetchPriorityAttr = fetchPriorityHigh ? 'fetchpriority="high"' : "";
 
     if (!type || !config) {
         const loadingAttrFallback = noLazyLoading ? "" : 'loading="lazy"';
-        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" ${loadingAttrFallback} decoding="async">`;
+        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" ${loadingAttrFallback} ${fetchPriorityAttr} decoding="async">`;
     }
 
     const { baseWidths, mediaBreakpoints } = config;
@@ -126,7 +131,7 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
     if (!fallbackMain) {
         console.warn(`⚠️ Aucun fallback trouvé pour ${src}`);
         const loadingAttrFallback = noLazyLoading ? "" : 'loading="lazy"';
-        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" ${loadingAttrFallback} decoding="async">`;
+        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" ${loadingAttrFallback} ${fetchPriorityAttr} decoding="async">`;
     }
 
     const fallbackSrcset = fallbackImages
@@ -135,7 +140,7 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
 
     const loadingAttr = noLazyLoading ? "" : 'loading="lazy"';
 
-    const imgTag = `<img class="${classe}" alt="${alt}" ${loadingAttr} decoding="async"
+    const imgTag = `<img class="${classe}" alt="${alt}" ${loadingAttr} ${fetchPriorityAttr} decoding="async"
     src="${fallbackMain.url}"
     srcset="${fallbackSrcset}"
     sizes="${sizesAttr}"
@@ -146,6 +151,8 @@ ${sources}
 ${imgTag}
 </picture>`;
 }
+
+
 
 module.exports = function(eleventyConfig) {
 
