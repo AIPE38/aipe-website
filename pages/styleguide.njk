@@ -150,6 +150,57 @@ nofollow: true
             ) }}
         </li>
     </ul>
+
+    <h3 class="styleguide-h3">button outline</h3>
+    <ul class="reset df  fd-c gap">
+        <li>
+            {{ button(
+                href="/",
+                label="theme- neutre - classique",
+                outline="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="/",
+                label="theme parent - external",
+                theme="parent",
+                external="true",
+                outline="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="mailto:aipe.petite.enfance@gmail.com",
+                label="theme enfant - mailto",
+                theme="enfant",
+                outline="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="tel:0749836207",
+                label="theme pro - tel:",
+                theme="pro",
+                outline="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="/",
+                icon="facebook",
+                label="theme- neutre - icon",
+                outline="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                theme="primary",
+                label="button type button primary",
+                outline="true"
+            ) }}
+        </li>
+    </ul>
 </div>
 
 <h2 class="styleguide-h2">Cadre</h2>

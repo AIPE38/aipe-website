@@ -63,6 +63,15 @@ img {
     height: auto;
 }
 
+button {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 a {
     overflow-wrap: anywhere;
 }

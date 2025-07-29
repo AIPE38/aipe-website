@@ -1,4 +1,4 @@
-{% macro button(href='', icon='', label='', theme='', external='') %}
+{% macro button(href='', icon='', label='', theme='', external='', outline='') %}
 
     {% if theme == 'parent' %}
         {% set variation = " theme-parent" %}
@@ -6,6 +6,8 @@
         {% set variation = " theme-enfant" %}
     {% elif theme == 'pro' %}
         {% set variation = " theme-pro" %}
+    {% elif theme == 'primary' %}
+        {% set variation = " v_secondary" %}
     {% else %}
         {% set variation = " theme-neutre" %}
     {% endif %}
@@ -20,15 +22,27 @@
     {% endif %}
 
 
-    <a class="button{{variation}} d-if ai-c jc-c" href="{{ href }}" {{ attrs | safe }}>
-        {% if icon %}
-            <svg aria-hidden="true" focusable="false">
-                <use xlink:href="#{{ icon }}"></use>
-            </svg>
-            <span>{{ label | safe }}</span>
-        {% else %}
+    {% if outline == 'true' %}
+        {% set variationOutline = " v_outline" %}
+    {% endif %}
+
+
+    {% if href  %}
+        <a class="button{{variation}}{{variationOutline}} d-if ai-c jc-c" href="{{ href }}" {{ attrs | safe }}>
+            {% if icon %}
+                <svg aria-hidden="true" focusable="false">
+                    <use xlink:href="#{{ icon }}"></use>
+                </svg>
+                <span>{{ label | safe }}</span>
+            {% else %}
+                {{ label | safe }}
+            {% endif %}
+        </a>
+    {% else %}
+        <button type="button" class="button{{variation}}{{variationOutline}} d-if ai-c jc-c">
             {{ label | safe }}
-        {% endif %}
-    </a>
-    
+        </button>
+    {% endif %}
+
+
 {% endmacro %}
