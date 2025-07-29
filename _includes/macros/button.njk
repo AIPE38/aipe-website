@@ -1,4 +1,4 @@
-{% macro button(href='', icon='', label='', theme='', external='', outline='') %}
+{% macro button(href='', icon='', label='', theme='', external='', outline='', attributes='') %}
 
     {% if theme == 'parent' %}
         {% set variation = " theme-parent" %}
@@ -6,7 +6,7 @@
         {% set variation = " theme-enfant" %}
     {% elif theme == 'pro' %}
         {% set variation = " theme-pro" %}
-    {% elif theme == 'primary' %}
+    {% elif theme == 'secondary' %}
         {% set variation = " v_secondary" %}
     {% else %}
         {% set variation = " theme-neutre" %}
@@ -39,7 +39,7 @@
             {% endif %}
         </a>
     {% else %}
-        <button type="button" class="button{{variation}}{{variationOutline}} d-if ai-c jc-c">
+        <button type="button" class="button{{variation}}{{variationOutline}} d-if ai-c jc-c"{{ attributes | safe }}>
             {{ label | safe }}
         </button>
     {% endif %}
