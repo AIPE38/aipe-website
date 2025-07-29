@@ -10,10 +10,30 @@ const markdownIt = require("markdown-it");
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 
+const input = {
+    typeHero: {
+        sizes: [
+            { breakpoint: 600, width: 536 },
+            { breakpoint: 899, width: 835 },
+            { breakpoint: null, width: 416 }
+        ],
+        noLazyLoading: true // Désactive loading="lazy"
+    },
+    typePingPong: {
+        sizes: [
+            { breakpoint: 600, width: 536 },
+            { breakpoint: 899, width: 835 },
+            { breakpoint: null, width: 401 }
+        ]
+    }
+};
+
 function generateImageTypeMap(configs) {
     const imageTypeMap = {};
 
-    for (const [typeName, sizes] of Object.entries(configs)) {
+    for (const [typeName, config] of Object.entries(configs)) {
+        const sizes = config.sizes;
+
         const baseWidths = sizes.map(item => item.width);
 
         const sizesAttr = sizes.map(item => {
@@ -26,55 +46,44 @@ function generateImageTypeMap(configs) {
 
         const mediaBreakpoints = sizes.map(item => item.breakpoint ? `(max-width: ${item.breakpoint}px)` : null);
 
-        // Choix du nom de la propriété sizesAttr selon le type
         const sizeKey = (typeName === 'typeHero') ? 'sizebaseWidthssAttr' : 'sizesAttr';
 
         imageTypeMap[typeName] = {
             baseWidths,
             [sizeKey]: sizesAttr,
-            mediaBreakpoints
+            mediaBreakpoints,
+            noLazyLoading: config.noLazyLoading === true // false par défaut
         };
     }
 
     return imageTypeMap;
 }
 
-const input = {
-    typeHero: [
-        { breakpoint: 600, width: 536 },
-        { breakpoint: 899, width: 835 },
-        { breakpoint: null, width: 416 }
-    ],
-    typePingPong: [
-        { breakpoint: 600, width: 536 },
-        { breakpoint: 899, width: 835 },
-        { breakpoint: null, width: 401 }
-    ]
-};
 const imageTypeMap = generateImageTypeMap(input);
 
 function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
     const originalSrc = src;
 
-    // Corrige le chemin
     if (src.startsWith("/")) {
         src = `.${src}`;
     } else if (!src.startsWith("./") && !src.startsWith("http")) {
         src = `./${src}`;
     }
 
-    // Fallback simple si type non reconnu
     const config = imageTypeMap[type];
+    // Par défaut noLazyLoading = false si pas de config
+    const noLazyLoading = config?.noLazyLoading === true;
+
     if (!type || !config) {
-        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" loading="lazy" decoding="async">`;
+        const loadingAttrFallback = noLazyLoading ? "" : 'loading="lazy"';
+        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" ${loadingAttrFallback} decoding="async">`;
     }
 
-    const { baseWidths, sizesAttr, mediaBreakpoints } = config;
+    const { baseWidths, mediaBreakpoints } = config;
+    const sizesAttr = config.sizesAttr || config.sizebaseWidthssAttr || "";
 
-    // Générer les largeurs à 1x et 2x
     const widthType = baseWidths.flatMap(w => [w, w * 2]);
 
-    // Format selon l'extension
     const ext = src.split(/[#?]/)[0].split(".").pop().trim().toLowerCase();
     const formatType = ext === "png" ? ["webp", "png"] : ["webp", "jpg"];
 
@@ -85,21 +94,15 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
         outputDir: "_site/media/generate/"
     };
 
-    // Déclenche génération des images (async, non bloquant)
     Image(src, options);
 
     const metadata = Image.statsSync(src, options);
 
-    // Génère automatiquement les couples 1x / 2x
     const media = mediaBreakpoints.map((media, i) => {
         const w = baseWidths[i];
-        return {
-            media,
-            widths: [w, w * 2]
-        };
+        return { media, widths: [w, w * 2] };
     });
 
-    // Balises <source>
     const sources = media
         .map(({ media, widths }) => {
             const srcset = widths
@@ -115,7 +118,6 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
         .filter(Boolean)
         .join("\n");
 
-    // Fallback image
     const fallbackImages = metadata[formatType[1]] || [];
     const fallbackMain =
         fallbackImages.find(img => img.width === Math.max(...widthType)) ||
@@ -123,14 +125,17 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
 
     if (!fallbackMain) {
         console.warn(`⚠️ Aucun fallback trouvé pour ${src}`);
-        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" loading="lazy" decoding="async">`;
+        const loadingAttrFallback = noLazyLoading ? "" : 'loading="lazy"';
+        return `<img src="${originalSrc}" alt="${alt}" class="${classe}" ${loadingAttrFallback} decoding="async">`;
     }
 
     const fallbackSrcset = fallbackImages
         .map(img => `${img.srcset} ${img.width}w`)
         .join(", ");
 
-    const imgTag = `<img class="${classe}" alt="${alt}" loading="lazy" decoding="async"
+    const loadingAttr = noLazyLoading ? "" : 'loading="lazy"';
+
+    const imgTag = `<img class="${classe}" alt="${alt}" ${loadingAttr} decoding="async"
     src="${fallbackMain.url}"
     srcset="${fallbackSrcset}"
     sizes="${sizesAttr}"
