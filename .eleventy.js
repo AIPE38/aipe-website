@@ -40,6 +40,10 @@ function imageShortcodeSync(type="", src="", alt="", classe="") {
             baseWidths = [416, 536, 835]; //large, small, medium.
             sizesAttr = "(max-width: 600px) 536px, (max-width: 899px) 835px, 416px"; //small, medium, large
             break;
+        case 'typePingPong':
+            baseWidths = [401, 536, 835]; //large, small, medium.
+            sizesAttr = "(max-width: 600px) 536px, (max-width: 899px) 835px, 401px"; //small, medium, large
+            break;
     }
 
     // Si type inconnu (variables non définies), renvoie une balise <img> simple
