@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.logo-partenaire {
+    width: rem(150px);
+    height: rem(100px);
+    padding: rem(16px);
+    background-color: var(--c-bg-primary);
+}
+
+.logo-partenaire img {
+    object-fit: contain;
+}
+
+
+
+
+.round-top-left {
+    border-top-left-radius: rem(30px);
+}
+
+.round-top-right {
+    border-top-right-radius: rem(30px);
+}
+
+.round-bottom-right {
+    border-bottom-right-radius: rem(30px);
+}
+
+.round-all {
+    border-radius: rem(30px);
+}
+
+.round-left {
+    border-top-left-radius: rem(30px);
+    border-bottom-left-radius: rem(30px);
+}
+
+.round-right {
+    border-top-right-radius: rem(30px);
+    border-bottom-right-radius: rem(30px);
+}
+
+.round-bottom-left {
+    border-bottom-left-radius: rem(30px);
+}

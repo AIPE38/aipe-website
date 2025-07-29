@@ -7,11 +7,14 @@ eleventyNavigation:
     key: Accueil
     order: 1
 accueil: "true"
+scriptsJs: 
+    - filtrePartenaire
 ---
 {% from "macros/hero.njk" import hero as hero %}
 {% from "macros/button.njk" import button as button %}
 {% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
 {% from "macros/intercalaire.njk" import intercalaire as intercalaire %}
+{% from "macros/logo_partenaire.njk" import logo_partenaire as logo_partenaire %}
 
 
 
@@ -194,36 +197,150 @@ accueil: "true"
 
 
 <div class="pblock-section">
-    <h2>Nos partenaires</h2>
-    <p>Notre association intervient sur huit communes et est en relation avec plusieurs structures associatives, crèches, RPE, sur différentes communes des alentours</p>
+    <h2 id="partenaire-titre">Nos partenaires</h2>
+    <p class="mb">Notre association intervient sur huit communes et est en relation avec plusieurs structures associatives, crèches, RPE, sur différentes communes des alentours</p>
+    <div class="mb">
+        <ul class="reset df fw-w gap-8 js--filtre-buttons" data-filtre-class-inactif="v_secondary" data-filtre-class-actif="theme-neutre">
+            <li>
+                {{ button(
+                    label="Tous",
+                    outline="true",
+                    attributes="data-filtre-cible='js--filtre-tous'"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    theme="secondary",
+                    label="Communes",
+                    outline="true",
+                    attributes="data-filtre-cible='js--filtre-communes'"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    theme="secondary",
+                    label="Crèches",
+                    outline="true",
+                    attributes="data-filtre-cible='js--filtre-creches'"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    theme="secondary",
+                    label="Autres",
+                    outline="true",
+                    attributes="data-filtre-cible='js--filtre-autres'"
+                ) }}
+            </li>
+        </ul>
+        <div class="show-for-sr js--filtre-annonce" aria-live="polite" role="status"></div>
+    </div>
+    <ul class="reset df fw-w gap-20 js--filtre-partenaire" aria-labelledby="partenaire-titre">
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Moirans (lieu de notre siège social)"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Saint Jean de Moirans"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Rives"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="La Murette"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Saint Cassien"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Réaumont"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Saint Blaise du Buis"
+            ) }}
+        </li>
+        <li class="js--filtre-communes">
+            {{ logo_partenaire(
+                alt="Charnècles"
+            ) }}
+        </li>
+        <li class="js--filtre-creches">
+            {{ logo_partenaire(
+                alt="Les p’tits Loups, Saint Jean de Moirans"
+            ) }}
+        </li>
+        <li class="js--filtre-creches">
+            {{ logo_partenaire(
+                alt="La Ruche (anciennement la Balancelle), Moirans"
+            ) }}
+        </li>
+        <li class="js--filtre-creches">
+            {{ logo_partenaire(
+                alt="Halte Garderie L’envol, Coublevie"
+            ) }}
+        </li>
+        <li class="js--filtre-creches">
+            {{ logo_partenaire(
+                alt="Crèche La Ribambelle, Rives"
+            ) }}
+        </li>
+        <li class="js--filtre-autres">
+            {{ logo_partenaire(
+                alt="Association Jumeau et plus"
+            ) }}
+        </li>
+        <li class="js--filtre-autres">
+            {{ logo_partenaire(
+                alt="ACEPP38"
+            ) }}
+        </li>
+        <li class="js--filtre-autres">
+            {{ logo_partenaire(
+                alt="CAF Isère"
+            ) }}
+        </li>
+        <li class="js--filtre-autres">
+            {{ logo_partenaire(
+                alt="Conseil Départemental de l’Isère"
+            ) }}
+        </li>
+        <li class="js--filtre-autres">
+            {{ logo_partenaire(
+                alt="Petit Pré"
+            ) }}
+        </li>
+    </ul>
 </div>
 
 
 
+{% call intercalaire(theme="pro", titre="Nos valeurs") %}
+    <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
+        <li>Partage,</li>
+        <li>Écoute,</li>
+        <li>Association</li>
+    </ul>
+{% endcall  %}
 
 
 
 
-<h3>Communes</h3>
-<ul style="color:#A90404;background:white;">
-    <li>liste de logo</li>
-    <li>a fournir</li>
-    <li>ou au moins le nombre d’éléments par section, que je puisse ajuster la mise en page</li>
-</ul>
 
-<h3>Crèches</h3>
-<ul style="color:#A90404;background:white;">
-    <li>liste de logo</li>
-    <li>a fournir</li>
-    <li>ou au moins le nombre d’éléments par section, que je puisse ajuster la mise en page</li>
-</ul>
 
-<h3>Associations</h3>
-<ul style="color:#A90404;background:white;">
-    <li>liste de logo</li>
-    <li>a fournir</li>
-    <li>ou au moins le nombre d’éléments par section, que je puisse ajuster la mise en page</li>
-</ul>
+
+
 
 <h2>Nos membres</h2>
 <p style="color:#A90404;background:white;">intro/texte à me fournir</p>
