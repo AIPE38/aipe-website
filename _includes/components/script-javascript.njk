@@ -5,8 +5,20 @@
 
 <!-- feed it through our jsmin filter to minify -->
 <script>
+	{# commun dans chaque page #}
+	{{ js | safe }}
 
-	//commun dans chaque page
-	{{ js | safe }} 
+	{# spécifique à un composant #}
+	{% for item in scriptsJs %}
 
+		{% if item == 'filtrePartenaire' %}
+
+				{% set filtrePartenaire %}
+					{% include "js/filtre-partenaire.js" %}
+				{% endset %}
+				{{ filtrePartenaire | safe }}
+
+		{% endif %}
+
+	{% endfor %}
 </script>
