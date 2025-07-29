@@ -58,6 +58,7 @@ h1,h2,h3,h4,h5,p,ul {
 .h5, h5:not([class]) { font-size: rem(24px); font-weight: 400;}
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
