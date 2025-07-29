@@ -11,6 +11,7 @@ accueil: "true"
 {% from "macros/hero.njk" import hero as hero %}
 {% from "macros/button.njk" import button as button %}
 {% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
+{% from "macros/intercalaire.njk" import intercalaire as intercalaire %}
 
 
 
@@ -133,6 +134,12 @@ accueil: "true"
 </div>
 
 
+
+{% call intercalaire(theme="parent") %}
+    <div class="df jc-c">
+        <p>Une association pour les enfants, les parents et les professionnels</p>
+    </div>
+{% endcall  %}
   
 
 

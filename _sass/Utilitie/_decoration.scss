@@ -1,9 +1,8 @@
 @use "sass:map";
 @use "../Abstracts/__index" as *;
 
-.bg-primary {
-    background-color: var(--c-bg-primary);
-}
+.bg-primary { background-color: var(--c-bg-primary)}
+.bg-theme {   background-color: var(--theme-bg)}
 
 .vague {
     height: rem(23px);
