@@ -9,8 +9,8 @@
             </div>
         </div>
         <div class="grid-hero__image">
-            <img class="hide-for-large" src="{{ imageHorizontal }}" alt="">
-            <img class="show-for-large" src="{{ imageVertical }}" alt="">
+            {% image "typeHero", imageHorizontal, "", "hide-for-large" %}
+            {% image "typeHero", imageVertical, "", "show-for-large" %}
         </div>
     </div>
 
