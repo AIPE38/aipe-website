@@ -1,4 +1,4 @@
-{% macro intercalaire(theme='') %}
+{% macro intercalaire(theme='', titre='') %}
 
     {% if theme == 'parent' %}
         {% set cssTheme = " theme-parent" %}
@@ -11,8 +11,13 @@
     {% endif %}
 
     <div class="grid-main__item-full vague v_haut bg-theme{{cssTheme}}"></div>
-    <div class="grid-main__item-full grid-main bg-theme pblock-section font-dancing text-38 color-theme{{cssTheme}}">
-        {{ caller() }}
+    <div class="grid-main__item-full grid-main bg-theme pblock-section color-theme{{cssTheme}}">
+        {% if titre %}
+            <p class="font-hero text-20 text-center--medium mb">{{ titre }}</p>
+        {% endif %}
+        <div class="font-dancing text-38">
+            {{ caller() }}
+        </div>
     </div>
     <div class="grid-main__item-full vague v_bas bg-theme{{cssTheme}}"></div>
 

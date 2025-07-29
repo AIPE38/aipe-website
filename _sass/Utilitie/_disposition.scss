@@ -41,3 +41,12 @@
 .ct-inline {
     container-type: inline-size;
 }
+
+@include breakpoint("medium") {
+    .text-center--medium {
+        text-align: center;
+    }
+    .jc-c--medium {
+        justify-content: center;
+    }
+}

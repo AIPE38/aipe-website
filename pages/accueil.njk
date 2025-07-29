@@ -143,34 +143,66 @@ accueil: "true"
   
 
 
+ <div class="pblock-section"></div>   
+    <h3><span class="font-hero">L’Acti'Bébé</span> Commission Animation Formation</h3>
+    <p>Des parents bénévoles et des professionnels de la petite enfance se  réunissent toutes les 6 semaines pour réfléchir sur des projets autour  de la petite enfance</p>
+
+    {% call ping_pong(
+        type="pong",
+        theme="pro",
+        titre="Des ateliers pour les touts petits et leurs parents",  
+        imageVertical="",
+        imageHorizontal=""
+    ) %}
+        <ul class="df fd-c gap">
+            <li><strong>Massage bébé</strong> : découverte du massage guidée par des professionnels de la petite enfance</li>
+            <li><strong>Motricité </strong>: de 1 à 2 ans, découverte sensorielle dans un espace aménagé</li>
+            <li><strong>Communication gestuelle</strong> : initiation à la langue des signes bébé pour mieux comprendre ses besoins avant les premiers mots</li>
+            <li><strong>Secourisme parent-enfant</strong> gestes de premiers secours adaptés aux tout-petits</li>
+            <li><strong>Spectacles</strong> à destination du très jeune public</li>
+        </ul>
+    {% endcall  %}
+
+    {% call ping_pong(
+        theme="parent",
+        titre="Des soirées à thèmes & Location",  
+        imageVertical="",
+        imageHorizontal=""
+    ) %}
+        <ul class="df fd-c gap">
+            <li><strong>Initiation au maquillage de fête</strong> : des stages sont proposés aux parents et professionnels</li>
+            <li><strong>Soirées d’information et de débats</strong> autour de la parentalité</li>
+            <li><strong>Location de mallettes de maquillage</strong> que vous soyez une association, un particulier ou un professionnel</li>
+        </ul>
+    {% endcall  %}
+</div>
+
+
+
+{% call intercalaire(theme="enfant", titre="Retrouvez-nous dans les communes de") %}
+    <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
+        <li>Moirans,</li>
+        <li>Réaumont,</li>
+        <li>Charnècles,</li>
+        <li>Rives,</li>
+        <li>St Jean de Moirans,</li>
+        <li>St Blaise du Buis,</li>
+        <li>La Murette Charnècles</li>
+    </ul>
+{% endcall  %}
+
+
+
+<div class="pblock-section">
+    <h2>Nos partenaires</h2>
+    <p>Notre association intervient sur huit communes et est en relation avec plusieurs structures associatives, crèches, RPE, sur différentes communes des alentours</p>
+</div>
 
 
 
 
 
 
-
-
-
-<h3>L’Acti'Bébé  Commission Animation Formation</h3>
-<p>Des parents bénévoles et des professionnels de la petite enfance se réunissent toutes les 6 semaines pour réfléchir sur des projets autour de la petite enfance</p>
-
-<h4>Des ateliers pour les touts petits et leurs parents</h4>
-<ul>
-    <li><strong>Massage bébé</strong>&nbsp;: découverte du massage guidée par des professionnels de la petite enfance</li>
-    <li><strong>Psychomotricité</strong>&nbsp;: de 1 à 2 ans, découverte sensorielle dans un espace aménagé</li>
-    <li><strong>Éveil au cirque</strong>&nbsp;: de 2 à 3 ans, découverte de son corps grâce aux jeux de cirque</li>
-    <li><strong>Spectacles</strong> à destination du très jeune public</li>
-</ul>
-
-<h4>Des soirées à thèmes</h4>
-<ul>
-    <li><strong>Initiation au maquillage de fête</strong>&nbsp;: des stages sont proposés aux parents et professionnels</li>
-    <li><strong>Soirées d’information et de débats</strong> autour de la parentalité</li>
-</ul>
-
-<h2>Nos partenaires</h2>
-<p style="color:#A90404;background:white;">intro/texte à me fournir</p>
 
 <h3>Communes</h3>
 <ul style="color:#A90404;background:white;">

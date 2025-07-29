@@ -6,6 +6,12 @@
 .gap-20 {   gap: rem(20px)}
 .gap-30 {   gap: rem(30px)}
 
+.mb {       margin-bottom: rem(16px)}
+
+@include breakpoint("medium") {
+    .col-gap-60--medium { column-gap: rem(60px)}
+}
+
 .pblock-section {
     padding-block: rem(30px);
 }
