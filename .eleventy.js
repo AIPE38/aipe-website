@@ -222,6 +222,9 @@ module.exports = function(eleventyConfig) {
         });
     });
 
+    // Copie le dossier "_includes/js" dans "_site/js"
+    eleventyConfig.addPassthroughCopy({"_includes/js": "js"});
+
     return {
         templateFormats: ["md", "njk", "html", "liquid"],
         pathPrefix: "/",

@@ -1,24 +1,11 @@
-<!-- capture the JS content as a Nunjucks variable -->
-{% set js %}
-	{% include "js/button-burger.js" %}
-{% endset %}
+{# commun dans chaque page #}
+<script src="/js/button-burger.js" defer></script>
 
-<!-- feed it through our jsmin filter to minify -->
-<script>
-	{# commun dans chaque page #}
-	{{ js | safe }}
+{# spécifique à une page #}
+{% for item in scriptsJs %}
 
-	{# spécifique à un composant #}
-	{% for item in scriptsJs %}
-
-		{% if item == 'filtrePartenaire' %}
-
-				{% set filtrePartenaire %}
-					{% include "js/filtre-partenaire.js" %}
-				{% endset %}
-				{{ filtrePartenaire | safe }}
-
-		{% endif %}
-
-	{% endfor %}
-</script>
+	{% if item == 'filtrePartenaire' %}
+		<script src="/js/filtre-partenaire.js" defer></script>
+	{% endif %}
+	
+{% endfor %}
