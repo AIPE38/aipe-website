@@ -152,6 +152,32 @@ ${imgTag}
 </picture>`;
 }
 
+// Récupère les fichiers de inputDir, les minifie et les place dans un dossier temporaire
+async function minifyFiles(inputDir, outputDir) {
+    // Lire tous les fichiers JS du dossier source
+    const files = fs.readdirSync(inputDir).filter(f => f.endsWith(".js"));
+
+    files.forEach(file => {
+        const filePath = path.join(inputDir, file);
+        const code = fs.readFileSync(filePath, "utf8");
+
+        // Minification avec UglifyJS
+        const result = UglifyJS.minify(code);
+
+        if (result.error) {
+            console.error(`Erreur lors de la minification de ${file} :`, result.error);
+            return;
+        }
+
+        // Créer le dossier destination si nécessaire
+        fs.mkdirSync(outputDir, { recursive: true });
+
+        // Écrire le fichier minifié
+        fs.writeFileSync(path.join(outputDir, file), result.code);
+        console.log(`${file} minifié avec succès.`);
+    });
+}
+minifyFiles("./_includes/js", "./_tmp/js");
 
 
 module.exports = function(eleventyConfig) {
@@ -222,8 +248,8 @@ module.exports = function(eleventyConfig) {
         });
     });
 
-    // Copie le dossier "_includes/js" dans "_site/js"
-    eleventyConfig.addPassthroughCopy({"_includes/js": "js"});
+    // Copie le dossier "_tmp/js" dans "_site/js"
+    eleventyConfig.addPassthroughCopy({"_tmp/js": "js"});
 
     return {
         templateFormats: ["md", "njk", "html", "liquid"],
