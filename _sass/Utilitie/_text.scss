@@ -2,7 +2,10 @@
 @use "../Abstracts/__index" as *;
 
 .text-20 { 
-    font-size: rem(20px)
+    font-size: rem(18px);
+    @include breakpoint(large) {
+        font-size: rem(20px);
+    }
 }
 .text-38 { 
     font-size: rem(28px);
