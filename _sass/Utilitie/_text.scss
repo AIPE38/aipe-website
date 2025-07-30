@@ -1,8 +1,19 @@
 @use "sass:map";
 @use "../Abstracts/__index" as *;
 
-.text-20 { font-size: rem(20px)}
-.text-38 { font-size: rem(38px)}
+.text-20 { 
+    font-size: rem(20px)
+}
+.text-38 { 
+    font-size: rem(28px);
+    line-height: .9;
+    @include breakpoint(large) {
+        font-size: rem(38px);
+    }
+}
+.text-48 { 
+    font-size: rem(48px)
+}
 
 .font-dancing { font-family: 'Dancing Script', cursive}
 .font-hero {    font-family: 'Hero', sans-serif}

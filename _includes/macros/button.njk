@@ -27,8 +27,14 @@
     {% endif %}
 
 
+    {% if icon %}
+        {% set dispositionCSS = "d-if ai-c jc-c" %}
+    {% else %}
+        {% set dispositionCSS = "d-ib" %}
+    {% endif %}
+
     {% if href  %}
-        <a class="button{{variation}}{{variationOutline}} d-if ai-c jc-c" href="{{ href }}" {{ attrs | safe }}>
+        <a class="button{{variation}}{{variationOutline}} {{dispositionCSS}}" href="{{ href }}" {{ attrs | safe }}>
             {% if icon %}
                 <svg aria-hidden="true" focusable="false">
                     <use xlink:href="#{{ icon }}"></use>
@@ -39,7 +45,7 @@
             {% endif %}
         </a>
     {% else %}
-        <button type="button" class="button{{variation}}{{variationOutline}} d-if ai-c jc-c"{{ attributes | safe }}>
+        <button type="button" class="button{{variation}}{{variationOutline}} {{dispositionCSS}}"{{ attributes | safe }}>
             {{ label | safe }}
         </button>
     {% endif %}
