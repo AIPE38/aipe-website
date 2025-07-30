@@ -16,6 +16,7 @@ scriptsJs:
 {% from "macros/intercalaire.njk" import intercalaire as intercalaire %}
 {% from "macros/logo_partenaire.njk" import logo_partenaire as logo_partenaire %}
 {% from "macros/matrix.njk" import matrix as matrix %}
+{% from "macros/stylizeAt.njk" import stylizeAt as stylizeAt %}
 
 
 
@@ -102,7 +103,7 @@ scriptsJs:
                     {{ button(
                         theme="parent",
                         href="mailto:aipe.petite.enfance@gmail.com",
-                        label="aipe.petite.enfance<span class='font-system'>@</span>gmail.com"
+                        label="aipe.petite.enfance@gmail.com"
                     ) }}
                 </li>
             </ul>
@@ -424,7 +425,7 @@ scriptsJs:
                     ] %}
                     {{ matrix(datas=listeMembre) }}
                     <p>
-                        Si vous avez des questions, nous sommes joignables par email <a class="accent" href="mailto:aipe.bureau38@gmail.com">aipe.bureau38@gmail.com</a>
+                        Si vous avez des questions, nous sommes joignables par email <a class="accent" href="mailto:aipe.bureau38@gmail.com">{{ stylizeAt("aipe.bureau38@gmail.com") }}</a>
                     </p>
                 </div>
             </div>

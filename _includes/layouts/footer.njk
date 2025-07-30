@@ -1,5 +1,6 @@
 {% from "macros/button_icon.njk" import button_icon as button_icon %}
 {% from "macros/matrix.njk" import matrix as matrix %}
+{% from "macros/stylizeAt.njk" import stylizeAt as stylizeAt %}
 
 <div class="grid-main pblock-section theme-reverse bg-theme fg-theme">
     <div class="grid-footer">
@@ -13,7 +14,7 @@
         <div class="grid-footer__c-content df fd-c gap">
             <p>90 Rue des Fleurs, 38430 Moirans</p>
             <p><a class="fg-theme" href="tel:0749836207">07 49 83 62 07</a></p>
-            <p><a class="fg-theme" href="mailto:petite.enfance@assoaipe.fr">petite.enfance@assoaipe.fr</a></p>
+            <p><a class="fg-theme" href="mailto:petite.enfance@assoaipe.fr">{{ stylizeAt("petite.enfance@assoaipe.fr") }}</a></p>
             <ul class="reset df gap-8 fw-w">
                 <li>
                     {{ button_icon(href="https://www.facebook.com/aiperam",label="Parent theme", icon="facebook", theme="parent") }}

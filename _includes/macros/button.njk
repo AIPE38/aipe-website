@@ -41,7 +41,7 @@
                 </svg>
                 <span>{{ label | safe }}</span>
             {% else %}
-                {{ label | safe }}
+                {{ label | replace('@', '<span class="font-system">@</span>') | safe }}
             {% endif %}
         </a>
     {% else %}

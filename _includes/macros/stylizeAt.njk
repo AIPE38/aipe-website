@@ -1,0 +1,3 @@
+{% macro stylizeAt(str) %}
+  {{ str | replace('@', '<span class="font-system">@</span>') | safe }}
+{% endmacro %}
