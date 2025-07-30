@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.site {
+    min-height: 100dvh;
+}

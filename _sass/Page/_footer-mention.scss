@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+
+.footer-mention {
+    padding-bottom: rem(20px);
+}
+
+.footer-mention a {
+    text-decoration: none;
+}
+
+.footer-mention a:hover {
+    text-decoration: underline;
+}

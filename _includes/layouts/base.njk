@@ -1,12 +1,14 @@
+{% from "macros/button.njk" import button as button %}
+
 <!DOCTYPE html>
 <html lang="fr">
 
     {% include "layouts/head.njk" %}
 
-    <body class="base grid-main v_body">
+    <body class="site grid-main v_body">
 
-        <nav role="navigation" aria-label="Accès rapide">
-            <a class="lien-evitement" href="#contenu">
+        <nav class="grid-main__item-full grid-main evitement theme-reverse bg-theme fg-theme pblock-section df jc-c" role="navigation" aria-label="Accès rapide">
+            <a class="fg-theme" href="#contenu">
                 Aller au contenu
             </a>
         </nav>
@@ -19,7 +21,7 @@
             {{ content | safe }}
         </main>
 
-        <footer id="footer" class="test" role="contentinfo">
+        <footer id="footer" class="grid-main__item-full" role="contentinfo">
             {% include "layouts/footer.njk" %}
         </footer>
 

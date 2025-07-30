@@ -84,6 +84,10 @@ a:not([class]):focus {
     color: var(--c-fg-secondary);
 }
 
+a.accent {
+    color: var(--c-theme-accent);
+}
+
 button.reset {
     background: transparent;
     border: none;
@@ -109,7 +113,7 @@ ul.reset {
 }
 
 *:focus-visible {
-    outline: 2px solid var(--c-theme-accent);
+    outline: 2px solid var(--c-outline);
     outline-offset: var(--focus-visible-offset, rem(8px));
     border-radius: var(--focus-visible-radius, rem(40px));
 }

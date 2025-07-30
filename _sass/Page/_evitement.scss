@@ -1,10 +1,10 @@
-.lien-evitement {
-    position:absolute;
-    left:-99999rem;
-    padding:1rem;
-    background-color: var(--c-bg-default);
+.evitement {
+    left:-9999rem;
+    position:absolute
 }
-.lien-evitement:focus {
-    position:absolute;
-    left:0
+
+.evitement:focus-within {
+    position:static;
+    left: unset;
+    text-align: center;
 }

@@ -48,7 +48,7 @@ scriptsJs:
 <div class="grid-main__item-full vague v_haut bg-primary"></div>
 <div class="grid-main__item-full grid-main bg-primary pblock-section">
     <div class="df fd-c gap-20">
-        <h2>Qui sommes nous ?</h2>
+        <h2>Qui sommes nous&nbsp;?</h2>
         <p class="text-20">
             L’AIPE, Association Intercommunale pour la petite enfance est gérée par des parents&nbsp;<br class="show-for-large">bénévoles qui développe des activités autour de la petite enfance à travers le RPE et la commission Acti’Bébé. 
         </p>
@@ -349,7 +349,7 @@ scriptsJs:
         <div class="grid-ping-pong__visuel">
             <div class="cadre df fd-c gap-8">
                 image
-                <p class="text-20">Une question, un besoin ou une envie de collaborer ? </p>
+                <p class="text-20">Une question, un besoin ou une envie de collaborer&nbsp;? </p>
                 <p class="mb">
                     {{ button(
                         theme="pro",
@@ -372,14 +372,14 @@ scriptsJs:
             <p>Elles sont cinq salariées, à temps partiel, à faire tourner l’association au quotidien</p>
             <p>image</p>
             {% set listeSalaries = [
-                { poste: "Coordinatrice", nom: "Nathalie Deroo", tel: "07 49 83 62 07" },
-                { poste: "Animatrice", nom: "Aude Foucault", tel: "06 49 75 45 33" },
-                { poste: "Animatrice", nom: "Marie Laisne", tel: "06 50 89 74 70" },
-                { poste: "Animatrice", nom: "Sabine Ponti", tel: "06 58 27 62 36" },
-                { poste: "Comptable", nom: "Cécile Susptitz", tel: "07 49 83 62 07" }
+                { col1: "Coordinatrice", col2: "Nathalie Deroo", col3: "07 49 83 62 07" },
+                { col1: "Animatrice", col2: "Aude Foucault", col3: "06 49 75 45 33" },
+                { col1: "Animatrice", col2: "Marie Laisne", col3: "06 50 89 74 70" },
+                { col1: "Animatrice", col2: "Sabine Ponti", col3: "06 58 27 62 36" },
+                { col1: "Comptable", col2: "Cécile Susptitz", col3: "07 49 83 62 07" }
             ] %}
             {{ matrix(datas=listeSalaries) }}
-            <p>Nous serons ravis d’échanger avec vous !</p>
+            <p>Nous serons ravis d’échanger avec vous&nbsp;!</p>
         </div>
     </div>
 
@@ -390,15 +390,15 @@ scriptsJs:
         <p>Une association ne peut fonctionner <strong>sans l’engagement de ses bénévoles</strong>. Les membres du bureau, qui en sont aussi les employeurs bénévoles, jouent un <strong>rôle essentiel</strong> dans son bon fonctionnement..</p>
         <div class="pblock-section df fd-c fd-cr--large">
             <div class="cadre theme-parent grid-aider">
-                <h4 class="h4 grid-aider__titre">Envie de donner un coup de main ?</h4>
+                <h4 class="h4 grid-aider__titre">Envie de donner un coup de main&nbsp;?</h4>
                 <div class="grid-aider__visuel">
                     image
                 </div>
                 <div class="grid-aider__intro df fd-c gap">
                     <p>Les postes de présidente et trésorière sont pourvus pour 2025, mais de <strong>nombreuses façons de s’impliquer</strong> dans l’association restent possibles.</p>
                     <div>
-                        <p>Envie de rejoindre notre association ou de mieux connaître les rôles du bureau ?</p>
-                        <p><a href="/nous-rejoindre/">Découvrez toutes les infos sur le bénévolat à l’AIPE</a></p>
+                        <p>Envie de rejoindre notre association ou de mieux connaître les rôles du bureau&nbsp;?</p>
+                        <p><a class="accent" href="/nous-rejoindre/">Découvrez toutes les infos sur le bénévolat à l’AIPE</a></p>
                     </div>
                 </div>
                 <p class="grid-aider__lien">
@@ -418,13 +418,13 @@ scriptsJs:
                 <div class="grid-ping-pong__contenu df fd-c gap-20">
                     <p><strong>Le bureau est renouvelé chaque année</strong> lors de l’assemblée générale, mais les membres peuvent bien sûr s’investir sur plusieurs années.</p>
                     {% set listeMembre = [
-                        { poste: "Présidente", nom: "Lucille Esnault" },
-                        { poste: "Trésorière", nom: "Julie Brunel" },
-                        { poste: "Secrétaire", nom: "Marie Schmi"}
+                        { col1: "Présidente", col2: "Lucille Esnault" },
+                        { col1: "Trésorière", col2: "Julie Brunel" },
+                        { col1: "Secrétaire", col2: "Marie Schmi"}
                     ] %}
                     {{ matrix(datas=listeMembre) }}
                     <p>
-                        Si vous avez des questions, nous sommes joignables par email <a href="mailto:aipe.bureau38@gmail.com">aipe.bureau38@gmail.com</a>
+                        Si vous avez des questions, nous sommes joignables par email <a class="accent" href="mailto:aipe.bureau38@gmail.com">aipe.bureau38@gmail.com</a>
                     </p>
                 </div>
             </div>

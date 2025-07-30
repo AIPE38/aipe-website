@@ -1,28 +1,50 @@
-<hr>
-<ul>
-    <li><a href="/mention-legales">Mentions légales</a></li>
-    <li><a href="/mention-legales#accessibilite">Accessibilité : en attente</a></li>
-    <li><a href="/plan-du-site">Plan du site</a></li>
-    <li>Réseaux sociaux
-        <ul>
-            <li>Facebook ?</li>
-            <li>autre ?</li>
-        </ul>
-    </li>
-    <li>
-        <a href="mailto:petite.enfance@assoaipe.fr">petite.enfance@assoaipe.fr</a>
-    </li>
-    <li>
-        Maison de la Petite Enfance, 90 Rue des Fleurs, 38430 Moirans <br>
-        <a href="tel:0749836207">07 49 83 62 07</a>
-        <ul>
-            <li>lundi 09h00 à 17h00</li>
-            <li>mardi 09h00 à 17h00</li>
-            <li>mercredi Fermé</li>
-            <li>jeudi 09h00 à 17h00</li>
-            <li>vendredi 09h00 à 17h00</li>
-            <li>samedi Fermé</li>
-            <li>dimanche Fermé</li>
-        </ul>
-    </li>
-</ul>
+{% from "macros/button_icon.njk" import button_icon as button_icon %}
+{% from "macros/matrix.njk" import matrix as matrix %}
+
+<div class="grid-main pblock-section theme-reverse bg-theme fg-theme">
+    <div class="grid-footer">
+        <div class="grid-footer__logo">
+            <img src="/media/image/aipe-logo.svg" alt="AIPE Petite Enfance" width="160">
+        </div>
+        <p clas="footer__intro">Venez visiter la Maison de la Petite Enfance pour découvrir nos salles, rencontrer nos membres et en savoir plus sur ce que nous proposons et comment nous pouvons vous accompagner</p>
+        <div class="grid-footer__c-head">
+            <h2>Nous contactez</h2>
+        </div>
+        <div class="grid-footer__c-content df fd-c gap">
+            <p>90 Rue des Fleurs, 38430 Moirans</p>
+            <p><a class="fg-theme" href="tel:0749836207">07 49 83 62 07</a></p>
+            <p><a class="fg-theme" href="mailto:petite.enfance@assoaipe.fr">petite.enfance@assoaipe.fr</a></p>
+            <ul class="reset df gap-8 fw-w">
+                <li>
+                    {{ button_icon(href="https://www.facebook.com/aiperam",label="Parent theme", icon="facebook", theme="parent") }}
+                </li>
+                <li>
+                    {{ button_icon(href="https://www.instagram.com/aipe.38",label="Parent theme", icon="instagram", theme="enfant") }}
+                </li>
+            </ul>
+        </div>
+        <div class="grid-footer__h-head">
+            <h3 class="h2">Horaires d’ouverture</h3>
+        </div>
+        <div class="grid-footer__h-content">
+            {% set listeHoraire = [
+                { col1: "lundi", col2: "09h00 à 17h00" },
+                { col1: "mardi", col2: "09h00 à 17h00" },
+                { col1: "mercredi", col2: "Fermé" },
+                { col1: "jeudi", col2: "09h00 à 17h00" },
+                { col1: "vendredi", col2: "09h00 à 17h00" },
+                { col1: "samedi", col2: "Fermé" },
+                { col1: "dimanche", col2: "Fermé" }
+            ] %}
+            {{ matrix(datas=listeHoraire) }}
+        </div>
+    </div>
+</div>
+<div class="grid-main__item-full vague v_bas bg-theme theme-footer"></div>
+<div class="grid-main footer-mention">
+    <ul class="reset df fd-c--md jc-c gap-8 col-gap-60--medium">
+        <li><a class="accent" href="/mention-legales">Mentions légales</a></li>
+        <li><a class="accent" href="/mention-legales#accessibilite">Accessibilité : en attente</a></li>
+        <li><a class="accent" href="/plan-du-site">Plan du site</a></li>
+    </ul>
+</div>

@@ -1,17 +1,24 @@
 {% macro matrix(datas) %}
+
+    {% set hasCol3 = false %}
+    {% for item in datas %}
+        {% if item.col3 %}
+            {% set hasCol3 = true %}
+        {% endif %}
+    {% endfor %}
+
     <div class="matrix">
-        <div class="grid-matrix">
+        <div class="grid-matrix{% if hasCol3 %} v_3col{% else %} v_2col{% endif %}">
             {% for item in datas %}
-                <p class="grid-matrix__poste">{{ item.poste }}</p>
-                <p class="grid-matrix__nom">{{ item.nom }}</p>
-                {% if item.tel %}
-                    <p class="grid-matrix__tel">
-                        <a href="tel:{{ item.tel | replace(' ','') }}">{{ item.tel }}</a>
+                <p class="grid-matrix__col1">{{ item.col1 }}</p>
+                <p class="grid-matrix__col2">{{ item.col2 }}</p>
+                {% if item.col3 %}
+                    <p class="grid-matrix__col3">
+                        <a href="tel:{{ item.col3 | replace(' ','') }}">{{ item.col3 }}</a>
                     </p>
-                {% else %}
-                    <div class="grid-matrix__tel"></div>
                 {% endif %}
             {% endfor %}
         </div>
     </div>
+
 {% endmacro %}

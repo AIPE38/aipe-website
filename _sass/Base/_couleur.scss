@@ -10,23 +10,20 @@
     --c-aipe-gris:    rgb(74 74 74);    //#4A4A4A;
 
     /*--------------------------------------------------------------------*/
-    /* Déclinaisons de couleurs pour un contraste A11y optimal            */
+    /* Couleurs web avec un contraste A11y sufisant                       */
     /*--------------------------------------------------------------------*/
-    //$fg-jaune:   #9B6600;
-    //$fg-corail:  #B45151;
-    //$fg-marron:  #AE5549;
-    --c-fg-dark:      rgb(23 23 23);    //#171717  // bien constraster sur jaune, corail, marron, bleu
+    --c-fg-dark:      rgb(23 23 23);    //#171717  // optimiser pour les fond aipe jaune, corail, marron et bleu
     --c-fg-gris:      rgb(54 63 63);    //#403F3F; // ok sur aipe
     --c-fg-bleu:      rgb(25 67  98);   //#194362; // ok sur aipe
     --c-fg-accent:    rgb(43 117 172);  //#2B75AC; // ok sur aipe-blanc
-
+    --c-blanc:        rgb(255 255 255); 
 
     /*--------------------------------------------------------------------*/
     /* Theme                                                              */
     /*--------------------------------------------------------------------*/
     --c-bg-default:   var(--c-aipe-blanc);
-    --c-bg-primary:   rgb(255 255 255);
-    --c-bg-secondary:   var( --c-fg-gris);
+    --c-bg-primary:   var(--c-blanc);
+    --c-bg-secondary: var( --c-fg-gris);
 
     --c-theme-pro:    var(--c-aipe-jaune);
     --c-theme-enfant: var(--c-aipe-corail);
@@ -37,6 +34,8 @@
 
     --c-fg-primary:   var(--c-fg-gris);
     --c-fg-secondary: var(--c-fg-bleu);
+
+    --c-outline:      var(--c-theme-accent);
 }
 
 .theme-neutre {
@@ -61,4 +60,11 @@
     --theme-border: var(--c-theme-pro);
     --theme-bg: var(--c-theme-pro);
     --theme-fg: var(--c-theme-fg);
+}
+
+.theme-reverse {
+    --theme-border: var(--c-blanc);
+    --theme-bg: var(--c-theme-accent);
+    --theme-fg: var(--c-blanc);
+    --c-outline: var(--c-blanc);
 }

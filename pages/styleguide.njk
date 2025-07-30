@@ -7,6 +7,7 @@ nofollow: true
 ---
 {% from "macros/button_icon.njk" import button_icon as button_icon %}
 {% from "macros/button.njk" import button as button %}
+{% from "macros/matrix.njk" import matrix as matrix %}
 
 <h1>Styleguide</h1>
 
@@ -26,66 +27,72 @@ nofollow: true
         padding-top:.5rem;
         padding-left:.5rem;
         margin-top: 1rem;
-        margin-bottom: 0;
+        margin-bottom: 1rem;
     }
 </style>
 
 
 <h2 class="styleguide-h2">Texte et paragraphe</h2>
 
-<h3 class="styleguide-h3">Heading</h3>
-<h1>Heading h1</h1>
-<h2>Heading h2</h2>
-<h3>Heading h3</h3>
-<h4>Heading h4</h4>
-<h5>Heading h5</h5>
-
-<h3 class="styleguide-h3">Liste</h3>
-<ul class="reset df gap">
-    <li>
-        <ul>
-            <li>liste<br>saut de ligne</li>
-            <li>non</li>
-            <li>ordonnée</li>
-        </ul>
-    </li>
-    <li class="theme-parent">
-        <ul>
-            <li>liste<br>saut de ligne</li>
-            <li>non</li>
-            <li>ordonnée</li>
-        </ul>
-    </li>
-    <li class="theme-enfant">
-        <ul>
-            <li>liste<br>saut de ligne</li>
-            <li>non</li>
-            <li>ordonnée</li>
-        </ul>
-    </li>
-    <li class="theme-pro">
-        <ul>
-            <li>liste<br>saut de ligne</li>
-            <li>non</li>
-            <li>ordonnée</li>
-        </ul>
-    </li>
-</ul>
-
-<h3 class="styleguide-h3">Paragraphe</h3>
-<div class="has-dancing">
-    <p>Paragraphe défaut : Lorem ipsum <strong>dolor sit</strong> amet, <a href="#">lien dans paragraphe</a> dolor <span class="surligne theme-neutre">neutre</span> adipisicing <span class="surligne theme-parent">parent</span> elit  <span class="surligne theme-enfant">enfant</span> sequi <span class="surligne theme-pro">pro</span> ratione.</p>
+<div class="pblock-section">
+    <h3 class="styleguide-h3">Heading</h3>
+    <h1>Heading h1</h1>
+    <h2>Heading h2</h2>
+    <h3>Heading h3</h3>
+    <h4>Heading h4</h4>
+    <h5>Heading h5</h5>
 </div>
 
-<div class="text-20 has-dancing">
-    <p>Paragraphe 20 : Lorem ipsum <strong>dolor sit</strong> amet, <a href="#">lien dans paragraphe</a> dolor <span class="surligne theme-neutre">neutre</span> adipisicing <span class="surligne theme-parent">parent</span> elit  <span class="surligne theme-enfant">enfant</span> sequi <span class="surligne theme-pro">pro</span> ratione.</p>
+<div class="pblock-section">
+    <h3 class="styleguide-h3">Liste</h3>
+    <ul class="reset df gap">
+        <li>
+            <ul>
+                <li>liste<br>saut de ligne</li>
+                <li>non</li>
+                <li>ordonnée</li>
+            </ul>
+        </li>
+        <li class="theme-parent">
+            <ul>
+                <li>liste<br>saut de ligne</li>
+                <li>non</li>
+                <li>ordonnée</li>
+            </ul>
+        </li>
+        <li class="theme-enfant">
+            <ul>
+                <li>liste<br>saut de ligne</li>
+                <li>non</li>
+                <li>ordonnée</li>
+            </ul>
+        </li>
+        <li class="theme-pro">
+            <ul>
+                <li>liste<br>saut de ligne</li>
+                <li>non</li>
+                <li>ordonnée</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="pblock-section">
+    <h3 class="styleguide-h3">Paragraphe</h3>
+    <div class="df gap">
+        <div class="has-dancing">
+            <p>Paragraphe défaut :<br>Lorem ipsum <strong>dolor sit</strong> amet, <a href="#">lien dans paragraphe</a>, <a class="accent" href="#">lien accent</a> dolor <span class="surligne theme-neutre">neutre</span> adipisicing <span class="surligne theme-parent">parent</span> elit  <span class="surligne theme-enfant">enfant</span> sequi <span class="surligne theme-pro">pro</span> ratione.</p>
+        </div>
+        <div class="text-20 has-dancing">
+            <p>Paragraphe 20 :<br>Lorem ipsum <strong>dolor sit</strong> amet, <a href="#">lien dans paragraphe</a>, <a class="accent" href="#">lien accent</a> dolor <span class="surligne theme-neutre">neutre</span> adipisicing <span class="surligne theme-parent">parent</span> elit  <span class="surligne theme-enfant">enfant</span> sequi <span class="surligne theme-pro">pro</span> ratione.</p>
+        </div>
+    </div>
 </div>
 
 
 <h2 class="styleguide-h2">Lien et Bouton</h2>
 
-<div class="df fd-c gap">
-
+<div class="pblock-section">
     <h3 class="styleguide-h3">Lien de paragraphe</h3>
     <ul class="reset df gap">
         <li>
@@ -95,7 +102,9 @@ nofollow: true
             <a href="#" rel="external">lien external</a>
         </li>
     </ul>
+</div>
 
+<div class="pblock-section">
     <h3 class="styleguide-h3">button icon</h3>
     <ul class="reset df gap">
         <li>
@@ -111,7 +120,9 @@ nofollow: true
             {{ button_icon(href="/",label="Default", icon="sun", theme="pro") }}
         </li>
     </ul>
+</div>
 
+<div class="pblock-section">
     <h3 class="styleguide-h3">button</h3>
     <ul class="reset df  fd-c gap">
         <li>
@@ -150,7 +161,9 @@ nofollow: true
             ) }}
         </li>
     </ul>
+</div>
 
+<div class="pblock-section">
     <h3 class="styleguide-h3">button outline</h3>
     <ul class="reset df  fd-c gap">
         <li>
@@ -203,27 +216,63 @@ nofollow: true
     </ul>
 </div>
 
+
 <h2 class="styleguide-h2">Cadre</h2>
 
-<ul class="reset df  gap">
-    <li>
-        <div class="cadre">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+<div class="pblock-section">
+    <h3 class="styleguide-h3">Cadre</h3>
+    <ul class="reset df  gap">
+        <li>
+            <div class="cadre">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li class="theme-parent">
+            <div class="cadre">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li class="theme-enfant">
+            <div class="cadre">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+        <li class="theme-pro">
+            <div class="cadre">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="pblock-section">
+    <h3 class="styleguide-h3">Matrix</h3>
+        {% set demoMatrix2col = [
+            { col1: "col1", col2: "col2" },
+            { col1: "col1", col2: "col2" },
+            { col1: "col1", col2: "col2" }
+        ] %}
+        {% set demoMatrix3col = [
+            { col1: "col1", col2: "col2", col3: "col3" },
+            { col1: "col1", col2: "col2", col3: "col3" },
+            { col1: "col1", col2: "col2", col3: "col3" }
+        ] %}
+    <div class="reset df gap">
+        <div class="theme-neutre">
+            {{ matrix(datas=demoMatrix2col) }}
         </div>
-    </li>
-    <li class="theme-parent">
-        <div class="cadre">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="theme-parent">
+            {{ matrix(datas=demoMatrix3col) }}
         </div>
-    </li>
-    <li class="theme-enfant">
-        <div class="cadre">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="theme-enfant">
+            {{ matrix(datas=demoMatrix2col) }}
         </div>
-    </li>
-    <li class="theme-pro">
-        <div class="cadre">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="theme-pro">
+            {{ matrix(datas=demoMatrix2col) }}
         </div>
-    </li>
-</ul>
+        <div class="theme-reverse bg-theme fg-theme">
+            {{ matrix(datas=demoMatrix2col) }}
+        </div>
+        
+    </div>
+</div>

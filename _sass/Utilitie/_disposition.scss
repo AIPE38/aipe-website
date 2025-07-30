@@ -13,6 +13,11 @@
 .fd-c {
     flex-direction: column;
 }
+@include breakpoint("mediumDown") {
+    .fd-c--md {
+        flex-direction: column;
+    }
+}
 @include breakpoint("large") {
     .fd-cr--large {
         flex-direction: column-reverse;

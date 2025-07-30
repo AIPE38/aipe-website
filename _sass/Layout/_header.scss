@@ -13,8 +13,10 @@
     justify-content: center;
 
     background-color: var(--c-bg-default);
+    padding-top: rem(10px);
 
     @include breakpoint(large) {
+        padding-top: rem(20px);
         grid-template-areas: 
         "logo menu social";
     }

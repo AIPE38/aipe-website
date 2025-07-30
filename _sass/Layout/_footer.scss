@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: rem(20px);
+
+    @include breakpoint(large) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "logo chead hhead"
+            "intro ccontent hcontent";
+        gap: rem(40px) rem(60px);
+    }
+
+}
+
+@include breakpoint(large) {
+    .grid-footer__logo {        grid-area: logo}
+    .grid-footer__intro {       grid-area: intro}
+    .grid-footer__c-head {      grid-area: chead}
+    .grid-footer__c-content {   grid-area: ccontent}
+    .grid-footer__h-head {      grid-area: hhead}
+    .grid-footer__h-content {   grid-area: hcontent}
+
+    .grid-footer__c-head,
+    .grid-footer__h-head {
+        align-self: flex-end;
+    }
+}
+
+.grid-footer a {
+    text-decoration: none;
+}
+
+.grid-footer a:hover {
+    text-decoration: underline;
+}
+
+.grid-footer .button-icon svg {
+  fill: var(--c-fg-secondary);
+}

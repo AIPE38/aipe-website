@@ -1,7 +1,0 @@
-@use "sass:map";
-@use "../Abstracts/__index" as *;
-
-.matrix {
-    border: rem(1px) solid var(--c-theme-neutre);
-    border-radius: rem(20px);
-}
