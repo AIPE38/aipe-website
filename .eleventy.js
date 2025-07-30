@@ -214,8 +214,13 @@ module.exports = function(eleventyConfig) {
     // Copie le dossier "media/favicon" dans "_site/media/favicon"
     eleventyConfig.addPassthroughCopy({"media/favicon": "media/favicon"});
 
-    // Copie le dossier "media/font" dans "_site/media/fonts"
-    eleventyConfig.addPassthroughCopy({"media/font": "media/font"});
+    // Copie le contenu du dossier "media/font" à la racine de "_site" (opti perf)
+    const fontFiles = fs.readdirSync("media/font");
+    fontFiles.forEach(file => {
+        eleventyConfig.addPassthroughCopy({
+            [`media/font/${file}`]: file
+        });
+    });
 
     return {
         templateFormats: ["md", "njk", "html", "liquid"],
