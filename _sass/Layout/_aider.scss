@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.grid-aider {
+        display: grid;
+        gap: rem(20px);
+
+    @include breakpoint(large) {
+        grid-template-columns: 1fr rem(125px) rem(366px);
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "titre titre visuel"
+            "intro intro visuel"
+            "lien accorche accorche"
+        ;
+        align-items: center;
+    }
+}
+
+@include breakpoint(large) {
+    .grid-aider__titre {    grid-area: titre;}
+    .grid-aider__visuel {   grid-area: visuel;}
+    .grid-aider__intro {    grid-area: intro;}
+    .grid-aider__lien {     grid-area: lien;}
+    .grid-aider__accroche { grid-area: accorche;}
+}

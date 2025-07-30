@@ -1,0 +1,17 @@
+{% macro matrix(datas) %}
+    <div class="matrix">
+        <div class="grid-matrix">
+            {% for item in datas %}
+                <p class="grid-matrix__poste">{{ item.poste }}</p>
+                <p class="grid-matrix__nom">{{ item.nom }}</p>
+                {% if item.tel %}
+                    <p class="grid-matrix__tel">
+                        <a href="tel:{{ item.tel | replace(' ','') }}">{{ item.tel }}</a>
+                    </p>
+                {% else %}
+                    <div class="grid-matrix__tel"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

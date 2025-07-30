@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.grid-matrix {
+    display: grid;
+    grid-template-columns: max-content 1fr auto;
+}
+
+.grid-matrix__poste,
+.grid-matrix__nom,
+.grid-matrix__tel {
+    border-top: rem(1px) solid var(--c-theme-neutre);
+    padding: rem(8px) rem(16px);
+}
+
+.grid-matrix [class^="grid-matrix__"]:nth-child(-n+3) {
+    border-color: transparent;
+}
+
+.grid-matrix__poste {
+    font-weight: 700;
+}

@@ -15,6 +15,7 @@ scriptsJs:
 {% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
 {% from "macros/intercalaire.njk" import intercalaire as intercalaire %}
 {% from "macros/logo_partenaire.njk" import logo_partenaire as logo_partenaire %}
+{% from "macros/matrix.njk" import matrix as matrix %}
 
 
 
@@ -344,7 +345,7 @@ scriptsJs:
     <p class="mb">Qu’ils soient professionnels de la petite enfance ou parents bénévoles, les membres actifs de l’association s’engagent pleinement pour faire vivre le projet associatif.</p>
 
     <div class="grid-ping ai-c pblock-section theme-pro">
-        <h4 class="h4 grid-ping-pong__titre">Professionnels</h4>
+        <h3 class="h3 grid-ping-pong__titre">Professionnels</h3>
         <div class="grid-ping-pong__visuel">
             <div class="cadre df fd-c gap-8">
                 image
@@ -370,13 +371,14 @@ scriptsJs:
         <div class="grid-ping-pong__contenu df fd-c gap-20">
             <p>Elles sont cinq salariées, à temps partiel, à faire tourner l’association au quotidien</p>
             <p>image</p>
-            <ul class='reset'>
-                <li>Coordinatrice : Nathalie Deroo, 07-49-83-62-07</li>
-                <li>Animatrice : Aude Foucault, 06-49-75-45-33</li>
-                <li>Animatrice : Marie Laisne, 06-50-89-74-70</li>
-                <li>Animatrice : Sabine Ponti, 06-58-27-62-36</li>
-                <li>Comptable : Cécile Susptitz,07-49-83-62-07</li>
-            </ul>
+            {% set listeSalaries = [
+                { poste: "Coordinatrice", nom: "Nathalie Deroo", tel: "07 49 83 62 07" },
+                { poste: "Animatrice", nom: "Aude Foucault", tel: "06 49 75 45 33" },
+                { poste: "Animatrice", nom: "Marie Laisne", tel: "06 50 89 74 70" },
+                { poste: "Animatrice", nom: "Sabine Ponti", tel: "06 58 27 62 36" },
+                { poste: "Comptable", nom: "Cécile Susptitz", tel: "07 49 83 62 07" }
+            ] %}
+            {{ matrix(datas=listeSalaries) }}
             <p>Nous serons ravis d’échanger avec vous !</p>
         </div>
     </div>
@@ -384,17 +386,29 @@ scriptsJs:
 
 
     <div class="pblock-section">
-        <h4 class="h4">Bénévoles</h4>
+        <h3>Bénévoles</h3>
         <p>Une association ne peut fonctionner <strong>sans l’engagement de ses bénévoles</strong>. Les membres du bureau, qui en sont aussi les employeurs bénévoles, jouent un <strong>rôle essentiel</strong> dans son bon fonctionnement..</p>
         <div class="pblock-section df fd-c fd-cr--large">
-            <div class="cadre theme-parent">
-                <h4>Envie de donner un coup de main ?</h4>
-                <p>Les postes de présidente et trésorière sont pourvus pour 2025, mais de <strong>nombreuses façons de s’impliquer</strong> dans l’association restent possibles.</p>
-                <p>Envie de rejoindre notre association ou de mieux connaître les rôles du bureau ?
-        Découvrez toutes les infos sur le bénévolat à l’AIPE</p>
-                <p>aipe.petite.enfance@gmail.com</p>
-                image
-                <p>Si vous êtes intéressé·e, n’hésitez pas à nous le faire savoir </p>
+            <div class="cadre theme-parent grid-aider">
+                <h4 class="h4 grid-aider__titre">Envie de donner un coup de main ?</h4>
+                <div class="grid-aider__visuel">
+                    image
+                </div>
+                <div class="grid-aider__intro df fd-c gap">
+                    <p>Les postes de présidente et trésorière sont pourvus pour 2025, mais de <strong>nombreuses façons de s’impliquer</strong> dans l’association restent possibles.</p>
+                    <div>
+                        <p>Envie de rejoindre notre association ou de mieux connaître les rôles du bureau ?</p>
+                        <p><a href="/nous-rejoindre/">Découvrez toutes les infos sur le bénévolat à l’AIPE</a></p>
+                    </div>
+                </div>
+                <p class="grid-aider__lien">
+                    {{ button(
+                        theme="parent",
+                        href="mailto:aipe.petite.enfance@gmail.com",
+                        label="aipe.petite.enfance@gmail.com"
+                    ) }}
+                </p>
+                <p class="grid-aider__accroche text-20">Si vous êtes intéressé·e,&nbsp;<br>n’hésitez pas à nous le faire savoir </p>
             </div>
             <div class="grid-pong ai-c pblock-section theme-parent">
 
@@ -403,11 +417,14 @@ scriptsJs:
                 </div>
                 <div class="grid-ping-pong__contenu df fd-c gap-20">
                     <p><strong>Le bureau est renouvelé chaque année</strong> lors de l’assemblée générale, mais les membres peuvent bien sûr s’investir sur plusieurs années.</p>
-                    Présidente : Lucille Esnault
-                    Trésorière : Julie Brunel
-                    Secrétaire : Marie Schmi
+                    {% set listeMembre = [
+                        { poste: "Présidente", nom: "Lucille Esnault" },
+                        { poste: "Trésorière", nom: "Julie Brunel" },
+                        { poste: "Secrétaire", nom: "Marie Schmi"}
+                    ] %}
+                    {{ matrix(datas=listeMembre) }}
                     <p>
-                        Si vous avez des questions, nous sommes joignables par email aipe.bureau38@gmail.com
+                        Si vous avez des questions, nous sommes joignables par email <a href="mailto:aipe.bureau38@gmail.com">aipe.bureau38@gmail.com</a>
                     </p>
                 </div>
             </div>
