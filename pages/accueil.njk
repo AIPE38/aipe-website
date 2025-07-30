@@ -49,7 +49,7 @@ scriptsJs:
     <div class="df fd-c gap-20">
         <h2>Qui sommes nous ?</h2>
         <p class="text-20">
-            L’AIPE, Association Intercommunale pour la petite enfance est gérée par des parents&nbsp;<br class="show-for-large">bénévoles qui développe des activités autour de la petite enfance
+            L’AIPE, Association Intercommunale pour la petite enfance est gérée par des parents&nbsp;<br class="show-for-large">bénévoles qui développe des activités autour de la petite enfance à travers le RPE et la commission Acti’Bébé. 
         </p>
         <h3 class="show-for-sr">Nos objectifs</h3>
         <div class="ct-inline">
@@ -61,10 +61,10 @@ scriptsJs:
                     <p>Encourager la&nbsp;<br><strong class="surligne">formation</strong> des&nbsp;<br>parents et des professionnels</p>
                 </li>
                 <li class="text-20 grid-objectif__garde theme-neutre">
-                    <p>Développer les&nbsp;<br><strong class="surligne">différents</strong> modes&nbsp;<br class="persite"> de <strong class="surligne">gardes</strong>&nbsp;<br>d’enfants</p>
+                    <p>Informer sur les&nbsp;<br><strong class="surligne">différents</strong> modes&nbsp;<br class="persite"> de <strong class="surligne">gardes</strong>&nbsp;<br>d’enfants</p>
                 </li>
                 <li class="text-20 grid-objectif__accompagner theme-parent">
-                <p><strong class="surligne">Accompagner</strong>&nbsp;<br>la fonction <strong class="surligne">parentale</strong></p>
+                <p><strong class="surligne">Accompagner</strong>&nbsp;<br>le rôle&nbsp;<br><strong class="surligne">de parent</strong></p>
                 </li>
             </ul>
         </div>
@@ -84,8 +84,8 @@ scriptsJs:
         imageHorizontal="/media/image/accueil/rpe-parent-horizontal.png"
     ) %}
         <ul class="df fd-c gap">
-            <li>La recherche d’un mode de garde</li>
-            <li>Un soutien pour l’élaboration d’un contrat de travail</li>
+            <li>La recherche d’un mode d’accueil</li>
+            <li>Un accompagnement pour l’élaboration et la gestion d’un contrat de travail</li>
         </ul>
         <div class="cadre df fd-c gap">
             <p>Une <strong>permanence administrative</strong> est assurée&nbsp;<br class="show-for-large">par un professionnel</p>
@@ -105,6 +105,7 @@ scriptsJs:
                     ) }}
                 </li>
             </ul>
+            <p><a href="/rpe/">Consulter les horaires des permanences</a></p>
         </div>
     {% endcall  %}
 
@@ -130,7 +131,7 @@ scriptsJs:
     ) %}
         <ul class="df fd-c gap">
             <li>Des sorties, découvertes, spectacles, tout au long de l’année (Fête de Noël, carnaval, sortie de fin d’année).</li>
-            <li>Des soirées débat destinées aux parents et assistantes maternelles sur les thèmes de la petite enfance.</li>
+            <li>Des conférences-débats destinées aux parents et assistantes maternelles sur les thèmes de la petite enfance.</li>
         </ul>
     {% endcall  %}
 
@@ -148,7 +149,7 @@ scriptsJs:
 
  <div class="pblock-section"></div>   
     <h3><span class="font-hero">L’Acti'Bébé</span> Commission Animation Formation</h3>
-    <p>Des parents bénévoles et des professionnels de la petite enfance se  réunissent toutes les 6 semaines pour réfléchir sur des projets autour  de la petite enfance</p>
+    <p>Afin de proposer des ateliers aux enfants et aux familles, des parents bénévoles et des professionnelles se réunissent régulièrement pour réfléchir sur des projets autour de la petite enfance.</p>
 
     {% call ping_pong(
         type="pong",
@@ -159,7 +160,7 @@ scriptsJs:
     ) %}
         <ul class="df fd-c gap">
             <li><strong>Massage bébé</strong> : découverte du massage guidée par des professionnels de la petite enfance</li>
-            <li><strong>Motricité </strong>: de 1 à 2 ans, découverte sensorielle dans un espace aménagé</li>
+            <li><strong>Motricité </strong>: découverte de son corps dans un espace aménagé</li>
             <li><strong>Communication gestuelle</strong> : initiation à la langue des signes bébé pour mieux comprendre ses besoins avant les premiers mots</li>
             <li><strong>Secourisme parent-enfant</strong> gestes de premiers secours adaptés aux tout-petits</li>
             <li><strong>Spectacles</strong> à destination du très jeune public</li>
@@ -168,13 +169,14 @@ scriptsJs:
 
     {% call ping_pong(
         theme="parent",
-        titre="Des soirées à thèmes & Location",  
+        titre="Des soirées à thèmes et de la location",  
         imageVertical="",
         imageHorizontal=""
     ) %}
         <ul class="df fd-c gap">
             <li><strong>Initiation au maquillage de fête</strong> : des stages sont proposés aux parents et professionnels</li>
             <li><strong>Soirées d’information et de débats</strong> autour de la parentalité</li>
+            <li><strong>Matinées jeux</strong> pour enfants et échanges sur la parentalité</li>
             <li><strong>Location de mallettes de maquillage</strong> que vous soyez une association, un particulier ou un professionnel</li>
         </ul>
     {% endcall  %}
@@ -182,7 +184,7 @@ scriptsJs:
 
 
 
-{% call intercalaire(theme="enfant", titre="Retrouvez-nous dans les communes de") %}
+{% call intercalaire(theme="enfant", titre="Nous intervenons dans les communes de") %}
     <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
         <li>Moirans,</li>
         <li>Réaumont,</li>
@@ -190,7 +192,8 @@ scriptsJs:
         <li>Rives,</li>
         <li>St Jean de Moirans,</li>
         <li>St Blaise du Buis,</li>
-        <li>La Murette Charnècles</li>
+        <li>La Murette</li>
+        <li>Charnècles</li>
     </ul>
 {% endcall  %}
 
@@ -198,7 +201,7 @@ scriptsJs:
 
 <div class="pblock-section">
     <h2 id="partenaire-titre">Nos partenaires</h2>
-    <p class="mb">Notre association intervient sur huit communes et est en relation avec plusieurs structures associatives, crèches, RPE, sur différentes communes des alentours</p>
+    <p class="mb">Notre association intervient sur 8 communes, elle est en relation avec les diverses structures associatives de cette intercommunalité.</p>
     <div class="mb">
         <ul class="reset df fw-w gap-8 js--filtre-buttons" data-filtre-class-inactif="v_secondary" data-filtre-class-actif="theme-neutre">
             <li>
@@ -330,7 +333,7 @@ scriptsJs:
     <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
         <li>Partage,</li>
         <li>Écoute,</li>
-        <li>Association</li>
+        <li>Convivialité</li>
     </ul>
 {% endcall  %}
 
