@@ -139,10 +139,17 @@ scriptsJs:
 
 
 
-{% call intercalaire(theme="parent") %}
-    <div class="df jc-c">
-        <p>Une association pour les enfants, les parents et les professionnels</p>
-    </div>
+{% call intercalaire(theme="parent", titre="Nous intervenons dans les communes de") %}
+    <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
+        <li>Moirans,</li>
+        <li>Réaumont,</li>
+        <li>Charnècles,</li>
+        <li>Rives,</li>
+        <li>St Jean de Moirans,</li>
+        <li>St Blaise du Buis,</li>
+        <li>La Murette</li>
+        <li>Charnècles</li>
+    </ul>
 {% endcall  %}
   
 
@@ -184,17 +191,10 @@ scriptsJs:
 
 
 
-{% call intercalaire(theme="enfant", titre="Nous intervenons dans les communes de") %}
-    <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
-        <li>Moirans,</li>
-        <li>Réaumont,</li>
-        <li>Charnècles,</li>
-        <li>Rives,</li>
-        <li>St Jean de Moirans,</li>
-        <li>St Blaise du Buis,</li>
-        <li>La Murette</li>
-        <li>Charnècles</li>
-    </ul>
+{% call intercalaire(theme="pro") %}
+    <div class="df jc-c">
+        <p>Une association pour les enfants, les parents et les professionnels</p>
+    </div>
 {% endcall  %}
 
 
@@ -329,7 +329,7 @@ scriptsJs:
 
 
 
-{% call intercalaire(theme="pro", titre="Nos valeurs") %}
+{% call intercalaire(theme="enfant", titre="Nos valeurs") %}
     <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
         <li>Partage,</li>
         <li>Écoute,</li>
@@ -346,12 +346,25 @@ scriptsJs:
     <div class="grid-ping ai-c pblock-section theme-pro">
         <h4 class="h4 grid-ping-pong__titre">Professionnels</h4>
         <div class="grid-ping-pong__visuel">
-            <div class="cadre">
+            <div class="cadre df fd-c gap-8">
                 image
-                <p>Une question, un besoin ou une envie de collaborer ? </p>
-                <p>07 49 83 62 07</p>
-                <p>Contactez notre équipe par mail à l’adresse</p>
-                <p>aipe.petite.enfance@gmail.com</p>
+                <p class="text-20">Une question, un besoin ou une envie de collaborer ? </p>
+                <p class="mb">
+                    {{ button(
+                        theme="pro",
+                        href="tel:0749836207",
+                        label="07 49 83 62 07",
+                        outline="true"
+                    ) }}
+                </p>
+                <p class="text-20">Contactez notre équipe par mail à l’adresse</p>
+                <p>
+                    {{ button(
+                        theme="pro",
+                        href="mailto:aipe.petite.enfance@gmail.com",
+                        label="aipe.petite.enfance@gmail.com"
+                    ) }}
+                </p>
             </div>
         </div>
         <div class="grid-ping-pong__contenu df fd-c gap-20">
