@@ -9,17 +9,20 @@
 
     font-family: 'dancing', cursive;
     font-size: rem(22px);
-    vertical-align: text-bottom;
+    vertical-align: baseline;
 
     &::before {
         content: "";
         position: absolute;
-        height: 40%;
+        height: 70%;
         right: rem(4px);
         bottom: rem(-1px);
         left: rem(-2px);
         transform: rotate(-2deg);
         z-index: -1;
+        @include breakpoint(medium) {
+             height: 40%;
+        }
     }
 }
 
@@ -31,7 +34,10 @@
         font-weight: 400;
 
         &::before {
-            bottom: rem(-6px);
+            bottom: rem(-12px);
+            @include breakpoint(medium) {
+                bottom: rem(-6px);
+            }
         }
     }
 }
@@ -65,10 +71,20 @@
     }
 }
 
+
+// correction du line-height pour text-20
 .has-dancing .text-20,
 .has-dancing.text-20 {
+    line-height: rem(22px);
+    @include breakpoint(medium) {
         line-height: rem(44px);
-    .surligne {
+    }
+}
+
+.has-dancing .text-20 .surligne,
+.has-dancing.text-20 .surligne {
+    line-height: .5;
+    @include breakpoint(medium) {
         line-height: 1;
     }
 }
