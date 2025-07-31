@@ -84,6 +84,12 @@ a:not([class]):focus {
     color: var(--c-fg-secondary);
 }
 
+a[target="_blank"][rel="noopener noreferrer"]:not([class])::after {
+    content: "↗";
+    color: var(--c-fg-primary);
+    font-family: system-ui,-apple-system,sans-serif
+}
+
 a.accent {
     color: var(--c-theme-accent);
 }
