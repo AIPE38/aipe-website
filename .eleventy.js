@@ -90,13 +90,28 @@ function imageShortcodeSync(type = "", src = "", alt = "", classe = "") {
     const widthType = baseWidths.flatMap(w => [w, w * 2]);
 
     const ext = src.split(/[#?]/)[0].split(".").pop().trim().toLowerCase();
-    const formatType = ext === "png" ? ["webp", "png"] : ["webp", "jpg"];
+    const formatType = ext === "png" ? ["avif", "webp", "png"] : ["avif", "webp", "jpg"];
 
     const options = {
         widths: widthType,
         formats: formatType,
         urlPath: "/media/generate/",
-        outputDir: "_site/media/generate/"
+        outputDir: "_site/media/generate/",
+        sharpWebpOptions: {
+            quality: 70 // Par défaut = 80
+        },
+        sharpJpegOptions: {
+            quality: 70 // Plus bas = plus petit fichier
+        },
+        sharpPngOptions: {
+            compressionLevel: 9, // max compression
+            quality: 70,
+            progressive: true
+        },
+        sharpAvifOptions: {
+            quality: 50
+        },
+        cleanOutputDir: true //tout écraser à chaque build
     };
 
     Image(src, options);
