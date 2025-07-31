@@ -28,18 +28,19 @@
 <nav id="navigation-principal" class="header__menu hide-for-medium-down" role="navigation" aria-label="Menu principal">
     <ul class="reset df fw-w gap">
         {%- for entry in navPages %}
-            <li>
-                {% if entry.url == page.url %}
-                    <a class="link-menu" href="{{ entry.url | url }}" aria-current="page">
-                        {{ entry.title }}
-                    </a>
-                {% else %}
-                    <a class="link-menu" href="{{ entry.url | url }}">
-                        {{ entry.title }}
-                    </a>
-                {% endif %}
-                
-            </li>
+            {% if not entry.planDuSite %}
+                <li>
+                    {% if entry.url == page.url %}
+                        <a class="link-menu" href="{{ entry.url | url }}" aria-current="page">
+                            {{ entry.title }}
+                        </a>
+                    {% else %}
+                        <a class="link-menu" href="{{ entry.url | url }}">
+                            {{ entry.title }}
+                        </a>
+                    {% endif %}
+                </li>
+            {% endif %}
         {%- endfor %}
     </ul>
 </nav>

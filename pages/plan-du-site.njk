@@ -3,8 +3,30 @@ layout: layouts/page.njk
 title: Plan du site
 metaDescription: metadescription Plan du site -> A FAIRE
 permalink: /plan-du-site/index.html
+eleventyNavigation:
+    key: Plan du site
+    order: 7
+    planDuSite: true
 ---
 
-<h1 class="dancing-script">Plan du site</h1>
+{% set planDuSitePages = collections.all | eleventyNavigation %}
 
-A FAIRE
+<div class="pblock-section df fd-c gap-20">
+    <h1 class="dancing-script">Plan du site</h1>
+
+    <ul class="df fd-c gap-8">
+        {%- for entry in planDuSitePages %}
+            <li>
+                {% if entry.url == page.url %}
+                    <a href="{{ entry.url | url }}" aria-current="page">
+                        {{ entry.title }}
+                    </a>
+                {% else %}
+                    <a href="{{ entry.url | url }}">
+                        {{ entry.title }}
+                    </a>
+                {% endif %}
+            </li>
+        {%- endfor %}
+    </ul>
+</div>
