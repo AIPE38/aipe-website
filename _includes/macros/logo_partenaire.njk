@@ -1,9 +1,5 @@
 {% macro logo_partenaire(img="", alt="") %}
 
-    {% if not img %}
-        {% set img = "/media/image/aipe-soleil.svg" %}
-    {% endif %}
-
     {% set classes = [
         "round-top-left",
         "round-top-right",
@@ -17,8 +13,12 @@
 
     {% set randomClass = classes | random %}
 
-    <div class="logo-partenaire {{ randomClass }} df ai-cXXX jc-c" title="{{ alt }}">
-        <img src="{{ img }}" alt="{{ alt }}" loading="lazy" decoding="async">
+    <div class="logo-partenaire {{ randomClass }} df ai-c jc-c" title="{{ alt }}">
+        {% if img %}
+            <img src="{{ img }}" alt="{{ alt }}" loading="lazy" decoding="async">
+        {% else %}
+            <p class="text-20">{{ alt }}</p>
+        {% endif %}
     </div>
 
 {% endmacro %}

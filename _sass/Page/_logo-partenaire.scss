@@ -2,12 +2,14 @@
 @use "../Abstracts/__index" as *;
 
 .logo-partenaire {
+    height: 100%;
     padding: rem(16px);
     background-color: var(--c-bg-primary);
 }
 
 .logo-partenaire img {
     object-fit: contain;
+    aspect-ratio: 1 / 1;
 }
 
 
