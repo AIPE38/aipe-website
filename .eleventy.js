@@ -26,6 +26,13 @@ const input = {
             { breakpoint: 899, width: 835 },
             { breakpoint: null, width: 401 }
         ]
+    },
+    typePongPing: {
+        sizes: [
+            { breakpoint: 600, width: 536 },
+            { breakpoint: 899, width: 835 },
+            { breakpoint: null, width: 614 }
+        ]
     }
 };
 

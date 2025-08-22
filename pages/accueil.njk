@@ -127,7 +127,7 @@ scriptsJs:
 
     {% call ping_pong(
         theme="pro",
-        titre="Le <abrr>RPE</abrr>, c’est aussi",  
+        titre="Le <abrr>RPE</abrr>, c’est aussi",
         imageVertical="/media/image/accueil/rpe-pro-vertical.png",
         imageHorizontal="/media/image/accueil/rpe-pro-horizontal.png"
     ) %}
@@ -163,9 +163,9 @@ scriptsJs:
     {% call ping_pong(
         type="pong",
         theme="pro",
-        titre="Des ateliers pour les touts petits et leurs parents",  
-        imageVertical="",
-        imageHorizontal=""
+        titre="Des ateliers pour les touts petits et leurs parents",
+        imageVertical="/media/image/accueil/actibebe-parent-vertical.png",
+        imageHorizontal="/media/image/accueil/actibebe-parent-horizontal.png"
     ) %}
         <ul class="df fd-c gap">
             <li><strong>Massage bébé</strong> : découverte du massage guidée par des professionnels de la petite enfance</li>
@@ -178,9 +178,9 @@ scriptsJs:
 
     {% call ping_pong(
         theme="parent",
-        titre="Des soirées à thèmes et de la location",  
-        imageVertical="",
-        imageHorizontal=""
+        titre="Des soirées à thèmes et de la location",
+        imageVertical="/media/image/accueil/actibebe-enfant-vertical.png",
+        imageHorizontal="/media/image/accueil/actibebe-enfant-horizontal.png"
     ) %}
         <ul class="df fd-c gap">
             <li><strong>Initiation au maquillage de fête</strong> : des stages sont proposés aux parents et professionnels</li>
@@ -349,7 +349,9 @@ scriptsJs:
         <h3 class="h3 grid-ping-pong__titre">Professionnels</h3>
         <div class="grid-ping-pong__visuel">
             <div class="cadre df fd-c gap-8">
-                image
+                <div class="df jc-c">
+                    <img src="/media/image/accueil/membre-pro-contact.png" alt="" width="205">
+                </div>
                 <p class="text-20">Une question, un besoin ou une envie de collaborer&nbsp;? </p>
                 <p class="mb">
                     {{ button(
@@ -371,7 +373,7 @@ scriptsJs:
         </div>
         <div class="grid-ping-pong__contenu df fd-c gap-20">
             <p>Elles sont cinq salariées, à temps partiel, à faire tourner l’association au quotidien</p>
-            <p>image</p>
+            {% image "typePongPing", "/media/image/accueil/membre-pro-horizontal.png" %}
             {% set listeSalaries = [
                 { col1: "Coordinatrice", col2: "Nathalie Deroo", col3: "07 49 83 62 07" },
                 { col1: "Animatrice", col2: "Aude Foucault", col3: "06 49 75 45 33" },
@@ -393,7 +395,9 @@ scriptsJs:
             <div class="cadre theme-parent grid-aider">
                 <h4 class="h4 grid-aider__titre">Envie de donner un coup de main&nbsp;?</h4>
                 <div class="grid-aider__visuel">
-                    image
+                    <div class="df jc-c">
+                        <img src="/media/image/accueil/membre-benevol-contact.png" alt="" width="366">
+                    </div>
                 </div>
                 <div class="grid-aider__intro df fd-c gap">
                     <p>Les postes de présidente et trésorière sont pourvus pour 2025, mais de <strong>nombreuses façons de s’impliquer</strong> dans l’association restent possibles.</p>
@@ -411,24 +415,23 @@ scriptsJs:
                 </p>
                 <p class="grid-aider__accroche text-20">Si vous êtes intéressé·e,&nbsp;<br>n’hésitez pas à nous le faire savoir </p>
             </div>
-            <div class="grid-pong ai-c pblock-section theme-parent">
-
-                <div class="grid-ping-pong__visuel">
-                    image
-                </div>
-                <div class="grid-ping-pong__contenu df fd-c gap-20">
-                    <p><strong>Le bureau est renouvelé chaque année</strong> lors de l’assemblée générale, mais les membres peuvent bien sûr s’investir sur plusieurs années.</p>
-                    {% set listeMembre = [
-                        { col1: "Présidente", col2: "Lucille Esnault" },
-                        { col1: "Trésorière", col2: "Julie Brunel" },
-                        { col1: "Secrétaire", col2: "Marie Schmi"}
-                    ] %}
-                    {{ matrix(datas=listeMembre) }}
-                    <p>
-                        Si vous avez des questions, nous sommes joignables par email <a class="accent" href="mailto:aipe.bureau38@gmail.com">{{ stylizeAt("aipe.bureau38@gmail.com") }}</a>
-                    </p>
-                </div>
-            </div>
+            {% call ping_pong(
+                type="pong",
+                theme="parent",
+                imageVertical="/media/image/accueil/membre-benevol-vertical.png",
+                imageHorizontal="/media/image/accueil/membre-benevol-horizontal.png"
+            ) %}
+                <p><strong>Le bureau est renouvelé chaque année</strong> lors de l’assemblée générale, mais les membres peuvent bien sûr s’investir sur plusieurs années.</p>
+                {% set listeMembre = [
+                    { col1: "Présidente", col2: "Lucille Esnault" },
+                    { col1: "Trésorière", col2: "Julie Brunel" },
+                    { col1: "Secrétaire", col2: "Marie Schmi"}
+                ] %}
+                {{ matrix(datas=listeMembre) }}
+                <p>
+                    Si vous avez des questions, nous sommes joignables par email <a class="accent" href="mailto:aipe.bureau38@gmail.com">{{ stylizeAt("aipe.bureau38@gmail.com") }}</a>
+                </p>
+            {% endcall  %}
         </div>
     </div>
 </div>
