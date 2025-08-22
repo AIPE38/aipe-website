@@ -5,17 +5,26 @@
 .bg-theme {   background-color: var(--theme-bg)}
 
 .vague {
-    height: rem(23px);
     -webkit-mask-repeat: repeat-x;
     mask-repeat: repeat-x;
 }
 
 .vague.v_haut {
+    height: rem(23px);
     -webkit-mask-image: url(/media/image/vague-haut.svg);
     mask-image: url(/media/image/vague-haut.svg);
 }
 
 .vague.v_bas {
+    height: rem(22px);
     -webkit-mask-image: url(/media/image/vague-bas.svg);
     mask-image: url(/media/image/vague-bas.svg);
+}
+
+.vague.v_haut.bg-theme + div:has(+ .vague.v_bas.bg-theme) {
+    box-shadow: 0 rem(-2px) var(--theme-bg), 0 rem(2px) var(--theme-bg);
+}
+
+.vague.v_haut.bg-primary + div:has(+ .vague.v_bas.bg-primary) {
+    box-shadow: 0 rem(-2px) var(--c-bg-primary), 0 rem(2px) var(--c-bg-primary);
 }
