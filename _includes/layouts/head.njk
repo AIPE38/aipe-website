@@ -9,6 +9,10 @@
     {% endif %}
     <title>{{ titrePage | safe }}</title>
 
+    {% if metaDescription %}
+        <meta name="description" content="{{metaDescription}}">
+    {% endif %}
+
     {# il faut faire du Inline critical CSS
     <link rel="preload" href="/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/style.css"></noscript>
