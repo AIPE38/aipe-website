@@ -123,7 +123,7 @@ scriptsJs:
 
     {% call ping_pong(
         theme="pro",
-        titre="Le <abrr>RPE</abrr>, c’est aussi",
+        titre="Le&nbsp;<abrr>RPE</abrr>, c’est aussi",
         imageVertical="/media/image/accueil/rpe-pro-vertical.png",
         imageHorizontal="/media/image/accueil/rpe-pro-horizontal.png"
     ) %}
@@ -456,7 +456,7 @@ scriptsJs:
                 {% set listeMembre = [
                     { col1: "Présidente", col2: "Lucille Esnault" },
                     { col1: "Trésorière", col2: "Julie Brunel" },
-                    { col1: "Secrétaire", col2: "Marie Schmi"}
+                    { col1: "Secrétaire", col2: "Marie Schmidt"}
                 ] %}
                 {{ matrix(datas=listeMembre) }}
                 <p>
