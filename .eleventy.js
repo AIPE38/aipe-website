@@ -256,6 +256,12 @@ module.exports = function(eleventyConfig) {
      // trigger a rebuild if sass changes
     eleventyConfig.addWatchTarget("_sass/");
 
+    // trigger a rebuild if js changes
+    eleventyConfig.addWatchTarget("_includes/js");
+    eleventyConfig.on("beforeWatch", () => {
+        minifyFiles("./_includes/js", "./_tmp/js");
+    });
+
     // Copie le dossier "media/image" dans "_site/media/image"
     eleventyConfig.addPassthroughCopy({"media/image": "media/image"});
 
@@ -272,6 +278,9 @@ module.exports = function(eleventyConfig) {
 
     // Copie le dossier "_tmp/js" dans "_site/js"
     eleventyConfig.addPassthroughCopy({"_tmp/js": "js"});
+
+    // Copie le dossier "_includes/css" dans "_site/css"
+    eleventyConfig.addPassthroughCopy({ "_includes/css": "css" });
 
     return {
         templateFormats: ["md", "njk", "html", "liquid"],
