@@ -260,31 +260,38 @@ nofollow: true
 <div class="pblock-section">
     <h3 class="styleguide-h3">Matrix</h3>
         {% set demoMatrix2col = [
-            { col1: "col1", col2: "col2" },
-            { col1: "col1", col2: "col2" },
-            { col1: "col1", col2: "col2" }
+            { col1: "col un", col2: "col2" },
+            { col1: "col deux", col2: "col2" },
+            { col1: "col trois", col2: "col2" }
         ] %}
         {% set demoMatrix3col = [
-            { col1: "col1", col2: "col2", col3: "col3" },
-            { col1: "col1", col2: "col2", col3: "col3" },
-            { col1: "col1", col2: "col2", col3: "col3" }
+            { col1: "col un", col2: "col2", col3: "col3" },
+            { col1: "col deux", col2: "col2", col3: "col3" },
+            { col1: "col trois", col2: "col2", col3: "col3" }
         ] %}
     <div class="reset df gap">
         <div class="theme-neutre">
-            {{ matrix(datas=demoMatrix2col) }}
+            {{ matrix(datas=demoMatrix2col, nbCol=2) }}
         </div>
         <div class="theme-parent">
-            {{ matrix(datas=demoMatrix3col) }}
+            {{ matrix(datas=demoMatrix3col, nbCol=3) }}
         </div>
         <div class="theme-enfant">
-            {{ matrix(datas=demoMatrix2col) }}
+            {{ matrix(datas=demoMatrix2col, nbCol=2) }}
         </div>
         <div class="theme-pro">
-            {{ matrix(datas=demoMatrix2col) }}
+            {{ matrix(datas=demoMatrix2col, nbCol=2) }}
         </div>
         <div class="theme-reverse bg-theme fg-theme">
-            {{ matrix(datas=demoMatrix2col) }}
+            {{ matrix(datas=demoMatrix2col, nbCol=2) }}
         </div>
-        
+    </div>
+    <div class="reset">
+        <div class="theme-parent df fd-c gap">
+            {{ matrix(datas=demoMatrix3col, nbCol=3) }}
+            {{ matrix(datas=demoMatrix3col, nbCol=3, growCol=1) }}
+            {{ matrix(datas=demoMatrix3col, nbCol=3, growCol=2) }}
+            {{ matrix(datas=demoMatrix3col, nbCol=3, growCol=3) }}
+        </div>
     </div>
 </div>

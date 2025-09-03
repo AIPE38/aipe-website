@@ -1,64 +1,66 @@
 @use "sass:map";
 @use "../Abstracts/__index" as *;
 
-.grid-matrix {
+.matrix {
+    --nb-col : 1;
+    border: rem(1px) solid var(--theme-border);
+    border-radius: rem(20px);
+
     display: grid;
+    grid-template-columns: repeat(var(--nb-col), 1fr);
 }
 
+.matrix__subgrid {
+    border-top: rem(1px) solid var(--theme-border);
+    padding: rem(8px) rem(16px);
+
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span var(--nb-col);
+    column-gap: rem(32px);
+}
+
+.matrix__subgrid:first-child {
+    border-top: 0 none;
+}
+
+
+// Nombre de colonnes
+.matrix.v_2col {
+    --nb-col : 2;
+}
+
+.matrix.v_3col {
+    --nb-col : 3;
+}
+
+// Colonne qui grandit
+.matrix.v_grow1 {
+    grid-template-columns: 1fr auto auto;
+}
+.matrix.v_grow2 {
+    grid-template-columns: auto 1fr auto;
+}
+.matrix.v_grow3 {
+    grid-template-columns: auto auto 1fr;
+}
+
+
+
+// Spécifique 3col 
 @include breakpoint(smallOnly) {
-
-    .grid-matrix.v_2col {
-        grid-template-columns: max-content 1fr;
+    .matrix.v_3col {
+        --nb-col : 1;
+    }
+    .matrix.v_3col.v_grow1,
+    .matrix.v_3col.v_grow2,
+    .matrix.v_3col.v_grow3 {
+        grid-template-columns: 1fr;
     }
 
-    .grid-matrix.v_2col .grid-matrix__col1,
-    .grid-matrix.v_2col .grid-matrix__col2,
-    .grid-matrix.v_2col .grid-matrix__col3 {
-        border-top: rem(1px) solid var(--theme-border);
-        padding: rem(8px) rem(16px);
+    .matrix.v_3col .matrix__subgrid *:nth-child(2),
+    .matrix.v_3col .matrix__subgrid *:nth-child(3) {
+        text-align: right;
     }
 
-    .grid-matrix.v_2col [class^="grid-matrix__col"]:nth-child(-n+2) {
-        border-color: transparent;
-    }
-
-    .grid-matrix.v_3col .grid-matrix__col1 {
-        padding: rem(8px) rem(16px) 0;
-    }
-    .grid-matrix.v_3col .grid-matrix__col2,
-    .grid-matrix.v_3col .grid-matrix__col3 {
-        padding-inline: rem(32px) rem(16px);
-        text-align: end;
-    }
-
-    .grid-matrix.v_3col .grid-matrix__col3 {
-        padding-bottom: rem(8px);
-        border-bottom: rem(1px) solid var(--theme-border);
-    }
-
-}
-
-@include breakpoint(medium) {
-    .grid-matrix.v_2col {
-        grid-template-columns: max-content 1fr;
-    }
-    .grid-matrix.v_3col {
-        grid-template-columns: max-content 1fr auto;
-    }
-
-    .grid-matrix__col1,
-    .grid-matrix__col2,
-    .grid-matrix__col3 {
-        border-top: rem(1px) solid var(--theme-border);
-        padding: rem(8px) rem(16px);
-    }
-
-    .grid-matrix.v_2col [class^="grid-matrix__col"]:nth-child(-n+2),
-    .grid-matrix.v_3col [class^="grid-matrix__col"]:nth-child(-n+3) {
-        border-color: transparent;
-    }
-}
-
-.grid-matrix__col1 {
-    font-weight: 700;
 }

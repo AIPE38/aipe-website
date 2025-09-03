@@ -412,7 +412,7 @@ scriptsJs:
                 { col1: "Animatrice", col2: "Sabine Ponti", col3: "06 58 27 62 36" },
                 { col1: "Comptable", col2: "Cécile Susptitz", col3: "07 49 83 62 07" }
             ] %}
-            {{ matrix(datas=listeSalaries) }}
+            {{ matrix(datas=listeSalaries, nbCol=3, growCol=2) }}
             <p>Nous serons ravis d’échanger avec vous&nbsp;!</p>
         </div>
     </div>
@@ -458,7 +458,7 @@ scriptsJs:
                     { col1: "Trésorière", col2: "Julie Brunel" },
                     { col1: "Secrétaire", col2: "Marie Schmidt"}
                 ] %}
-                {{ matrix(datas=listeMembre) }}
+                {{ matrix(datas=listeMembre, nbCol=2, growCol=2) }}
                 <p>
                     Si vous avez des questions, nous sommes joignables par mail <a class="accent" href="mailto:aipe.bureau38@gmail.com">{{ stylizeAt("aipe.bureau38@gmail.com") }}</a>
                 </p>

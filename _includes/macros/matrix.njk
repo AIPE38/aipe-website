@@ -1,24 +1,32 @@
-{% macro matrix(datas) %}
+{% macro matrix(datas, nbCol='', growCol='') %}
 
-    {% set hasCol3 = false %}
-    {% for item in datas %}
-        {% if item.col3 %}
-            {% set hasCol3 = true %}
-        {% endif %}
-    {% endfor %}
+    {% if nbCol == '2' %}
+        {% set col = ' v_2col' %}
+    {% elif nbCol == '3' %}
+        {% set col = ' v_3col' %}
+    {% endif %}
 
-    <div class="matrix">
-        <div class="grid-matrix{% if hasCol3 %} v_3col{% else %} v_2col{% endif %}">
-            {% for item in datas %}
-                <p class="grid-matrix__col1">{{ item.col1 }}</p>
-                <p class="grid-matrix__col2">{{ item.col2 }}</p>
+
+    {% if growCol == '1' %}
+        {% set grow = ' v_grow1' %}
+    {% elif growCol == '2' %}
+        {% set grow = ' v_grow2' %}
+    {% elif growCol == '3' %}
+        {% set grow = ' v_grow3' %}
+    {% endif %}
+
+    <ul class="reset matrix{{ col }}{{ grow }}">
+        {% for item in datas %}
+            <li class="matrix__subgrid">
+                <strong>{{ item.col1 }}</strong>
+                <p>{{ item.col2 | safe }}</p>
                 {% if item.col3 %}
-                    <p class="grid-matrix__col3">
+                    <p>
                         <a href="tel:{{ item.col3 | replace(' ','') }}">{{ item.col3 }}</a>
                     </p>
                 {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+            </li>
+        {% endfor %}
+    </ul>
 
 {% endmacro %}
