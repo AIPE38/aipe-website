@@ -19,6 +19,13 @@
     #}
     <link rel="stylesheet" href="/style.css" />
 
+    {# CSS spécifique à un script JS et à une page #}
+    {% for item in scriptsJs %}
+        {% if item == 'leaflet' %}
+            <link rel="stylesheet" href="/css/leaflet.css" />
+        {% endif %}
+    {% endfor %}
+
     <link rel="preload" href="/Dancing-Script.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/Hero-Regular.woff" as="font" type="font/woff" crossorigin="anonymous">
     

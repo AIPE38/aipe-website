@@ -22,4 +22,7 @@
 .font-hero {    font-family: 'hero', sans-serif}
 .font-system {  font-family: system-ui, sans-serif}
 
-.fg-theme { color: var(--theme-fg) }
+.fg-theme,
+.fg-theme a:not([class]) { 
+    color: var(--theme-fg) 
+}

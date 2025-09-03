@@ -6,6 +6,223 @@ permalink: /rpe/index.html
 eleventyNavigation:
     key: RPE
     order: 2
+scriptsJs:
+    - leaflet
+    - map-pro
 ---
+{% from "macros/hero.njk" import hero as hero %}
+{% from "macros/button.njk" import button as button %}
+{% from "macros/intercalaire.njk" import intercalaire as intercalaire %}
+{% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
+{% from "macros/matrix.njk" import matrix as matrix %}
 
-<h1 class="dancing-script">RPE</h1>
+{% call hero(
+    titre="Le <abbr>RPE</abbr> - Relais Petite <br class='show-for-large'>Enfance de l'AIPE", 
+    sousTitre="Informer, orienter et accompagner parents et assistantes maternelles dans leur parcours d’accueil de l’enfant.", 
+    imageVertical="/media/image/placeholder-vertical.png",
+    imageHorizontal="/media/image/placeholder-horizontal.png"
+) %}
+{% endcall %}
+
+
+
+<div class="grid-main__item-full vague v_haut bg-primary"></div>
+<div class="grid-main__item-full grid-main bg-primary pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>À vos côtés</h2>
+        <p class="text-20">
+            Un soutien pour vous et les assistantes maternelles tout au long de l’accueil de votre enfant.
+        </p>
+        <div class="df jc-sa gap">
+            {{ button(
+                href="/",
+                label="Je suis parent",
+                theme="parent"
+            ) }}
+            {{ button(
+                href="/",
+                label="Je suis assistante maternelle",
+                theme="pro"
+            ) }}
+        </div>
+    </div>
+</div>
+<div class="grid-main__item-full vague v_bas bg-primary"></div>
+
+
+
+ <div class="pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>Parents, futurs parents, employeurs d’assistantes maternelles</h2>
+
+        <h3>Découvrez nos services</h3>
+
+        <div class="dg v_3col gap">
+            <div class="df fd-c gap theme-enfant">
+                <div class="text-20 has-dancing font-700">
+                    <h4 class="surligne">Informer</h4>
+                </div>
+                <ul class="df fd-c gap-8">
+                    <li>Tous les modes d’accueil de l’enfant</li>
+                    <li>Les disponibilités des assistantes maternelles du territoire</li>
+                    <li>Le rôle d’employeur et ses démarches</li>
+                </ul>
+            </div>
+            <div class="df fd-c gap theme-pro">
+                <div class="text-20 has-dancing font-700">
+                    <h4 class="surligne">Accueillir</h4>
+                </div>
+                <ul class="df fd-c gap-8">
+                    <li>Votre enfant et son assistante maternelle pour des temps d’éveil et de socialisation douce</li>
+                    <li>Parents et assistantes maternelles sur des temps de partage festif ou thématiques</li>
+                </ul>
+            </div>
+            <div class="df fd-c gap theme-parent">
+                <div class="text-20 has-dancing font-700">
+                    <h4 class="surligne">Accompagner</h4>
+                </div>
+                <ul class="df fd-c gap-8">
+                    <li>En vous offrant une écoute personnalisée</li>
+                    <li>Dans votre parentalité et vos questions et besoins du moment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ <div class="pblock-section">
+    <div class="df fd-c gap-20">
+       <h3>Rencontres et permanences parentales</h3>
+
+        <div class="grid-pong v_no-titre ai-c pblock-section">
+            <div class="grid-ping-pong__visuel">
+                accordeon
+            </div>
+            <div class="grid-ping-pong__contenu df fd-c gap-30">
+                carte
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% call intercalaire(theme="enfant") %}
+    <div class="df jc-c">
+        <p>Plus d’informations sur les missions d’un RPE<br class="show-for-large"> sont disponibles sur le <a href="https://www.caf.fr/allocataires/aides-et-demarches/thematique-libre/relais-petite-enfance-rpe" rel="external" target="_blank" title="site de la CAF - Nouvel fenêtre" aria-label="site de la CAF - Nouvel fenêtre">site de la CAF</a></p>
+    </div>
+{% endcall  %}
+
+
+
+ <div class="pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>Pour assistante maternelle agréée, candidate à l’agrément</h2>
+
+        <h3>Découvrez nos services</h3>
+
+        <div class="dg v_3col gap">
+            <div class="df fd-c gap theme-enfant">
+                <div class="text-20 has-dancing font-700">
+                    <h4 class="surligne">Informe</h4>
+                </div>
+                <ul class="df fd-c gap-8">
+                    <li>Les démarches d’agrément</li>
+                    <li>Votre statut professionnel et votre droit à la formation</li>
+                    <li>L’actualité de votre profession</li>
+                </ul>
+            </div>
+            <div class="df fd-c gap theme-pro">
+                <div class="text-20 has-dancing font-700">
+                    <h4 class="surligne">Accueille</h4>
+                </div>
+                <ul class="df fd-c gap-8">
+                    <li>Avec les enfants que vous accompagnez sur les ateliers d’éveil et temps festifs</li>
+                    <li>Pour des temps d’échanges professionnels</li>
+                </ul>
+            </div>
+            <div class="df fd-c gap theme-parent">
+                <div class="text-20 has-dancing font-700">
+                    <h4 class="surligne">Accompagne</h4>
+                </div>
+                <ul class="df fd-c gap-8">
+                    <li>En vous offrant une écoute bienveillante et constructive</li>
+                    <li>En vous soutenant dans l’exercice de votre profession</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+ <div class="pblock-section theme-parent">
+    <div class="df fd-c gap-20">
+       <h3>Des lieux d’éveil pour les enfants et leurs assistantes maternelles</h3>
+       <p>Nous vous accueillons avec les enfants lors de temps d’éveil organisés sur différentes communes</p>
+
+        <div class="grid-pong v_no-titre ai-c pblock-section">
+            <div class="grid-ping-pong__visuel">
+                {% set listeLieuxPro = [
+                    { 
+                        col1: "<button type='button' id='btn-moirans'>Moirans</button>", 
+                        col2: "<a href='#lieux-moirans' aria-label='Plus d&#39;info sur notre antenne de Moirans'>Détails</a>" 
+                        },
+                    { 
+                        col1: "Saint Jean de Moirans", 
+                        col2: "<a href='#lieux-st-jeanmoirans' aria-label='Plus d&#39;info sur notre antenne de Saint Jean de Moirans'>Détails</a>"  
+                        },
+                    { 
+                        col1: "Rives", 
+                        col2: "<a href='#lieux-rives' aria-label='Plus d&#39;info sur notre antenne de Rives'>Détails</a>" 
+                        },
+                    { 
+                        col1: "Charnècles", 
+                        col2: "<a href='#lieux-charnecles' aria-label='Plus d&#39;info sur notre antenne de Charnècles'>Détails</a>" 
+                        },
+                    { 
+                        col1: "La Murette", 
+                        col2: "<a href='#lieux-la-murette' aria-label='Plus d&#39;info sur notre antenne de La Murette'>Détails</a>" 
+                        }
+                ] %}
+                {{ matrix(datas=listeLieuxPro, nbCol=2, growCol=1) }}
+                <button id="btn-reset">📍 Vue par défaut</button>
+            </div>
+            <div class="grid-ping-pong__contenu df fd-c gap-30">
+                <div id="map-pro" class="map-pro"></div>
+            </div>
+        </div>
+
+        <div class="cadre">
+            <div class="grid-pong v_no-titre ai-c pblock-section">
+                <div class="grid-ping-pong__visuel">
+                    image
+                </div>
+                <div class="grid-ping-pong__contenu df fd-c gap-30">
+                    <p class="text-20">Nouvelle assistante maternelle sur notre secteur ?</p>
+                    <div>
+                        {{ button(
+                            href="/",
+                            label="Prendre contact",
+                            theme="parent"
+                        ) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lieux-moirans">
+            <h4>Moirans</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sit fugiat fuga eos repellat cupiditate eum fugit atque, error porro quasi consequuntur, est repudiandae iure accusantium id quisquam, explicabo odit!</p>
+        </div>
+
+        <div id="lieux-st-jeanmoirans">
+            <h4>Saint Jean de Moirans</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sit fugiat fuga eos repellat cupiditate eum fugit atque, error porro quasi consequuntur, est repudiandae iure accusantium id quisquam, explicabo odit!</p>
+        </div>
+
+        etc...
+    </div>
+</div>

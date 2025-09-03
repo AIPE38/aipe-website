@@ -17,6 +17,14 @@
     }
 }
 
+.grid-ping.v_no-titre,
+.grid-pong.v_no-titre {
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "visuel"
+        "contenu";
+}
+
 .grid-ping-pong__titre {    grid-area: titre}
 .grid-ping-pong__visuel {   grid-area: visuel}
 .grid-ping-pong__contenu {  grid-area: contenu}
@@ -44,6 +52,16 @@
 
     .grid-ping-pong__contenu {
         align-self: flex-start;
+    }
+
+    .grid-ping.v_no-titre {
+        grid-template-areas: "contenu visuel";
+        grid-template-rows: auto;
+    }
+
+    .grid-pong.v_no-titre {
+        grid-template-areas: "visuel contenu";
+        grid-template-rows: auto;
     }
 
 }

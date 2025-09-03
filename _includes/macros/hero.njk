@@ -2,7 +2,7 @@
 
     <div class="grid-hero">
         <div class="grid-hero__content as-c df fd-c gap-20">
-            <h1>{{ titre }}</h1>
+            <h1>{{ titre | safe }}</h1>
             <p class="text-20">{{ sousTitre | safe }}</p>
             <div class="mw-450">
                 {{ caller() }}

@@ -18,7 +18,7 @@
     <ul class="reset matrix{{ col }}{{ grow }}">
         {% for item in datas %}
             <li class="matrix__subgrid">
-                <strong>{{ item.col1 }}</strong>
+                <strong>{{ item.col1 | safe }}</strong>
                 <p>{{ item.col2 | safe }}</p>
                 {% if item.col3 %}
                     <p>

@@ -29,6 +29,9 @@
 .jc-sb {
     justify-content: space-between;
 }
+.jc-sa {
+    justify-content: space-around;
+}
 .ai-c {
     align-items: center;
 }
@@ -65,5 +68,14 @@
     }
     .jc-c--medium {
         justify-content: center;
+    }
+}
+
+.dg {
+    display: grid;
+}
+.dg.v_3col {
+    @include breakpoint("medium") {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
