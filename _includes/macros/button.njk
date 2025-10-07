@@ -1,4 +1,4 @@
-{% macro button(href='', icon='', label='', theme='', external='', outline='', attributes='') %}
+{% macro button(href='', icon='', label='', theme='', external='', outline='', attributes='', small='') %}
 
     {% if theme == 'parent' %}
         {% set variation = " theme-parent" %}
@@ -27,6 +27,11 @@
     {% endif %}
 
 
+    {% if small == 'true' %}
+        {% set variationSmall = " v_small" %}
+    {% endif %}
+
+
     {% if icon %}
         {% set dispositionCSS = "d-if ai-c jc-c" %}
     {% else %}
@@ -34,7 +39,7 @@
     {% endif %}
 
     {% if href  %}
-        <a class="button{{variation}}{{variationOutline}} {{dispositionCSS}}" href="{{ href }}" {{ attrs | safe }}>
+        <a class="button{{variation}}{{variationOutline}}{{variationSmall}} {{dispositionCSS}}" href="{{ href }}" {{ attrs | safe }}>
             {% if icon %}
                 <svg aria-hidden="true" focusable="false">
                     <use xlink:href="#{{ icon }}"></use>
