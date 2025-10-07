@@ -1,0 +1,23 @@
+{% macro rpe_accordion_parent(datas) %}
+
+    <ul class="js_accordion reset matrix" data-single="true" data-open-index="0">
+         {% for item in datas %}
+            <li class="matrix__subgrid">
+                <h4 class="p">
+                    <button class="js_accordion-button button-accordion">
+                        {{ item.ville | safe }}
+                    </button>
+                </h4>
+                <div>
+                    <div class="df fd-c gap-8 mt-8">
+                        <h5 class="p font-700">{{ item.titre | safe }}</h5>
+                        <p>{{ item.adresse | safe }} <button type="button" class="a" id="{{ item.btn | safe }}" aria-hidden="true">Voir sur la carte</button></p>
+                        <p>{{ item.horaire | safe }}</p>
+                        <p><a href="tel:{{ item.telephone | safe }}">{{ item.telephone | safe }}</a></p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endmacro %}

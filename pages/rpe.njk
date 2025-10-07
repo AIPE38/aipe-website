@@ -8,13 +8,15 @@ eleventyNavigation:
     order: 2
 scriptsJs:
     - leaflet
-    - map-pro
+    - map
+    - accordion
 ---
 {% from "macros/hero.njk" import hero as hero %}
 {% from "macros/button.njk" import button as button %}
 {% from "macros/intercalaire.njk" import intercalaire as intercalaire %}
 {% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
 {% from "macros/matrix.njk" import matrix as matrix %}
+{% from "macros/rpe_accordion_parent.njk" import rpe_accordion_parent as rpe_accordion_parent %}
 
 {% call hero(
     titre="Le <abbr>RPE</abbr> - Relais Petite <br class='show-for-large'>Enfance de l'AIPE", 
@@ -92,16 +94,91 @@ scriptsJs:
 
 
 
- <div class="pblock-section">
+ <div class="pblock-section theme-parent">
     <div class="df fd-c gap-20">
        <h3>Rencontres et permanences parentales</h3>
 
         <div class="grid-pong v_no-titre ai-c pblock-section">
             <div class="grid-ping-pong__visuel">
-                accordeon
+                {% set dataLieuParent = [
+                    { 
+                        ville: 'Charnècles', 
+                        titre: 'Relais Petite Enfance - Salle du Pont Romain', 
+                        adresse: '212-260 Chemin de l’Eglise',
+                        horaire: '2ème et 4ème Mardis du mois de 11h à 12h',
+                        telephone: '06 58 27 62 36',
+                        btn: 'btn-mapparent-charnecles'
+                    },
+                    {
+                        ville: 'La Murette',
+                        titre: 'Relais Petite Enfance - Petite salle polyvalente',
+                        adresse: 'Chemin du Clapier',
+                        horaire: '1er et 3ème Vendredis du mois de 11h à 12h en cours de changement/validation',
+                        telephone: '06 50 89 74 70',
+                        btn: 'btn-mapparent-la-murette'
+                    },
+                    {
+                        ville: 'Moirans',
+                        titre: 'Relais Petite Enfance - Maison de la Petite Enfance',
+                        adresse: '90 rue des Fleurs',
+                        horaire: '1er et 3ème mardis du mois : 13h30-15h, jeudi : 16h30 -18h et vendredi : 11h-12h30',
+                        telephone: '06 49 75 45 33',
+                        btn: 'btn-mapparent-moirans'
+                    },
+                    {
+                        ville: 'Réaumont',
+                        titre: 'Mairie',
+                        adresse: '10 Place de la mairie',
+                        horaire: '2ème vendredi du mois de 16h à 18h (voir dates en mairie)',
+                        telephone: '06 58 27 62 36',
+                        btn: 'btn-mapparent-reaumont'
+                    },
+                    {
+                        ville: 'Rives CSMO',
+                        titre: "Centre Social de l'Orgère CSMO",
+                        adresse: '96 rue Sadi Carnot',
+                        horaire: 'Lundi de 16h à 18h',
+                        telephone: '06 50 89 74 70',
+                        btn: 'btn-mapparent-rives'
+                    },
+                    {
+                        ville: 'Rives RPE',
+                        titre: "Relais Petite Enfance - Pôle Petite Enfance",
+                        adresse: '438 rue Bayard',
+                        horaire: 'Jeudi de 11h15 à 12h15',
+                        telephone: '06 50 89 74 70',
+                        btn: 'btn-mapparent-rives2'
+                    },
+                    {
+                        ville: 'Saint-Blaise-du-Buis',
+                        titre: 'Mairie',
+                        adresse: '305 rue de la Mairie',
+                        horaire: '3ème vendredi du mois de 16h à 18h (voir dates en mairie)',
+                        telephone: '06 58 27 62 36',
+                        btn: 'btn-mapparent-st-blaise-du-buis'
+                    },
+                    {
+                        ville: 'Saint-Cassien',
+                        titre: 'Mairie',
+                        adresse: '9 route de Chartreuse',
+                        horaire: '1er vendredi du mois de 16h à 18h (voir dates en mairie)',
+                        telephone: '06 58 27 62 36',
+                        btn: 'btn-mapparent-saint-cassien'
+                    },
+                    {
+                        ville: 'Saint-Jean-de-Moirans',
+                        titre: 'Relais Petite Enfance',
+                        adresse: '112 Rue Soffrey de Calignon',
+                        horaire: 'Lundis de 16h à 18h et les 1ers et 3èmes vendredis du mois de 11h15 à 12h30',
+                        telephone: '06 58 27 62 36',
+                        btn: 'btn-mapparent-st-jean-de-moirans'
+                    }
+                ] %}
+                {{ rpe_accordion_parent(datas=dataLieuParent) }}
+                <button type='button' class='button theme v_outline v_small mt-8' id='btn-reset-mapparent' aria-hidden='true'>Zoom par défaut</button>
             </div>
-            <div class="grid-ping-pong__contenu df fd-c gap-30">
-                carte
+            <div class="grid-ping-pong__contenu as-s df fd-c gap-30">
+                <div id="map-parent" class="map" aria-hidden="true"></div>
             </div>
         </div>
     </div>
@@ -158,7 +235,7 @@ scriptsJs:
 
 
 
- <div class="pblock-section theme-parent">
+ <div class="pblock-section theme-pro">
     <div class="df fd-c gap-20">
        <h3>Des lieux d’éveil pour les enfants et leurs assistantes maternelles</h3>
        <p>Nous vous accueillons avec les enfants lors de temps d’éveil organisés sur différentes communes</p>
@@ -167,33 +244,33 @@ scriptsJs:
             <div class="grid-ping-pong__visuel">
                 {% set listeLieuxPro = [
                     { 
-                        col1: "<button type='button' class='button v_small' id='btn-moirans'>Moirans</button>", 
+                        col1: "<button type='button' class='button v_small' id='btn-mappro-moirans'>Moirans</button>", 
                         col2: "<a href='#lieux-moirans' aria-label='Plus d&#39;info sur notre antenne de Moirans'>Détails</a>" 
                     },
                     { 
-                        col1: "<button type='button' class='button v_small' id='btn-st-jean-de-moirans'>Saint Jean de Moirans</button>", 
+                        col1: "<button type='button' class='button v_small' id='btn-mappro-st-jean-de-moirans'>Saint Jean de Moirans</button>", 
                         col2: "<a href='#lieux-st-jean-de-moirans' aria-label='Plus d&#39;info sur notre antenne de Saint Jean de Moirans'>Détails</a>"  
                     },
                     { 
-                        col1: "<button type='button' class='button v_small' id='btn-rives'>Rives</button>", 
+                        col1: "<button type='button' class='button v_small' id='btn-mappro-rives'>Rives</button>", 
                         col2: "<a href='#lieux-rives' aria-label='Plus d&#39;info sur notre antenne de Rives'>Détails</a>" 
                     },
                     { 
-                        col1: "<button type='button' class='button v_small' id='btn-charnecles'>Charnècles</button>", 
+                        col1: "<button type='button' class='button v_small' id='btn-mappro-charnecles'>Charnècles</button>", 
                         col2: "<a href='#lieux-charnecles' aria-label='Plus d&#39;info sur notre antenne de Charnècles'>Détails</a>" 
                     },
                     { 
-                        col1: "<button type='button' class='button v_small' id='btn-la-murette'>La Murette</button>", 
+                        col1: "<button type='button' class='button v_small' id='btn-mappro-la-murette'>La Murette</button>", 
                         col2: "<a href='#lieux-la-murette' aria-label='Plus d&#39;info sur notre antenne de La Murette'>Détails</a>" 
                     },
                     { 
-                        col1: "<button type='button' class='button v_small' id='btn-reset' aria-hidden='true'>Vue par défaut</button>"
+                        col1: "<button type='button' class='button v_outline v_small' id='btn-reset-mappro' aria-hidden='true'>Zoom par défaut</button>"
                     }
                 ] %}
                 {{ matrix(datas=listeLieuxPro, nbCol=2, growCol=1) }}
             </div>
             <div class="grid-ping-pong__contenu as-s df fd-c gap-30">
-                <div id="map-pro" class="map-pro" aria-hidden="true"></div>
+                <div id="map-pro" class="map" aria-hidden="true"></div>
             </div>
         </div>
 

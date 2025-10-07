@@ -4,6 +4,8 @@ title: Styleguide
 metaDescription: metadescription ACTIBEBE -> A FAIRE
 permalink: /styleguide/index.html
 nofollow: true
+scriptsJs:
+    - accordion
 ---
 {% from "macros/button_icon.njk" import button_icon as button_icon %}
 {% from "macros/button.njk" import button as button %}
@@ -385,4 +387,34 @@ nofollow: true
             {{ matrix(datas=demoMatrix3col, nbCol=3, growCol=3) }}
         </div>
     </div>
+</div>
+
+<div class="pblock-section">
+    <h3 class="styleguide-h3">Accordion</h3>
+    <ul>
+        <li>
+            <code>data-open-index="1"</code> ouvre un item au chargement de la page (index commence à 0)
+        </li>
+        <li>
+            <code>data-single="true"</code> n'ouvre qu'un item à la fois
+        </li>
+    </ul>
+    <ul class="js_accordion reset" data-open-index="1">
+        <li>
+            <h4>
+                <button class="js_accordion-button">Titre A</button>
+            </h4>
+            <div>
+                <p>Contenu A</p>
+            </div>
+        </li>
+        <li>
+            <h4>
+                <button class="js_accordion-button">Titre B</button>
+            </h4>
+            <div>
+                <p>Contenu B</p>
+            </div>
+        </li>
+    </ul>
 </div>

@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.button-accordion {
+    display: flex;
+    justify-content: space-between;
+    background: unset;
+    border: unset;
+    width: 100%;
+    text-align: left;
+    padding: unset;
+    font-size: rem(18px);
+    @include breakpoint(large) {
+        font-size: rem(20px);
+    }
+}
+
+.button-accordion:hover,
+.button-accordion:focus-visible {
+    color: var(--c-fg-secondary);
+}
+
+.button-accordion::after {
+    content: '';
+    font-family: sans-serif;
+}
+
+[aria-expanded="false"].button-accordion::after {
+    content: '+';
+}
+
+[aria-expanded="true"].button-accordion::after {
+    content: '-';
+}
