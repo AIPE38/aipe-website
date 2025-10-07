@@ -167,31 +167,33 @@ scriptsJs:
             <div class="grid-ping-pong__visuel">
                 {% set listeLieuxPro = [
                     { 
-                        col1: "<button type='button' id='btn-moirans'>Moirans</button>", 
+                        col1: "<button type='button' class='button v_small' id='btn-moirans'>Moirans</button>", 
                         col2: "<a href='#lieux-moirans' aria-label='Plus d&#39;info sur notre antenne de Moirans'>Détails</a>" 
-                        },
+                    },
                     { 
-                        col1: "Saint Jean de Moirans", 
-                        col2: "<a href='#lieux-st-jeanmoirans' aria-label='Plus d&#39;info sur notre antenne de Saint Jean de Moirans'>Détails</a>"  
-                        },
+                        col1: "<button type='button' class='button v_small' id='btn-st-jean-de-moirans'>Saint Jean de Moirans</button>", 
+                        col2: "<a href='#lieux-st-jean-de-moirans' aria-label='Plus d&#39;info sur notre antenne de Saint Jean de Moirans'>Détails</a>"  
+                    },
                     { 
-                        col1: "Rives", 
+                        col1: "<button type='button' class='button v_small' id='btn-rives'>Rives</button>", 
                         col2: "<a href='#lieux-rives' aria-label='Plus d&#39;info sur notre antenne de Rives'>Détails</a>" 
-                        },
+                    },
                     { 
-                        col1: "Charnècles", 
+                        col1: "<button type='button' class='button v_small' id='btn-charnecles'>Charnècles</button>", 
                         col2: "<a href='#lieux-charnecles' aria-label='Plus d&#39;info sur notre antenne de Charnècles'>Détails</a>" 
-                        },
+                    },
                     { 
-                        col1: "La Murette", 
+                        col1: "<button type='button' class='button v_small' id='btn-la-murette'>La Murette</button>", 
                         col2: "<a href='#lieux-la-murette' aria-label='Plus d&#39;info sur notre antenne de La Murette'>Détails</a>" 
-                        }
+                    },
+                    { 
+                        col1: "<button type='button' class='button v_small' id='btn-reset' aria-hidden='true'>Vue par défaut</button>"
+                    }
                 ] %}
                 {{ matrix(datas=listeLieuxPro, nbCol=2, growCol=1) }}
-                <button id="btn-reset">📍 Vue par défaut</button>
             </div>
-            <div class="grid-ping-pong__contenu df fd-c gap-30">
-                <div id="map-pro" class="map-pro"></div>
+            <div class="grid-ping-pong__contenu as-s df fd-c gap-30">
+                <div id="map-pro" class="map-pro" aria-hidden="true"></div>
             </div>
         </div>
 
@@ -215,14 +217,29 @@ scriptsJs:
 
         <div id="lieux-moirans">
             <h4>Moirans</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sit fugiat fuga eos repellat cupiditate eum fugit atque, error porro quasi consequuntur, est repudiandae iure accusantium id quisquam, explicabo odit!</p>
+            <h5>Maison de la Petite Enfance</h5>
+            <p>90 Rue des Fleurs, 38430, Moirans, France</p>
         </div>
 
-        <div id="lieux-st-jeanmoirans">
+        <div id="lieux-st-jean-de-moirans">
             <h4>Saint Jean de Moirans</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio sit fugiat fuga eos repellat cupiditate eum fugit atque, error porro quasi consequuntur, est repudiandae iure accusantium id quisquam, explicabo odit!</p>
+            <p>112 rue Soffrey de Calignon, Saint Jean de Moirans, France</p>
         </div>
 
-        etc...
-    </div>
+        <div id="lieux-rives">
+            <h4>Rives</h4>
+            <p>438 rue Bayard, Rives, France</p>
+        </div>
+
+        <div id="lieux-charnecles">
+            <h4>Charnècles</h4>
+            <h5>Salle Pont Romain</h5>
+            <p>"212-260 Chemin de l’Eglise, Charnècles, France</p>
+        </div>
+
+        <div id="lieux-la-murette">
+            <h4>La Murette</h4>
+            <h5>Petite salle polyvalente</h5>
+            <p>Chemin du clapier, La Murette, France</p>
+        </div>
 </div>

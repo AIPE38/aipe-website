@@ -21,7 +21,7 @@ const lieux = [
     },
     {
         id: "charnecles",
-        adresse: " 212-260 Chemin de l’Eglise, Charnècles, France",
+        adresse: "212-260 Chemin de l’Eglise, Charnècles, France",
         coords: null,
         popup: "Salle Pont Romain",
         zoom: 17
