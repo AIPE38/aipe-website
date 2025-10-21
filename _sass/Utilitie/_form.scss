@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+input {
+    border: rem(1px) solid var(--theme-fg);
+    border-radius: rem(30px);
+    padding: rem(4px) rem(8px);
+    width: 100%;
+    font-size: 1rem;
+    color: var(--theme-fg);
+    font-family: system-ui,-apple-system,sans-serif;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-width: 0;
+}
+
+.input-group button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: rem(1px) solid var(--theme-fg);
+    border-left-width: 0;
+    flex-shrink: 0;
+}
+
+
+.input-group input:focus,
+.input-group input:focus-visible {
+    outline: none;
+}
+
+.input-group:has(input:focus-visible) {
+    outline: 2px solid var(--c-outline);
+    outline-offset: var(--focus-visible-offset, rem(8px));
+    border-radius: var(--focus-visible-radius, rem(40px));
+}

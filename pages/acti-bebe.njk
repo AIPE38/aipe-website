@@ -93,14 +93,17 @@ eleventyNavigation:
                     external="true"
                 ) }}
             </div>
-            <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci-newsletter/">
-                <label class="hide">Ne pas remplir ce champ : <input name="bot-field"></label>
-                <label for="email">Votre adresse e-mail</label>
-                <div>
-                    <input id="email" name="email" type="email" required>
-                    <button type="submit" class="button theme-neutre v_small d-ib">Recevoir la newsletter mensuelle</button>
-                </div>
-            </form>
+            <div>
+                <h5>Recevoir la newsletter mensuelle</h5>
+                <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci-newsletter/" class="mt-8">
+                    <label class="hide">Ne pas remplir ce champ : <input name="bot-field"></label>
+                    <label for="email">Votre adresse e-mail</label>
+                    <div class="input-group mt-8">
+                        <input id="email" name="email" type="email" required>
+                        <button type="submit" class="button theme-pro v_small d-ib">Je m’abonne</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
