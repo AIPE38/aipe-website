@@ -8,4 +8,99 @@ eleventyNavigation:
     order: 3
 ---
 
-<h1 class="dancing-script">Acti’Bébé</h1>
+{% from "macros/hero.njk" import hero as hero %}
+{% from "macros/button.njk" import button as button %}
+{% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
+
+
+{% call hero(
+    titre="La commission ACTI’BéBé", 
+    sousTitre="Composée de bénévoles et de professionnels, nous développons des actions partenariales et participons à des projets autour de la petite enfance", 
+    imageVertical="/media/image/placeholder-vertical.png",
+    imageHorizontal="/media/image/placeholder-horizontal.png"
+) %}
+{% endcall %}
+
+
+<div class="grid-main__item-full vague v_haut bg-primary"></div>
+<div class="grid-main__item-full grid-main bg-primary pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>Échanges et formations</h2>
+        <p class="text-20">
+            Temps d'information et formations sont proposés aux parents, professionnels et bénévoles. Ouverts aux nouvelles idées, nous restons à l’écoute des opportunités
+        </p>
+    </div>
+</div>
+<div class="grid-main__item-full vague v_bas bg-primary"></div>
+
+
+{% call ping_pong(
+        type="pong",
+        theme="enfant",
+        titre="Des ateliers pour les touts petits et leurs parents",  
+        imageVertical="/media/image/placeholder-vertical.png",
+        imageHorizontal="/media/image/placeholder-horizontal.png"
+    ) %}
+        <ul class="df fd-c gap">
+            <li><strong>Massage bébé :</strong> découverte du massage guidée par une professionnelle de la petite enfance, sur 5 séances. Moment privilégié avec son bébé, cette activité peut se faire dès la naissance jusqu’à ce que l’enfant se déplace</li>
+            <li><strong>Motricité :</strong> découverte de son corps dans un espace aménagé pour les enfants de moins de 3 ans. Parfait dès les premiers pas</li>
+            <li><strong>Yoga en famille :</strong> découverte de posture de yoga lors d’une séance en famille découverte du yoga lors de séances en famille</li>
+            <li><strong>Communication gestuelle :</strong> initiation à la langue des signes bébé pour mieux comprendre ses besoins avant les premiers mots. Ce mode de communication permet de réduire les frustrations de l’enfant, de favoriser l’attention et de renforcer le lien parent-enfant</li>
+            <li><strong>Secourisme parent-enfant :</strong> gestes de premiers secours adaptés aux tout-petits, en deux séances complémentaires : étouffement et massage cardiaque</li>
+            <li><strong>Spectacles</strong> à destination du très jeune public</li>
+        </ul>
+{% endcall  %}
+
+
+{% call ping_pong(
+        type="ping",
+        theme="parent",
+        titre="Des soirées à thèmes et de la location",  
+        imageVertical="/media/image/placeholder-vertical.png",
+        imageHorizontal="/media/image/placeholder-horizontal.png"
+    ) %}
+        <ul class="df fd-c gap">
+            <li><strong>Initiation au maquillage de fête :</strong> des stages sont proposés aux parents et professionnels, une fois par an. Les stagiaires sont invités à pratiquer rapidement lors d’une manifestation (fête du jeu, marché…)</li>
+            <li><strong>Soirées d’information et de débats</strong> autour de la parentalité</li>
+            <li><strong>Matinées jeux :</strong> sur un thème choisi (propreté, sommeil…), une animatrice et un bénévole de l’association vous accueillent avec votre enfant un samedi matin afin d’échanger et de partager un moment de convivialité</li>
+            <li><strong>Location de mallettes de maquillage</strong> festif que vous soyez une association, un particulier ou un professionnel</li>
+        </ul>
+{% endcall  %}
+
+<div class="pblock-section df fd-c">
+     <div class="cadre theme-pro grid-aider">
+        <h4 class="h4 grid-aider__titre">Ne manquez rien&nbsp;!</h4>
+        <div class="grid-aider__visuel">
+            <div class="df jc-c">
+                <img src="/media/image/placeholder-horizontal.png" alt="" width="366">
+            </div>
+        </div>
+        <div class="grid-aider__intro df fd-c gap">
+            <p>Pour connaître nos activités, vous pouvez vous inscrire à notre Newsletters ou nous suivre sur les réseaux sociaux<p>
+            <div class="df fw-w gap">
+                {{ button(
+                    theme="pro",
+                    href="https://www.facebook.com/aiperam",
+                    icon="facebook",
+                    label="Facebook",
+                    external="true"
+                ) }}
+                {{ button(
+                    theme="pro",
+                    href="https://www.instagram.com/aipe.38",
+                    icon="instagram-line",
+                    label="Instagram",
+                    external="true"
+                ) }}
+            </div>
+            <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <label class="hide">Ne pas remplir ce champ : <input name="bot-field"></label>
+                <label for="email">Votre adresse e-mail</label>
+                <div>
+                    <input id="email" name="email" type="email" required>
+                    <button type="submit" class="button theme-neutre v_small d-ib">Recevoir la newsletter mensuelle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

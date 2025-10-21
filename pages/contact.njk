@@ -8,4 +8,62 @@ eleventyNavigation:
     order: 5
 ---
 
-<h1 class="dancing-script">Contact</h1>
+{% from "macros/hero.njk" import hero as hero %}
+{% from "macros/button.njk" import button as button %}
+
+
+{% call hero(
+    titre="Contact", 
+    sousTitre="Vous souhaitez en savoir plus ou vous impliquer ?", 
+    imageVertical="/media/image/placeholder-vertical.png",
+    imageHorizontal="/media/image/placeholder-horizontal.png"
+) %}
+{% endcall %}
+
+
+<div class="grid-main__item-full vague v_haut bg-primary"></div>
+<div class="grid-main__item-full grid-main bg-primary pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>À chacun son rôle !</h2>
+        <p class="text-20">
+            Choisissez votre profil pour accéder aux informations dédiées
+        </p>
+        <div class="df jc-sa gap">
+            {{ button(
+                href="#benevoles",
+                label="Bénévoles",
+                theme="parent"
+            ) }}
+            {{ button(
+                href="#professionnels",
+                label="Professionnels",
+                theme="pro"
+            ) }}
+        </div>
+    </div>
+</div>
+<div class="grid-main__item-full vague v_bas bg-primary"></div>
+
+
+<div class="pblock-section" id="benevoles">
+    <div class="df fd-c gap-20">
+        <h2>Rejoignez l’aventure de l’AIPE !</h2>
+        <p class="mt mb">Envie de participer à la vie de l’association et de contribuer au bien-être des enfants ?<br>Même un petit coup de main fait une grande différence !</p>
+        <div>
+            {{ button(
+                theme="parent",
+                href="mailto:aipe.petite.enfance@gmail.com",
+                label="aipe.petite.enfance@gmail.com"
+            ) }}
+        </div>
+    </div>
+</div>
+
+
+<div class="pblock-section" id="professionnels">
+    <div class="df fd-c gap-20">
+        <h2>Professionnels</h2>
+        <h3>L’équipe de l’AIPE</h3>
+        <h3>Les équipes de chaque antenne</h3>
+    </div>
+</div>
