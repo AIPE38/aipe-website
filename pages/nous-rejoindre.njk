@@ -7,5 +7,52 @@ eleventyNavigation:
     key: Nous Rejoindre
     order: 4
 ---
+{% from "macros/hero.njk" import hero as hero %}
+{% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
 
 <h1 class="dancing-script">Nous rejoindre</h1>
+
+{% call hero(
+    titre="Rejoignez le bureau de l’AIPE", 
+    sousTitre="L'association recherche des parents bénévoles souhaitant s’impliquer activement dans le fonctionnement et les projets de l’association.", 
+    imageVertical="/media/image/placeholder-vertical.png",
+    imageHorizontal="/media/image/placeholder-horizontal.png"
+) %}
+{% endcall %}
+
+
+
+<div class="grid-main__item-full vague v_haut bg-primary"></div>
+<div class="grid-main__item-full grid-main bg-primary pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>Construisons ensemble l’avenir de l’association</h2>
+        <p class="text-20">
+            Le bureau doit être composé à minima de 3 membres, président, trésorier et secrétaire. Mais tous les parents sont les bienvenus pour participer ! Sans bureau, l'association ne peut pas fonctionner.
+        </p>
+        <div class="cadre">
+            <p>Pour être membre du bureau, il faut adhérent à l’association, être présent à l’AG ou donner un pouvoir à une personne présente. Il est aussi possible d’être coopté en cours d’année.
+</p>
+        </div>
+        <p>Les membres sont accompagnés par la coordinatrice ainsi que les salariés dans leurs missions</p>
+    </div>
+</div>
+<div class="grid-main__item-full vague v_bas bg-primary"></div>
+
+
+{% call ping_pong(
+        type="pong",
+        theme="parent",
+        titre="Les missions communes",  
+        imageVertical="/media/image/placeholder-vertical.png",
+        imageHorizontal="/media/image/placeholder-horizontal.png"
+    ) %}
+        <ul class="df fd-c gap">
+            <li>Participer et porter les projets de l’association</li>
+            <li>Répondre aux questions des salariés</li>
+            <li>Représenter l'association auprès des communes, des institutions qui subventionnent (CAF, conseil départemental)</li>
+            <li>Implication RH (Faire passer les entretiens professionnels et annuels, valider les congés…)</li>
+            <li>Participer au suivi de la construction de la nouvelle maison de la petite enfance à Moirans</li>
+            <li>Valider le plan de formation</li>
+        </ul>
+{% endcall  %}
+
