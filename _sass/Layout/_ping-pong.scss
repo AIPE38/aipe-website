@@ -46,6 +46,11 @@
             "visuel contenu";
     }
 
+
+     .grid-ping.v_size-invert {
+        grid-template-columns: track-width(4) track-width(6);
+     }
+
     .grid-ping-pong__titre {
         align-self: flex-end;
     }

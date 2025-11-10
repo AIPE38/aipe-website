@@ -21,8 +21,8 @@ scriptsJs:
 {% call hero(
     titre="Le <abbr>RPE</abbr> - Relais Petite <br class='show-for-large'>Enfance de l'AIPE", 
     sousTitre="Informer, orienter et accompagner parents et assistantes maternelles dans leur parcours d’accueil de l’enfant.", 
-    imageVertical="/media/image/placeholder-vertical.png",
-    imageHorizontal="/media/image/placeholder-horizontal.png"
+    imageVertical="/media/image/aipe-logo-text.svg",
+    imageHorizontal="/media/image/aipe-logo-text.svg"
 ) %}
 {% endcall %}
 
@@ -35,7 +35,7 @@ scriptsJs:
         <p class="text-20">
             Un soutien pour vous et les assistantes maternelles tout au long de l’accueil de votre enfant.
         </p>
-        <div class="df jc-sa gap">
+        <div class="df fd-c--so jc-sa gap">
             {{ button(
                 href="#parent",
                 label="Je suis parent",
@@ -98,8 +98,11 @@ scriptsJs:
     <div class="df fd-c gap-20">
        <h3>Rencontres et permanences parentales</h3>
 
-        <div class="grid-pong v_no-titre ai-c pblock-section">
-            <div class="grid-ping-pong__visuel">
+        <div class="grid-ping v_no-titre v_size-invert ai-c pblock-section">
+            <div class="grid-ping-pong__visuel as-s df fd-c gap-30">
+                <div id="map-parent" class="map" aria-hidden="true"></div>
+            </div>
+            <div class="grid-ping-pong__contenu">
                 {% set dataLieuParent = [
                     { 
                         ville: 'Charnècles', 
@@ -175,10 +178,7 @@ scriptsJs:
                     }
                 ] %}
                 {{ rpe_accordion_parent(datas=dataLieuParent) }}
-                <button type='button' class='button theme v_outline v_small mt-8' id='btn-reset-mapparent' aria-hidden='true'>Zoom par défaut</button>
-            </div>
-            <div class="grid-ping-pong__contenu as-s df fd-c gap-30">
-                <div id="map-parent" class="map" aria-hidden="true"></div>
+                <button type='button' class='a mt-8' id='btn-reset-mapparent' aria-hidden='true'>Zoom par défaut</button>
             </div>
         </div>
     </div>
@@ -240,8 +240,12 @@ scriptsJs:
        <h3>Des lieux d’éveil pour les enfants et leurs assistantes maternelles</h3>
        <p>Nous vous accueillons avec les enfants lors de temps d’éveil organisés sur différentes communes</p>
 
-        <div class="grid-pong v_no-titre ai-c pblock-section">
-            <div class="grid-ping-pong__visuel">
+        <div class="grid-ping v_no-titre  v_size-invert ai-c pblock-section">
+            <div class="grid-ping-pong__visuel as-s df fd-c gap-30">
+                <div id="map-pro" class="map" aria-hidden="true"></div>
+            </div>
+            <div class="grid-ping-pong__contenu">
+                <!--
                 {% set listeLieuxPro = [
                     { 
                         col1: "<button type='button' class='button v_small' id='btn-mappro-moirans'>Moirans</button>", 
@@ -264,34 +268,64 @@ scriptsJs:
                         col2: "<a href='#lieux-la-murette' aria-label='Plus d&#39;info sur notre antenne de La Murette'>Détails</a>" 
                     },
                     { 
-                        col1: "<button type='button' class='button v_outline v_small' id='btn-reset-mappro' aria-hidden='true'>Zoom par défaut</button>"
+                        col1: "<button type='button' class='a' id='btn-reset-mappro' aria-hidden='true'>Zoom par défaut</button>"
                     }
                 ] %}
                 {{ matrix(datas=listeLieuxPro, nbCol=2, growCol=1) }}
-            </div>
-            <div class="grid-ping-pong__contenu as-s df fd-c gap-30">
-                <div id="map-pro" class="map" aria-hidden="true"></div>
+                -->
+                {% set dataLieuPro = [
+                    {
+                        ville: 'Moirans',
+                        adresse: '90 rue des Fleurs',
+                        btn: 'btn-mappro-moirans'
+                    },
+                    {
+                        ville: 'Saint-Jean-de-Moirans',
+                        adresse: '112 Rue Soffrey de Calignon',
+                        btn: 'btn-mappro-st-jean-de-moirans'
+                    },
+                    {
+                        ville: 'Rives',
+                        adresse: '438 rue Bayard',
+                        btn: 'btn-mappro-rives'
+                    },
+                    { 
+                        ville: 'Charnècles', 
+                        titre: 'Salle du Pont Romain', 
+                        adresse: '212-260 Chemin de l’Eglise',
+                        btn: 'btn-mappro-charnecles'
+                    },
+                    {
+                        ville: 'La Murette',
+                        titre: 'Petite salle polyvalente',
+                        adresse: 'Chemin du Clapier',
+                        btn: 'btn-mappro-la-murette'
+                    }
+                ] %}
+                {{ rpe_accordion_parent(datas=dataLieuPro) }}
+                <button type='button' class='a mt-8' id='btn-reset-mappro' aria-hidden='true'>Zoom par défaut</button>
             </div>
         </div>
 
         <div class="cadre">
-            <div class="grid-pong v_no-titre ai-c pblock-section">
+            <div class="grid-pong v_no-titre ai-c">
                 <div class="grid-ping-pong__visuel">
-                    image
+                    <img src="/media/image/rpe/nouvelle.png" alt="">
                 </div>
                 <div class="grid-ping-pong__contenu df fd-c gap-30">
                     <p class="text-20">Nouvelle assistante maternelle sur notre secteur ?</p>
                     <div>
                         {{ button(
-                            href="/",
+                            href="mailto:aipe.petite.enfance@gmail.com",
                             label="Prendre contact",
-                            theme="parent"
+                            theme="pro"
                         ) }}
                     </div>
                 </div>
             </div>
         </div>
 
+<!--
         <div id="lieux-moirans">
             <h4>Moirans</h4>
             <h5>Maison de la Petite Enfance</h5>
@@ -319,4 +353,5 @@ scriptsJs:
             <h5>Petite salle polyvalente</h5>
             <p>Chemin du clapier, La Murette, France</p>
         </div>
+-->
 </div>
