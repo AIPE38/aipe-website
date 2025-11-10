@@ -13,19 +13,27 @@ input {
 
 .input-group {
     display: flex;
+    @include breakpoint(smallOnly) {
+        flex-direction: column;
+        gap: rem(4px);
+    }
 }
 
-.input-group input {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right-width: 0;
+@include breakpoint(medium) {
+    .input-group input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right-width: 0;
+    }
+    .input-group button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left-width: 0;
+    }
 }
 
 .input-group button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
     border: rem(1px) solid var(--theme-fg);
-    border-left-width: 0;
     flex-shrink: 0;
 }
 
