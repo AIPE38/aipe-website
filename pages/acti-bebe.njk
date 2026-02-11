@@ -14,10 +14,10 @@ eleventyNavigation:
 
 
 {% call hero(
-    titre="La commission ACTI’BéBé", 
+    titre="La commission <span class=\"font-hero\">Acti’Bébé</span>", 
     sousTitre="Composée de bénévoles et de professionnels, nous développons des actions partenariales et participons à des projets autour de la petite enfance", 
-    imageVertical="/media/image/actibebe/accueil.jpg",
-    imageHorizontal="/media/image/actibebe/accueil.jpg"
+    imageVertical="/media/image/actibebe/accueil-vertical.png",
+    imageHorizontal="/media/image/actibebe/accueil-horizontal.png"
 ) %}
 {% endcall %}
 
@@ -38,8 +38,9 @@ eleventyNavigation:
         type="pong",
         theme="enfant",
         titre="Des ateliers pour les touts petits et leurs parents",  
-        imageVertical="/media/image/actibebe/atelier.jpg",
-        imageHorizontal="/media/image/actibebe/atelier.jpg"
+        imageVertical="/media/image/actibebe/atelier-vertical.png",
+        imageHorizontal="/media/image/actibebe/atelier-horizontal.png",
+        seo="h3"
     ) %}
         <ul class="df fd-c gap">
             <li><strong>Massage bébé :</strong> découverte du massage guidée par une professionnelle de la petite enfance, sur 5 séances. Moment privilégié avec son bébé, cette activité peut se faire dès la naissance jusqu’à ce que l’enfant se déplace</li>
@@ -56,8 +57,9 @@ eleventyNavigation:
         type="ping",
         theme="parent",
         titre="Des soirées à thèmes et de la location",  
-        imageVertical="/media/image/actibebe/maquillage.jpg",
-        imageHorizontal="/media/image/actibebe/maquillage.jpg"
+        imageVertical="/media/image/actibebe/maquillage-vertical.png",
+        imageHorizontal="/media/image/actibebe/maquillage-horizontal.png",
+        seo="h3"
     ) %}
         <ul class="df fd-c gap">
             <li><strong>Initiation au maquillage de fête :</strong> des stages sont proposés aux parents et professionnels, une fois par an. Les stagiaires sont invités à pratiquer rapidement lors d’une manifestation (fête du jeu, marché…)</li>
@@ -69,10 +71,10 @@ eleventyNavigation:
 
 <div class="pblock-section df fd-c">
      <div class="cadre theme-pro grid-aider">
-        <h4 class="h4 grid-aider__titre">Ne manquez rien&nbsp;!</h4>
+        <h2 class="h2 grid-aider__titre">Ne manquez rien&nbsp;!</h2>
         <div class="grid-aider__visuel">
             <div class="df jc-c">
-                <img src="/media/image/actibebe/actu.jpg" alt="" width="366">
+                <img src="/media/image/actibebe/actu-horizontal.png" alt="" width="366">
             </div>
         </div>
         <div class="grid-aider__intro df fd-c gap">
@@ -94,7 +96,7 @@ eleventyNavigation:
                 ) }}
             </div>
             <div>
-                <h5>Recevoir la newsletter mensuelle</h5>
+                <h3>Recevoir la newsletter mensuelle</h3>
                 <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci-newsletter/" class="mt-8">
                     <label class="hide">Ne pas remplir ce champ : <input name="bot-field"></label>
                     <label for="email">Votre adresse e-mail</label>
