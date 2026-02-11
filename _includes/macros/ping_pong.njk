@@ -1,4 +1,4 @@
-{% macro ping_pong(type='', titre='', imageVertical='', imageHorizontal='', theme='') %}
+{% macro ping_pong(type='', titre='', imageVertical='', imageHorizontal='', theme='', seo="h4") %}
 
     {% if type == 'pong' %}
         {% set gridPingpong = "grid-pong" %}
@@ -18,7 +18,7 @@
 
 
     <div class="{{ gridPingpong }} ai-c pblock-section{{ cssTheme }}">
-        <h4 class="h4 grid-ping-pong__titre">{{ titre | safe }}</h4>
+        <{{ seo }} class="h4 grid-ping-pong__titre">{{ titre | safe }}</{{ seo }}>
         <div class="grid-ping-pong__visuel">
             {% if imageHorizontal %}
                 {% image "typePingPong", imageHorizontal, "", "hide-for-large" %}
