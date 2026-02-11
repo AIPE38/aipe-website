@@ -14,7 +14,7 @@
     {% set randomClass = classes | random %}
 
     {% if url %}
-        <a href="{{ url }}" class="logo-partenaire {{ randomClass }} df ai-c jc-c" aria-label="En savoir plus sur {{ alt }}" target="_blank" rel="noopener">       
+        <a href="{{ url }}" class="logo-partenaire {{ randomClass }} df ai-c jc-c" aria-label="En savoir plus sur {{ alt }} - Nouvel fenêtre" target="_blank" rel="noopener">       
             {% if img %}
                 <img src="{{ img }}" alt="{{ alt }}" loading="lazy" decoding="async" title="{{ alt }}">
             {% else %}
