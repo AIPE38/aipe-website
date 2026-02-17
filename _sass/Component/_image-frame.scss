@@ -1,20 +1,6 @@
 @use "sass:map";
 @use "../Abstracts/__index" as *;
 
-.logo-partenaire {
-    height: 100%;
-    padding: rem(16px);
-    background-color: var(--c-bg-primary);
-}
-
-.logo-partenaire img {
-    object-fit: contain;
-    aspect-ratio: 1 / 1;
-}
-
-
-
-
 .round-top-left {
     border-top-left-radius: rem(30px);
 }
@@ -43,4 +29,32 @@
 
 .round-bottom-left {
     border-bottom-left-radius: rem(30px);
+}
+
+// Commun
+.image-frame {
+    height: 100%;
+    background-color: var(--c-bg-primary);
+}
+
+.grid-galerie .image-frame img {
+    aspect-ratio: 1 / 1;
+}
+
+// Partenaire
+.grid-partenaire .image-frame {
+    padding: rem(16px);
+}
+
+.grid-partenaire .image-frame img {
+    object-fit: contain;
+}
+
+// Galerie
+.grid-galerie .image-frame {
+    overflow: hidden;
+}
+
+.grid-galerie .image-frame img {
+    object-fit: cover;
 }

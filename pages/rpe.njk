@@ -17,12 +17,13 @@ scriptsJs:
 {% from "macros/ping_pong.njk" import ping_pong as ping_pong %}
 {% from "macros/matrix.njk" import matrix as matrix %}
 {% from "macros/rpe_accordion_parent.njk" import rpe_accordion_parent as rpe_accordion_parent %}
+{% from "macros/image_frame.njk" import image_frame as image_frame %}
 
 {% call hero(
     titre="Le <abbr>RPE</abbr> - Relais Petite <br class='show-for-large'>Enfance de l'AIPE", 
     sousTitre="Informer, orienter et accompagner parents et assistantes maternelles dans leur parcours d’accueil de l’enfant.", 
-    imageVertical="/media/image/aipe-logo-text.svg",
-    imageHorizontal="/media/image/aipe-logo-text.svg"
+    imageVertical="/media/image/rpe/hero-vertical.png",
+    imageHorizontal="/media/image/rpe/hero-horizontal.png"
 ) %}
 {% endcall %}
 
@@ -50,6 +51,51 @@ scriptsJs:
     </div>
 </div>
 <div class="grid-main__item-full vague v_bas bg-primary"></div>
+
+
+
+
+
+<div class="pblock-section">
+    <ul class="reset grid-galerie gap-20">
+        <li>
+            {{ image_frame(
+                img="/media/image/rpe/activite/image2.jpg",
+                alt=""
+            ) }}
+        </li>
+        <li>
+            {{ image_frame(
+                img="/media/image/rpe/activite/image3.jpg",
+                alt=""
+            ) }}
+        </li>
+        <li>
+            {{ image_frame(
+                img="/media/image/rpe/activite/image4.jpg",
+                alt=""
+            ) }}
+        </li>
+        <li>
+            {{ image_frame(
+                img="/media/image/rpe/activite/image5.jpg",
+                alt=""
+            ) }}
+        </li>
+        <li>
+            {{ image_frame(
+                img="/media/image/rpe/activite/image6.jpg",
+                alt=""
+            ) }}
+        </li>
+        <li>
+            {{ image_frame(
+                img="/media/image/rpe/activite/image7.jpg",
+                alt=""
+            ) }}
+        </li>
+    </ul>
+</div>
 
 
 
