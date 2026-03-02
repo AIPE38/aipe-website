@@ -7,18 +7,21 @@
         {% if quand is string %}
             <p>{{ quand }}</p>
         {% else %}
-            <ul>
+            <ul class="reset matrix v_2col v_grow1">
                 {% for item in quand %}
-                    <li>
-                        <strong>{{ item.jour }}</strong> {{ item.heure }}
-                        {% if item.adresse %} - {{ item.adresse }}{% endif %}
+                    <li class="matrix__subgrid">
+                        <p>
+                            <strong>{{ item.jour }}</strong>
+                            {{ item.info }}
+                        </p>
+                        <p>{{ item.heure }}</p>
                     </li>
                 {% endfor %}
             </ul>
         {% endif %}
 
         {% if ou and adresse %}
-            <p><strong>{{ ou }}</strong>&nbsp;: {{ adresse }}</p>
+            <p><span class="text-20">{{ ou }}</span>&nbsp;<br>{{ adresse }}</p>
         {% endif %}
 
         {% if tel is string %}

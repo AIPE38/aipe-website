@@ -96,7 +96,7 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="Charnècles",
-                quand=[ {jour:"Mardi", heure:"(2ème et 4ème du mois) 11h à 12h"} ],
+                quand=[ {jour:"Mardi", info:"2ème et 4ème du mois", heure:"11h à 12h"} ],
                 ou="Salle du Pont Romain",
                 adresse="212-260 Chemin de l’Eglise",
                 tel="06 58 27 62 36"
@@ -105,7 +105,7 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="La Murette",
-                quand=[ {jour:"Vendredi", heure:"(1er et 3ème du mois) 11h à 12h"} ],
+                quand=[ {jour:"Vendredi", info:"1er et 3ème du mois", heure:"11h à 12h"} ],
                 ou="Petite Salle Polyvalente",
                 adresse="Chemin du Clapier",
                 tel="06 50 89 74 70"
@@ -114,8 +114,8 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="Moirans",
-                quand=[ {jour:"Mardi", heure:"(1er et 3ème du mois) 13h30 à 15h"}, {jour:"Jeudi", heure:"16h30 à 18h"}, {jour:"Vendredi", heure:"11h à 12h30"} ],
-                ou="RPE - Maison de la Petite Enfance Les Premiers Pas",
+                quand=[ {jour:"Mardi", info:"1er et 3ème du mois", heure:"13h30 à 15h"}, {jour:"Jeudi", info:"Tous les jeudis", heure:"16h30 à 18h"}, {jour:"Vendredi", info:"Tous les vendredis", heure:"11h à 12h30"} ],
+                ou="Maison de la Petite Enfance Les Premiers Pas",
                 adresse="90 rue des Fleurs",
                 tel=["06 49 75 45 33","07 49 83 62 07"]
             ) }}
@@ -123,7 +123,7 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="Réaumont",
-                quand=[ {jour:"Vendredi", heure:"(2ème du mois) 16h à 18h"} ],
+                quand=[ {jour:"Vendredi", info:"2ème du mois", heure:"16h à 18h"} ],
                 ou="Mairie",
                 adresse="10 Place de la Mairie",
                 tel="06 58 27 62 36"
@@ -132,14 +132,14 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="Rives",
-                quand=[ {jour:"Lundi", heure:"16h à 18h", adresse:"Centre social de l’Orgère - 96 rue Sadi Carnot"},{jour:"Jeudi", heure:"16h à 18h", adresse:"RPE - 438 rue Bayard"} ],
+                quand=[ {jour:"Lundi", heure:"16h à 18h", info:"Centre social de l’Orgère - 96 rue Sadi Carnot"},{jour:"Jeudi", heure:"16h à 18h", info:"RPE - 438 rue Bayard"} ],
                 tel=["04 76 65 37 79","06 50 89 74 70"]
             ) }}
         </li>
         <li>
             {{ permanence_frame(
                 ville="Saint-Blaise-du-Buis",
-                quand=[ {jour:"Vendredi", heure:"(3ème du mois) 16h à 18h"} ],
+                quand=[ {jour:"Vendredi", info:"3ème du mois", heure:"16h à 18h"} ],
                 ou="Mairie",
                 adresse=" 305 Rue de la Mairie",
                 tel="06 58 27 62 36"
@@ -148,7 +148,7 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="Saint-Cassien",
-                quand=[ {jour:"Vendredi", heure:"(1er du mois) 16h à 18h"} ],
+                quand=[ {jour:"Vendredi", info:"1er du mois", heure:"16h à 18h"} ],
                 ou="Mairie",
                 adresse="9 Rte de Chartreuse",
                 tel="06 58 27 62 36"
@@ -157,7 +157,7 @@ eleventyNavigation:
         <li>
             {{ permanence_frame(
                 ville="Saint-Jean-de-Moirans",
-                quand=[ {jour:"Lundi", heure:"Lundi 16h à 18h"},{jour:"Vendredi", heure:"(1er et 3ème du mois) 11h à 12h30"} ],
+                quand=[ {jour:"Lundi", heure:"16h à 18h"},{jour:"Vendredi", info:"1er et 3ème du mois", heure:"11h à 12h30"} ],
                 ou="RPE (en face de la crèche)",
                 adresse="112 rue Soffrey de Calignon",
                 tel="06 58 27 62 36"

@@ -12,10 +12,20 @@
     }
 }
 
+.grid-permanence .matrix,
+.grid-permanence .matrix__subgrid {
+    --theme-border: var(--c-theme-neutre);
+}
+
 .permanence:target {
-    border-color: var(--c-theme-pro);
+    border-color: var(--c-theme-parent);
 }
 
 .permanence:target ul:not(.reset) li::before{
     background-image: url("/media/image/puce-pro.svg");
+}
+
+.permanence:target .matrix,
+.permanence:target .matrix__subgrid {
+    --theme-border: var(--c-theme-parent);
 }
