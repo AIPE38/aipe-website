@@ -1,0 +1,35 @@
+{% macro permanence_frame(ville="", quand="", ou="", adresse="", tel="") %}
+
+    <div class="cadre df fd-c gap permanence" id="{{ ville | slugify }}">
+
+        <h3>{{ ville }}</h3>
+
+        {% if quand is string %}
+            <p>{{ quand }}</p>
+        {% else %}
+            <ul>
+                {% for item in quand %}
+                    <li>
+                        <strong>{{ item.jour }}</strong> {{ item.heure }}
+                        {% if item.adresse %} - {{ item.adresse }}{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if ou and adresse %}
+            <p><strong>{{ ou }}</strong>&nbsp;: {{ adresse }}</p>
+        {% endif %}
+
+        {% if tel is string %}
+            <p><a href="tel:{{ tel | lower | replace(" ", "") }}">{{ tel }}</a></p>
+        {% else %}
+            <div>
+                {% for item in tel %}
+                    <p><a href="tel:{{ item | lower | replace(" ", "") }}">{{ item }}</a></p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endmacro %}

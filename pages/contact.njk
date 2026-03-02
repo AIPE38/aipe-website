@@ -10,16 +10,163 @@ eleventyNavigation:
 
 {% from "macros/hero.njk" import hero as hero %}
 {% from "macros/button.njk" import button as button %}
+{% from "macros/permanence_frame.njk" import permanence_frame as permanence_frame %}
 
 
 {% call hero(
     titre="Contact", 
     sousTitre="Vous souhaitez en savoir plus ou vous impliquer ?", 
-    imageVertical="/media/image/placeholder-vertical.png",
-    imageHorizontal="/media/image/placeholder-horizontal.png"
+    imageVertical="/media/image/aipe-logo-text.svg",
+    imageHorizontal="/media/image/aipe-logo-text.svg"
 ) %}
 {% endcall %}
 
+
+
+<div class="grid-main__item-full vague v_haut bg-primary"></div>
+<div class="grid-main__item-full grid-main bg-primary pblock-section">
+    <div class="df fd-c gap-20">
+        <h2>Permanences administratives <span class="font-hero">RPE</span> 2025-2026</h2>
+        <ul class="reset df fw-w gap">
+            <li>
+                {{ button(
+                    href="#charnecles",
+                    label="Charnècles",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#la-murette",
+                    label="La Murette",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#moirans",
+                    label="Moirans",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#reaumont",
+                    label="Réaumont",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#rives",
+                    label="Rives",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#saint-blaise-du-buis",
+                    label="Saint-Blaise-du-Buis",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#saint-cassien",
+                    label="Saint-Cassien",
+                    theme="pro"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    href="#saint-jean-de-moirans",
+                    label="Saint-Jean-de-Moirans",
+                    theme="pro"
+                ) }}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="grid-main__item-full vague v_bas bg-primary"></div>
+
+
+
+<div class="pblock-section">
+    <ul class="reset grid-permanence gap-20">
+        <li>
+            {{ permanence_frame(
+                ville="Charnècles",
+                quand=[ {jour:"Mardi", heure:"(2ème et 4ème du mois) 11h à 12h"} ],
+                ou="Salle du Pont Romain",
+                adresse="212-260 Chemin de l’Eglise",
+                tel="06 58 27 62 36"
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="La Murette",
+                quand=[ {jour:"Vendredi", heure:"(1er et 3ème du mois) 11h à 12h"} ],
+                ou="Petite Salle Polyvalente",
+                adresse="Chemin du Clapier",
+                tel="06 50 89 74 70"
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="Moirans",
+                quand=[ {jour:"Mardi", heure:"(1er et 3ème du mois) 13h30 à 15h"}, {jour:"Jeudi", heure:"16h30 à 18h"}, {jour:"Vendredi", heure:"11h à 12h30"} ],
+                ou="RPE - Maison de la Petite Enfance Les Premiers Pas",
+                adresse="90 rue des Fleurs",
+                tel=["06 49 75 45 33","07 49 83 62 07"]
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="Réaumont",
+                quand=[ {jour:"Vendredi", heure:"(2ème du mois) 16h à 18h"} ],
+                ou="Mairie",
+                adresse="10 Place de la Mairie",
+                tel="06 58 27 62 36"
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="Rives",
+                quand=[ {jour:"Lundi", heure:"16h à 18h", adresse:"Centre social de l’Orgère - 96 rue Sadi Carnot"},{jour:"Jeudi", heure:"16h à 18h", adresse:"RPE - 438 rue Bayard"} ],
+                tel=["04 76 65 37 79","06 50 89 74 70"]
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="Saint-Blaise-du-Buis",
+                quand=[ {jour:"Vendredi", heure:"(3ème du mois) 16h à 18h"} ],
+                ou="Mairie",
+                adresse=" 305 Rue de la Mairie",
+                tel="06 58 27 62 36"
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="Saint-Cassien",
+                quand=[ {jour:"Vendredi", heure:"(1er du mois) 16h à 18h"} ],
+                ou="Mairie",
+                adresse="9 Rte de Chartreuse",
+                tel="06 58 27 62 36"
+            ) }}
+        </li>
+        <li>
+            {{ permanence_frame(
+                ville="Saint-Jean-de-Moirans",
+                quand=[ {jour:"Lundi", heure:"Lundi 16h à 18h"},{jour:"Vendredi", heure:"(1er et 3ème du mois) 11h à 12h30"} ],
+                ou="RPE (en face de la crèche)",
+                adresse="112 rue Soffrey de Calignon",
+                tel="06 58 27 62 36"
+            ) }}
+        </li>
+    </ul>
+</div>
+
+<!--
 
 <div class="grid-main__item-full vague v_haut bg-primary"></div>
 <div class="grid-main__item-full grid-main bg-primary pblock-section">
@@ -67,3 +214,5 @@ eleventyNavigation:
         <h3>Les équipes de chaque antenne</h3>
     </div>
 </div>
+
+-->

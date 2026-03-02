@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "../Abstracts/__index" as *;
+
+.grid-permanence {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(230px, auto);
+    grid-auto-flow: dense;
+
+    @include breakpoint(medium) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.permanence:target {
+    border-color: var(--c-theme-pro);
+}
+
+.permanence:target ul:not(.reset) li::before{
+    background-image: url("/media/image/puce-pro.svg");
+}
