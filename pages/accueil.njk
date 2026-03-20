@@ -21,7 +21,7 @@ scriptsJs:
 
 
 {% call hero(
-    titre="Grandir ensemble : enfants, parents et pros accompagnés", 
+    titre="Grandir ensemble : <br class='show-for-large'>Enfants, parents et <br class='show-for-large'>assistantes maternelles", 
     sousTitre="Retrouvez-nous sur les réseaux pour ne rien&nbsp;<br class='show-for-large'>manquer de nos ateliers et animations.", 
     imageVertical="/media/image/accueil/hero-vertical.png",
     imageHorizontal="/media/image/accueil/hero-horizontal.png"
@@ -87,7 +87,7 @@ scriptsJs:
         imageHorizontal="/media/image/accueil/rpe-parent-horizontal.png"
     ) %}
         <div class="cadre df fd-c gap">
-            <p>Nous vous recevons sur chaque commune lors de <strong>permanence administrative</strong></p>
+            <p>Nous vous recevons sur chaque commune lors de <strong>permanences administratives</strong> avec ou sans radnez-vous.</p>
             <ul class="reset df fw-w gap-8">
                 <li>
                     {{ button(
@@ -140,27 +140,27 @@ scriptsJs:
 
 {% call intercalaire(theme="parent", titre="Nous intervenons dans les communes de") %}
     <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
-        <li>Moirans,</li>
-        <li>Réaumont,</li>
-        <li>Charnècles,</li>
-        <li>Rives,</li>
-        <li>St Jean de Moirans,</li>
-        <li>St Blaise du Buis,</li>
-        <li>La Murette</li>
+        <li>Moirans</li>
+        <li>Réaumont</li>
         <li>Charnècles</li>
+        <li>Rives</li>
+        <li>Saint Cassien</li>
+        <li>Saint Jean de Moirans</li>
+        <li>Saint Blaise du Buis</li>
+        <li>La Murette</li>
     </ul>
 {% endcall  %}
   
 
 
  <div class="pblock-section">   
-    <h3><span class="font-hero">L’Acti'Bébé</span> Commission Animation Formation</h3>
+    <h3><span class="font-hero">L’Acti'Bébé</span></h3>
     <p>Afin de proposer des ateliers aux enfants et aux familles, des parents bénévoles et des professionnelles se réunissent régulièrement pour réfléchir sur des projets autour de la petite enfance.</p>
 
     {% call ping_pong(
         type="pong",
         theme="pro",
-        titre="Des ateliers pour les touts petits et leurs parents",
+        titre="Des ateliers pour les tout-petits accompagnés de leurs parents ou de leurs assistantes maternelles",
         imageVertical="/media/image/accueil/actibebe-parent-vertical.png",
         imageHorizontal="/media/image/accueil/actibebe-parent-horizontal.png"
     ) %}
@@ -170,12 +170,13 @@ scriptsJs:
             <li><strong>Communication gestuelle</strong> : initiation à la langue des signes bébé pour mieux comprendre ses besoins avant les premiers mots</li>
             <li><strong>Secourisme parent-enfant</strong> gestes de premiers secours adaptés aux tout-petits</li>
             <li><strong>Spectacles</strong> à destination du très jeune public</li>
+            <li>Et de <strong>nouveaux projets</strong> chaque année</li>
         </ul>
     {% endcall  %}
 
     {% call ping_pong(
         theme="parent",
-        titre="Des soirées à thèmes et de la location",
+        titre="Des animations à thèmes",
         imageVertical="/media/image/accueil/actibebe-enfant-vertical.png",
         imageHorizontal="/media/image/accueil/actibebe-enfant-horizontal.png"
     ) %}
@@ -192,7 +193,7 @@ scriptsJs:
 
 {% call intercalaire(theme="pro") %}
     <div class="df jc-c">
-        <p>Une association pour les enfants, les parents et les professionnels</p>
+        <p>Une association pour les enfants, les parents et les professionnelles</p>
     </div>
 {% endcall  %}
 
@@ -200,157 +201,149 @@ scriptsJs:
 
 <div class="pblock-section">
     <h2 id="partenaire-titre">Nos partenaires</h2>
-    <p class="mb">Notre association intervient sur 8 communes, elle est en relation avec les diverses structures associatives de cette intercommunalité.</p>
+    <p class="mb">Notre association intervient sur 8 communes, elle est en relation avec les différentes structures petite enfance de cette intercommunalité.</p>
     <div class="mb">
         <ul class="reset df fw-w gap-8 js--filtre-buttons" data-filtre-class-inactif="v_secondary" data-filtre-class-actif="theme-neutre">
             <li>
                 {{ button(
+                    label="Financeurs",
+                    outline="true",
+                    attributes="data-filtre-cible='js--filtre-financeurs'"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    theme="secondary",
+                    label="Partenaires",
+                    outline="true",
+                    attributes="data-filtre-cible='js--filtre-partenaires'"
+                ) }}
+            </li>
+            <li>
+                {{ button(
+                    theme="secondary",
                     label="Tous",
                     outline="true",
                     attributes="data-filtre-cible='js--filtre-tous'"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    theme="secondary",
-                    label="Communes",
-                    outline="true",
-                    attributes="data-filtre-cible='js--filtre-communes'"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    theme="secondary",
-                    label="Crèches",
-                    outline="true",
-                    attributes="data-filtre-cible='js--filtre-creches'"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    theme="secondary",
-                    label="Autres",
-                    outline="true",
-                    attributes="data-filtre-cible='js--filtre-autres'"
                 ) }}
             </li>
         </ul>
         <div class="show-for-sr js--filtre-annonce" aria-live="polite" role="status"></div>
     </div>
     <ul class="reset grid-partenaire gap-20 js--filtre-partenaire" aria-labelledby="partenaire-titre">
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/moirans.png",
                 alt="Moirans (lieu de notre siège social)",
                 url="https://www.ville-moirans.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/st-jean-de-moirans.png",
                 alt="Saint Jean de Moirans",
                 url="https://www.st-jean-de-moirans.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/rives.jpg",
                 alt="Rives",
                 url="http://www.mairie-rives.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/la-murette.png",
                 alt="La Murette",
                 url="http://www.mairie-lamurette.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/saint-cassien.png",
                 alt="Saint Cassien",
                 url="http://www.saint-cassien.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/reaumont.jpg",
                 alt="Réaumont",
                 url="https://mairie-reaumont.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/saint-blaise-du-buis.jpg",
                 alt="Saint Blaise du Buis",
                 url="https://saintblaisedubuis.fr/"
             ) }}
         </li>
-        <li class="js--filtre-communes">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/charnecle.jpg",
                 alt="Charnècles",
                 url="http://www.charnecles.fr/"
             ) }}
         </li>
-        <li class="js--filtre-creches">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/les-ptits-loups.jpg",
                 alt="Les p’tits Loups, Saint Jean de Moirans",
                 url="https://www.st-jean-de-moirans.fr/2388-petite-enfance.htm"
             ) }}
         </li>
-        <li class="js--filtre-creches">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/la-ruche.png",
                 alt="La Ruche (anciennement la Balancelle), Moirans",
                 url="https://labalancelle.yo.fr/vitrine/"
             ) }}
         </li>
-        <li class="js--filtre-creches">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/envol.png",
                 alt="Halte Garderie L’envol, Coublevie",
                 url="https://www.crechelenvol.org/"
             ) }}
         </li>
-        <li class="js--filtre-creches">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/ribambelle.png",
                 alt="Crèche La Ribambelle, Rives",
                 url="https://www.mairie-rives.fr/petite-enfance"
             ) }}
         </li>
-        <li class="js--filtre-autres">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/jumeaux-et-plus.jpg",
                 alt="Association Jumeau et plus",
                 url="https://www.jumeaux-et-plus.fr/"
             ) }}
         </li>
-        <li class="js--filtre-autres">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/acepp38.svg",
                 alt="ACEPP38",
                 url="https://acepp38.fr/"
             ) }}
         </li>
-        <li class="js--filtre-autres">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/caf-isere.webp",
                 alt="CAF Isère",
                 url="https://www.caf.fr/allocataires/caf-de-l-isere/nous-contacter/points-d-accueil-de-votre-caf"
             ) }}
         </li>
-        <li class="js--filtre-autres">
+        <li class="js--filtre-financeurs">
             {{ image_frame(
                 img="/media/image/partenaire/isere.svg",
                 alt="Conseil Départemental de l’Isère",
                 url="https://www.isere.fr/"
             ) }}
         </li>
-        <li class="js--filtre-autres">
+        <li class="js--filtre-partenaires hide">
             {{ image_frame(
                 img="/media/image/partenaire/petit-pre.jpg",
                 alt="Petit Pré",
@@ -364,9 +357,9 @@ scriptsJs:
 
 {% call intercalaire(theme="enfant", titre="Nos valeurs") %}
     <ul class="reset df fw-w jc-c--medium gap-8 col-gap-60--medium">
-        <li>Partage,</li>
-        <li>Écoute,</li>
-        <li>Convivialité</li>
+        <li>Partage</li>
+        <li>Écoute</li>
+        <li>Lien</li>
     </ul>
 {% endcall  %}
 
@@ -377,7 +370,7 @@ scriptsJs:
     <p class="mb">Qu’ils soient professionnels de la petite enfance ou parents bénévoles, les membres actifs de l’association s’engagent pleinement pour faire vivre le projet associatif.</p>
 
     <div class="grid-ping ai-c pblock-section theme-pro">
-        <h3 class="h3 grid-ping-pong__titre">Professionnels</h3>
+        <h3 class="h3 grid-ping-pong__titre">Professionnelles</h3>
         <div class="grid-ping-pong__visuel">
             <div class="cadre df fd-c gap-8">
                 <div class="df jc-c">
@@ -421,7 +414,7 @@ scriptsJs:
 
     <div class="pblock-section">
         <h3>Bénévoles</h3>
-        <p>Une association ne peut fonctionner <strong>sans l’engagement de ses bénévoles</strong>. Les membres du bureau, qui  sont aussi les employeurs bénévoles, jouent un <strong>rôle essentiel</strong> dans le bon fonctionnement de l’AIPE.</p>
+        <p>Une association ne peut fonctionner sans <strong>l’engagement de ses bénévoles</strong>. Les membres du bureau, qui  sont aussi les employeurs bénévoles, jouent un <strong>rôle essentiel</strong> dans le bon fonctionnement de l’AIPE.</p>
         <div class="pblock-section df fd-c fd-cr--large">
             <div class="cadre theme-parent grid-aider">
                 <h4 class="h4 grid-aider__titre">Envie de donner un coup de main&nbsp;?</h4>

@@ -27,7 +27,7 @@ eleventyNavigation:
     <div class="df fd-c gap-20">
         <h2>Échanges et formations</h2>
         <p class="text-20">
-            Temps d'information et formations sont proposés aux parents, professionnels et bénévoles. Ouverts aux nouvelles idées, nous restons à l’écoute des opportunités
+            Temps d'information et formations sont proposés aux parents, professionnels et bénévoles. <br class="show-for-large">Ouverts aux nouvelles idées, nous restons à l’écoute des opportunités.
         </p>
     </div>
 </div>
@@ -37,7 +37,7 @@ eleventyNavigation:
 {% call ping_pong(
         type="pong",
         theme="enfant",
-        titre="Des ateliers pour les tout-petit et leurs parents",  
+        titre="Des ateliers pour les tout-petits et leurs parents",  
         imageVertical="/media/image/actibebe/atelier-vertical.png",
         imageHorizontal="/media/image/actibebe/atelier-horizontal.png",
         seo="h3"
@@ -56,7 +56,7 @@ eleventyNavigation:
 {% call ping_pong(
         type="ping",
         theme="parent",
-        titre="Des soirées à thèmes et de la location",  
+        titre="Des animations à thèmes",  
         imageVertical="/media/image/actibebe/maquillage-vertical.png",
         imageHorizontal="/media/image/actibebe/maquillage-horizontal.png",
         seo="h3"
@@ -96,13 +96,13 @@ eleventyNavigation:
                 ) }}
             </div>
             <div>
-                <h3>Recevoir la newsletter mensuelle</h3>
+                <h3>Recevoir notre programmation</h3>
                 <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci-newsletter/" class="mt-8">
                     <label class="hide">Ne pas remplir ce champ : <input name="bot-field"></label>
                     <label for="email">Votre adresse e-mail</label>
                     <div class="input-group mt-8">
                         <input id="email" name="email" type="email" placeholder="email@fournisseur.fr" required>
-                        <button type="submit" class="button theme-pro v_small d-ib">Je m’abonne</button>
+                        <button type="submit" class="button theme-pro v_small d-ib">Envoyer</button>
                     </div>
                 </form>
             </div>
