@@ -97,10 +97,18 @@ eleventyNavigation:
             </div>
             <div>
                 <h3>Recevoir notre programmation</h3>
-                <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci-newsletter/" class="mt-8">
+                <form name="newsletter" 
+                      method="POST" 
+                      data-netlify="true"
+                      data-netlify-recaptcha="true" 
+                      netlify-honeypot="bot-field" 
+                      action="/merci-newsletter/" 
+                      class="mt-8"
+                >
                     <input type="hidden" name="subject" value="Demande d’inscription au programme" />
                     <label class="hide">Ne pas remplir ce champ : <input name="bot-field"></label>
-                    <label for="email">Votre adresse e-mail</label>
+                    <div data-netlify-recaptcha="true"></div>
+                    <label for="email">E-mail</label>
                     <div class="input-group mt-8">
                         <input id="email" name="email" type="email" placeholder="email@fournisseur.fr" required>
                         <button type="submit" class="button theme-pro v_small d-ib">Envoyer</button>
