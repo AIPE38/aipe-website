@@ -135,3 +135,7 @@ ul.reset {
     outline-offset: var(--focus-visible-offset, rem(8px));
     border-radius: var(--focus-visible-radius, rem(40px));
 }
+
+blockquote {
+    margin: 0;
+}

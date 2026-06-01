@@ -46,6 +46,9 @@
 .as-c {
     align-self: center;
 }
+.as-e {
+    align-self: end;
+}
 .fw-w {
     flex-wrap: wrap;
 }
@@ -70,6 +73,10 @@
     container-type: inline-size;
 }
 
+.text-center {
+    text-align: center;
+}
+
 @include breakpoint("medium") {
     .text-center--medium {
         text-align: center;
@@ -82,8 +89,16 @@
 .dg {
     display: grid;
 }
+.dg.v_2col {
+    @include breakpoint("medium") {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 .dg.v_3col {
     @include breakpoint("medium") {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+.dg.v_3auto {
+    grid-template-columns: repeat(3, auto);
 }
