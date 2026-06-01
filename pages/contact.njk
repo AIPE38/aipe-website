@@ -22,66 +22,48 @@ eleventyNavigation:
 {% endcall %}
 
 
-
 <div class="grid-main__item-full vague v_haut bg-primary"></div>
 <div class="grid-main__item-full grid-main bg-primary pblock-section">
     <div class="df fd-c gap-20">
-        <h2>Permanences administratives <span class="font-hero">RPE</span> 2025-2026</h2>
+        <h2>Liens utiles</h2>
+        <h3>Participer à l’association</h3>
         <ul class="reset df fw-w gap">
             <li>
                 {{ button(
-                    href="#charnecles",
-                    label="Charnècles",
+                    href="#nous-contacter",
+                    label="Rejoindre l’association",
                     theme="pro"
                 ) }}
             </li>
             <li>
                 {{ button(
-                    href="#la-murette",
-                    label="La Murette",
+                    href="#",
+                    label="Adhérer à l’association",
                     theme="pro"
+                ) }}
+            </li>
+        </ul>
+        <h3>Trouver un accompagnement</h3>
+        <ul class="reset df fw-w gap">
+            <li>
+                {{ button(
+                    href="/acti-bebe/",
+                    label="Je cherche une activité",
+                    theme="enfant"
                 ) }}
             </li>
             <li>
                 {{ button(
-                    href="#moirans",
-                    label="Moirans",
-                    theme="pro"
+                    href="/rpe/#permanences-administratives",
+                    label="Je cherche un mode d’accueil",
+                    theme="enfant"
                 ) }}
             </li>
             <li>
                 {{ button(
-                    href="#reaumont",
-                    label="Réaumont",
-                    theme="pro"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    href="#rives",
-                    label="Rives",
-                    theme="pro"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    href="#saint-blaise-du-buis",
-                    label="Saint-Blaise-du-Buis",
-                    theme="pro"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    href="#saint-cassien",
-                    label="Saint-Cassien",
-                    theme="pro"
-                ) }}
-            </li>
-            <li>
-                {{ button(
-                    href="#saint-jean-de-moirans",
-                    label="Saint-Jean-de-Moirans",
-                    theme="pro"
+                    href="/rpe/#permanences-administratives",
+                    label="Questions sur l’accueil et le contrat de travail",
+                    theme="enfant"
                 ) }}
             </li>
         </ul>
@@ -91,7 +73,76 @@ eleventyNavigation:
 
 
 
-<div class="pblock-section">
+
+ <div class="pblock-section df fd-c gap-20"> 
+    <h2>Permanences administratives <span class="font-hero">RPE</span> 2025-2026</h2>
+    <ul class="reset df fw-w gap">
+        <li>
+            {{ button(
+                href="#charnecles",
+                label="Charnècles",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#la-murette",
+                label="La Murette",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#moirans",
+                label="Moirans",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#reaumont",
+                label="Réaumont",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#rives",
+                label="Rives",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#saint-blaise-du-buis",
+                label="Saint-Blaise-du-Buis",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#saint-cassien",
+                label="Saint-Cassien",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+        <li>
+            {{ button(
+                href="#saint-jean-de-moirans",
+                label="Saint-Jean-de-Moirans",
+                theme="parent",
+                small="true"
+            ) }}
+        </li>
+    </ul>
+
     <ul class="reset grid-permanence gap-20">
         <li>
             {{ permanence_frame(
