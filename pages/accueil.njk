@@ -78,7 +78,7 @@ scriptsJs:
 
  <div class="pblock-section"></div>   
     <h3><span class="font-hero">Le <abbr>RPE</abbr></span> Relais Petite Enfance</h3>
-    <p>C’est un lieu d'information, d'accompagnement et d'échange pour les parents et les assistantes maternelles. Ce service gratuit est soutenu par la CAF pour faciliter l’accès à un mode d’accueil de qualité.</p>
+    <p>C’est un lieu d'information sur tous les modes d’accueil, d'accompagnement et d'échange pour les parents et les assistantes maternelles. Ce service gratuit est soutenu par la CAF pour faciliter l’accès à un mode d’accueil de qualité.</p>
 
     {% call ping_pong(
         theme="parent",
@@ -268,7 +268,7 @@ scriptsJs:
         </li>
         <li class="js--filtre-financeurs">
             {{ image_frame(
-                img="/media/image/partenaire/reaumont.jpg",
+                img="/media/image/partenaire/reaumont.png",
                 alt="Réaumont",
                 url="https://mairie-reaumont.fr/"
             ) }}
@@ -374,7 +374,7 @@ scriptsJs:
         <div class="grid-ping-pong__visuel">
             <div class="cadre df fd-c gap-8">
                 <div class="df jc-c">
-                    <img src="/media/image/accueil/membre-pro-contact.png" alt="" width="205">
+                    <img src="/media/image/accueil/membre-pro-contact-dessin.png" alt="" width="205">
                 </div>
                 <p class="text-20">Une question, un besoin ou une envie de collaborer&nbsp;? </p>
                 <p class="mb">
@@ -397,7 +397,7 @@ scriptsJs:
         </div>
         <div class="grid-ping-pong__contenu df fd-c gap-20">
             <p>Elles sont cinq salariées, à temps partiel, à faire tourner l’association au quotidien</p>
-            {% image "typePongPing", "/media/image/accueil/membre-pro-horizontal.png" %}
+            {% image "typePongPing", "/media/image/equipe-aipe.jpg", "équipe de l'AIPE" %}
             {% set listeSalaries = [
                 { col1: "Coordinatrice", col2: "Nathalie Deroo", col3: "07 49 83 62 07" },
                 { col1: "Animatrice", col2: "Aude Foucault", col3: "06 49 75 45 33" },
@@ -420,7 +420,7 @@ scriptsJs:
                 <h4 class="h4 grid-aider__titre">Envie de donner un coup de main&nbsp;?</h4>
                 <div class="grid-aider__visuel">
                     <div class="df jc-c">
-                        <img src="/media/image/accueil/membre-benevol-contact.png" alt="" width="366">
+                        <img src="/media/image/accueil/membre-benevol-contact-dessin.png" alt="" width="366">
                     </div>
                 </div>
                 <div class="grid-aider__intro df fd-c gap">
@@ -442,8 +442,7 @@ scriptsJs:
             {% call ping_pong(
                 type="pong",
                 theme="parent",
-                imageVertical="/media/image/accueil/membre-benevol-vertical.png",
-                imageHorizontal="/media/image/accueil/membre-benevol-horizontal.png"
+                imageVertical="/media/image/accueil/membre-benevol-vertical-dessin.png"
             ) %}
                 <p><strong>Le bureau est renouvelé chaque année</strong> lors de l’assemblée générale et les membres peuvent bien sûr s’investir sur plusieurs années</p>
                 {% set listeMembre = [
