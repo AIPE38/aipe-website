@@ -251,7 +251,7 @@ scriptsJs:
                     }
                 ] %}
                 {{ rpe_accordion_parent(datas=dataLieuParent) }}
-                <button type='button' class='a mt-8' id='btn-reset-mapparent' aria-hidden='true'>Zoom par défaut</button>
+                <button type='button' class='a mt-8' id='btn-reset-mapparent' aria-hidden='true' tabindex="-1">Zoom par défaut</button>
             </div>
         </div>
     </div>
@@ -341,7 +341,7 @@ scriptsJs:
                         col2: "<a href='#lieux-la-murette' aria-label='Plus d&#39;info sur notre antenne de La Murette'>Détails</a>" 
                     },
                     { 
-                        col1: "<button type='button' class='a' id='btn-reset-mappro' aria-hidden='true'>Zoom par défaut</button>"
+                        col1: "<button type='button' class='a' id='btn-reset-mappro' aria-hidden='true' tabindex="-1">Zoom par défaut</button>"
                     }
                 ] %}
                 {{ matrix(datas=listeLieuxPro, nbCol=2, growCol=1) }}
@@ -381,7 +381,7 @@ scriptsJs:
                     }
                 ] %}
                 {{ rpe_accordion_parent(datas=dataLieuPro) }}
-                <button type='button' class='a mt-8' id='btn-reset-mappro' aria-hidden='true'>Zoom par défaut</button>
+                <button type='button' class='a mt-8' id='btn-reset-mappro' aria-hidden='true' tabindex="-1">Zoom par défaut</button>
             </div>
         </div>
 

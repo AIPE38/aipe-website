@@ -21,10 +21,31 @@ const lieuxParent = [
 
 /* --- Fonction générique d'initialisation d'une carte --- */
 async function initCarte(containerId, lieux, prefix = containerId) {
-    const map = L.map(containerId);
+    const map = L.map(containerId, {
+        keyboard: false
+    });
+
+    // Conteneur de la carte
+    map.getContainer().tabIndex = -1;
+
+    // Boutons de zoom
+    map.getContainer()
+        .querySelectorAll(".leaflet-control-zoom a")
+        .forEach(el => el.tabIndex = -1);
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
+
+    map.whenReady(() => {
+        map.getContainer()
+            .querySelectorAll(
+                ".leaflet-control-zoom a, .leaflet-control-attribution a"
+            )
+            .forEach(el => {
+                el.tabIndex = -1;
+            });
+    });
 
     const marqueurs = [];
     let defaultView = null;
@@ -39,7 +60,9 @@ async function initCarte(containerId, lieux, prefix = containerId) {
     lieux.forEach(lieu => {
         if (!lieu.coords) return;
 
-        const marker = L.marker([lieu.coords.lat, lieu.coords.lon]).addTo(map);
+        const marker = L.marker([lieu.coords.lat, lieu.coords.lon], {
+            keyboard: false
+        }).addTo(map);
         marker.bindPopup(getPopupContent(lieu));
         lieu.marker = marker;
 
