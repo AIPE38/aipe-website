@@ -136,6 +136,11 @@ ul.reset {
     border-radius: var(--focus-visible-radius, rem(40px));
 }
 
+ul li a:focus-visible {
+    --focus-visible-offset: 0px;
+    text-decoration: none;
+}
+
 blockquote {
     margin: 0;
 }
