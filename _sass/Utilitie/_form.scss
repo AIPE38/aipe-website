@@ -3,29 +3,48 @@
 
 input {
     border: rem(1px) solid var(--theme-fg);
-    border-radius: rem(30px);
-    padding: rem(4px) rem(8px);
+    border-radius: rem(10px);
+    padding: rem(15px) rem(25px);
     width: 100%;
     font-size: 1rem;
     color: var(--theme-fg);
     font-family: system-ui,-apple-system,sans-serif;
+
+    @include breakpoint(medium) {
+        border-radius: rem(30px);
+    }
 }
 
 .input-group {
     display: flex;
     @include breakpoint(smallOnly) {
         flex-direction: column;
-        gap: rem(4px);
     }
 }
 
-@include breakpoint(medium) {
-    .input-group input {
+
+.input-group input {
+    @include breakpoint(smallOnly) {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-width: 0;
+    }
+
+    @include breakpoint(medium) {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         border-right-width: 0;
     }
-    .input-group button {
+}
+.input-group button {
+    @include breakpoint(smallOnly) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top-width: 0;
+    }
+
+    @include breakpoint(medium) {   
+        padding: rem(15px) rem(25px);
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         border-left-width: 0;
@@ -44,7 +63,13 @@ input {
 }
 
 .input-group:has(input:focus-visible) {
-    outline: 2px solid var(--c-outline);
-    outline-offset: var(--focus-visible-offset, rem(8px));
-    border-radius: var(--focus-visible-radius, rem(40px));
+        outline: 2px solid var(--c-outline);
+        outline-offset: var(--focus-visible-offset, rem(8px));
+
+    @include breakpoint(smallOnly) {
+        border-radius: rem(4px) rem(4px) rem(30px) rem(30px);
+    }
+    @include breakpoint(medium) {
+        border-radius: rem(40px);
+    }
 }
