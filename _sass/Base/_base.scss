@@ -133,10 +133,10 @@ ul.reset {
 *:focus-visible {
     outline: 2px solid var(--c-outline);
     outline-offset: var(--focus-visible-offset, rem(8px));
-    border-radius: var(--focus-visible-radius, rem(40px));
+    border-radius: var(--focus-visible-radius, rem(4px));
 }
 
-ul li a:focus-visible {
+ul li a:not([class]):focus-visible {
     --focus-visible-offset: 0px;
     text-decoration: none;
 }

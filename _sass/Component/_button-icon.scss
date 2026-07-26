@@ -3,6 +3,7 @@
 
 .button-icon {
     --c-bg: var(--c-theme-neutre);
+    --focus-visible-offset: #{rem(2px)};
     width: rem(35px);
     height: rem(35px);
     border-radius: rem(1000px);
