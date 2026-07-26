@@ -33,15 +33,68 @@
 
     {% if nofollow %}
         <meta name="robots" content="noindex, nofollow">
+    {% else %}
+        <meta name="robots" content="index,follow">
     {% endif %}
 
-    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:url" content="{{ metadata.siteUrl }}{{ page.url | url }}">
+    <meta property="og:image" content="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}og-image.png">
+    <meta property="og:description" content="{{ metaDescription }}">
 
-    <link rel="icon" type="image/png" href="{{ metadata.faviconUrl }}favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="{{ metadata.faviconUrl }}favicon.svg" />
-    <link rel="shortcut icon" href="{{ metadata.faviconUrl }}favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.faviconUrl }}apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon.svg" />
+    <link rel="shortcut icon" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="AIPE" />
-    <link rel="manifest" href="{{ metadata.faviconUrl }}site.webmanifest" />
+    <link rel="manifest" href="{{ metadata.siteUrl }}{{ metadata.faviconUrl }}site.webmanifest" />
+
+    <link rel="canonical" href="{{ metadata.siteUrl }}{{ page.url | url }}">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Association Intercommunale Petite Enfance",
+        "alternateName": "AIPE",
+        "identifier": {
+            "@type": "PropertyValue",
+            "propertyID": "SIRET",
+            "value": "39125303600027"
+        },
+        "url": "{{ metadata.siteUrl }}",
+        "logo": "{{ metadata.siteUrl }}/media/image/aipe-logo-text.svg",
+        "knowsLanguage": "French",  
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "information",
+            "email": "aipe.petite.enfance@gmail.com",
+            "telephone": "+33 7 49 83 62 07",
+            "availableLanguage": "French"
+        },
+        "sameAs": [
+            "https://www.facebook.com/aiperam",
+            "https://www.instagram.com/aipe.38"
+        ],
+        "areaServed": [
+            "Charnècles",
+            "La Murette",
+            "Moirans",
+            "Réaumont",
+            "Rives",
+            "Saint-Blaise-du-Buis",
+            "Saint-Cassien",
+            "Saint-Jean-de-Moirans"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "90 Rue des Fleurs",
+            "postalCode": "38430",
+            "addressLocality": "Moirans",
+            "addressRegion": "Isère",
+            "addressCountry": "FR"
+        }
+    }
+    </script>
 
 </head>
